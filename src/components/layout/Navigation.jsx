@@ -1,13 +1,12 @@
 import { Settings } from "@mui/icons-material";
+import MenuIcon from "@mui/icons-material/Menu";
 import {
-	Divider,
+	Drawer,
 	FormControlLabel,
 	IconButton,
 	Popover,
 	styled,
 	Switch,
-	ToggleButton,
-	ToggleButtonGroup,
 } from "@mui/material";
 import React from "react";
 
@@ -33,6 +32,7 @@ function Navigation() {
 	const [anchorEl, setAnchorEl] = React.useState(null);
 	const isPopoverOpen = Boolean(anchorEl);
 	const popoverId = open ? "navigation-settings-popover" : undefined;
+	const [drawerOpen, setDrawerOpen] = React.useState(false);
 
 	const handlePopoverClick = (event) => {
 		setAnchorEl(event.currentTarget);
@@ -152,24 +152,47 @@ function Navigation() {
 		},
 	}));
 
+	const NavItems = ({ isMobile }) => {
+		return navItems
+			.filter((item) => !item.hidden)
+			.map((item) => (
+				<a
+					key={item.path}
+					href={item.path}
+					className="p-2 hover:bg-blue-400 hover:text-black transition-colors duration-300"
+				>
+					{item.title}
+				</a>
+			));
+	};
+
+	const toggleDrawer = (newOpen) => () => {
+		setDrawerOpen(newOpen);
+	};
+
 	return (
-		<div className="flex flex-row justify-between p-3 items-center select-none">
+		<div className="flex flex-row justify-between p-4 items-center select-none">
 			<div className="flex flex-row items-baseline">
 				<h1 className="text-5xl font-extrabold uppercase text-blue-400">K</h1>
 				<h1 className="text-4xl font-extrabold uppercase">evin</h1>
 			</div>
-			<div className="flex flex-row">
-				{navItems
-					.filter((item) => !item.hidden)
-					.map((item) => (
-						<a
-							key={item.path}
-							href={item.path}
-							className="p-2 hover:bg-blue-400 hover:text-black transition-colors duration-300"
-						>
-							{item.title}
-						</a>
-					))}
+			<div className="flex flex-row items-center sm:hidden">
+				<IconButton onClick={toggleDrawer(true)}>
+					<MenuIcon sx={{ color: "white", fontSize: "24pt" }} />
+				</IconButton>
+				<Drawer
+					open={drawerOpen}
+					onClose={toggleDrawer(false)}
+					anchor="right"
+					sx={{ backdropFilter: "blur(10px)" }}
+				>
+					<div className="h-full w-full flex flex-col bg-[#242424] text-white">
+						{NavItems(true)}
+					</div>
+				</Drawer>
+			</div>
+			<div className="hidden sm:flex flex-row">
+				{NavItems(false)}
 				<IconButton
 					sx={{
 						color: isPopoverOpen
@@ -197,7 +220,7 @@ function Navigation() {
 					horizontal: "left",
 				}}
 			>
-				<div className="bg-white p-3 select-none">
+				<div className="bg-white p-1 select-none scale-[90%]">
 					<div className="flex flex-row items-center justify-between">
 						<FormControlLabel
 							control={<DarkModeSwitch sx={{ m: 1 }} defaultChecked />}
