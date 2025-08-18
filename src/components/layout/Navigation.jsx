@@ -153,8 +153,8 @@ function Navigation() {
 	}));
 
 	return (
-		<div className="flex flex-row justify-between p-3 items-center">
-			<div className="flex flex-row items-baseline select-none">
+		<div className="flex flex-row justify-between p-3 items-center select-none">
+			<div className="flex flex-row items-baseline">
 				<h1 className="text-5xl font-extrabold uppercase text-blue-400">K</h1>
 				<h1 className="text-4xl font-extrabold uppercase">evin</h1>
 			</div>
@@ -197,7 +197,7 @@ function Navigation() {
 					horizontal: "left",
 				}}
 			>
-				<div className="bg-white p-3">
+				<div className="bg-white p-3 select-none">
 					<div className="flex flex-row items-center justify-between">
 						<FormControlLabel
 							control={<DarkModeSwitch sx={{ m: 1 }} defaultChecked />}
