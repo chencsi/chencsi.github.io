@@ -159,7 +159,10 @@ function Navigation() {
 				<a
 					key={item.path}
 					href={item.path}
-					className="p-2 hover:bg-blue-400 hover:text-black transition-colors duration-300"
+					className={isMobile
+						? "p-2 hover:bg-blue-400 hover:text-black transition-colors duration-300"
+						: "p-5 hover:bg-blue-400 hover:text-black transition-colors duration-300"
+					}
 				>
 					{item.title}
 				</a>
