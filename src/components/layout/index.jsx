@@ -5,7 +5,7 @@ const Layout = () => {
     return (
         <div className="w-full h-full overflow-hidden">
             <Navigation />
-            <div className="p-8">
+            <div className="p-5">
                 <Outlet />
             </div>
         </div>

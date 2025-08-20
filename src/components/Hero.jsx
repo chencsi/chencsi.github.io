@@ -5,24 +5,24 @@ function Hero() {
 	const navigate = useNavigate();
 
 	return (
-		<section className="bg-zinc-900 rounded-xl p-5 shadow-lg flex flex-row justify-between items-center gap-5 p-15 max-w-[800px] mx-auto">
-			<div className="flex flex-col items-center">
-				<h1 className="text-center text-5xl font-bold">Kevin Chen</h1>
-				<h2 className="text-xl md:text-xl text-gray-300 mt-2">
+		<section className="bg-zinc-900 rounded-xl shadow-lg flex sm:flex-row items-center flex-col-reverse justify-between gap-5 p-10 max-w-[800px] mx-auto">
+			<div className="flex flex-col self-center text-center sm:text-left sm:gap-1">
+				<h1 className="sm:text-left text-4xl sm:text-4xl md:text-5xl font-bold">Kevin Chen</h1>
+				<h2 className="text-xl text-md text-gray-300">
 					Frontend fejlesztő hallgató
 				</h2>
-				<p className="text-gray-400 leading-relaxed">
+				<p className="text-sm text-gray-400 leading-relaxed">
 					Letisztult és felhasználóbarát weboldalakat építek.
 				</p>
-				<Button sx={{mt: 2}} variant="contained" onClick={() => navigate("/contact")}>
+				<Button sx={{mx: "auto", mt: 2, px: 2}} variant="contained" onClick={() => navigate("/contact")}>
 					Kapcsolat
 				</Button>
 			</div>
-			<div className="block w-60 h-60 overflow-hidden rounded-full bg-blue-400 select-none pointer-events-none shadow-xl">
+			<div className="block max-w-50 max-h-50 md:max-w-60 md:max-h-60 overflow-hidden rounded-full bg-blue-400 select-none pointer-events-none shadow-xl">
 				<img
 					src="/portrait.png"
 					alt="'Portrait photo'"
-					className="w-full h-full object-cover object-[50%_15%] shadow-lg"
+					className="w-full h-full object-cover object-[50%_10%] shadow-lg"
 				/>
 			</div>
 		</section>

@@ -64,7 +64,7 @@ function Navigation() {
 	};
 
 	return (
-		<div className="flex flex-row justify-between p-4 items-center select-none">
+		<div className="flex flex-row justify-between px-5 py-3 items-center select-none">
 			<div className="flex flex-row items-baseline">
 				<h1 className="text-5xl font-extrabold uppercase text-blue-400">K</h1>
 				<h1 className="text-4xl font-extrabold uppercase">C</h1>

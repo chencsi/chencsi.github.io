@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 function NotFound() {
     const naviate = useNavigate();
-    
+
     return (
         <div className="h-screen w-screen flex flex-col items-center justify-center gap-3">
             <h1 className="text-4xl font-extrabold">Hoppá!</h1>
