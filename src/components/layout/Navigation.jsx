@@ -7,8 +7,8 @@ import {
 	Popover,
 } from "@mui/material";
 import React from "react";
-import DarkModeSwitch from "../navigation/ThemeSwitch";
-import LanguageSwitch from "../navigation/LanguageSwitch";
+import DarkModeSwitch from "../Navigation/ThemeSwitch";
+import LanguageSwitch from "../Navigation/LanguageSwitch";
 
 const navItems = [
 	{
