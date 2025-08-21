@@ -3,7 +3,7 @@ import Highlights from "../components/Highlights";
 
 function Home() {
 	return (
-		<main className="flex flex-col gap-10">
+		<main className="flex flex-col gap-20">
 			<Hero />
             <Highlights />
 		</main>
