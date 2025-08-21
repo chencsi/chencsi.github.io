@@ -1,15 +1,21 @@
 import { Outlet } from "react-router-dom";
 import Navigation from "./Navigation";
+import Footer from "./Footer";
 
 const Layout = () => {
-    return (
-        <div className="w-full h-full overflow-hidden">
-            <Navigation />
-            <div className="p-5">
-                <Outlet />
-            </div>
-        </div>
-    )
-}
+	return (
+		<>
+			<nav className="w-full h-full overflow-hidden">
+				<Navigation />
+			</nav>
+			<main className="pt-5 px-3 flex flex-col gap-20 min-h-screen">
+				<Outlet />
+			</main>
+			<footer>
+                <Footer />
+            </footer>
+		</>
+	);
+};
 
 export default Layout;
