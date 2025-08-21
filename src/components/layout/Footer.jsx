@@ -3,7 +3,7 @@ import navItems from "./navItems";
 
 function Footer() {
 	return (
-		<div className="h-50 bg-zinc-400/10 py-5 flex flex-col justify-between">
+		<div className=" bg-black/30 py-5 flex flex-col gap-5">
 			<ul className="flex flex-row gap-5 justify-center">
 				{navItems
 					.filter((item) => item.footer === true)
