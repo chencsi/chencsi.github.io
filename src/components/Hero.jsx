@@ -5,16 +5,27 @@ function Hero() {
 	const navigate = useNavigate();
 
 	return (
-		<section className="bg-zinc-900 rounded-xl shadow-lg flex sm:flex-row items-center flex-col-reverse justify-between gap-5 p-10 max-w-[800px] mx-auto">
+		<section className="bg-zinc-900 rounded-xl shadow-lg flex sm:flex-row items-center flex-col-reverse justify-between sm:gap-15 py-10 px-5 sm:py-15 sm:px-10 md:px-20 max-w-[600px] md:max-w-[800px] mx-auto">
 			<div className="flex flex-col self-center text-center sm:text-left sm:gap-1">
-				<h1 className="sm:text-left text-4xl sm:text-4xl md:text-5xl font-bold">Kevin Chen</h1>
+				<h1 className="sm:text-left text-4xl sm:text-4xl md:text-5xl font-bold">
+					Kevin Chen
+				</h1>
 				<h2 className="text-xl text-md text-gray-300">
 					Frontend fejlesztő hallgató
 				</h2>
 				<p className="text-sm text-gray-400 leading-relaxed">
 					Letisztult és felhasználóbarát weboldalakat építek.
 				</p>
-				<Button sx={{mx: "auto", mt: 2, px: 2}} variant="contained" onClick={() => navigate("/contact")}>
+				<Button
+					sx={{
+						mx: { xs: "auto", sm: 0 },
+						mr: { xs: "auto", sm: "auto" },
+						mt: 2,
+						px: 2,
+					}}
+					variant="contained"
+					onClick={() => navigate("/contact")}
+				>
 					Kapcsolat
 				</Button>
 			</div>
