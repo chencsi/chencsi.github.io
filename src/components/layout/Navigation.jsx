@@ -5,6 +5,7 @@ import React from "react";
 import DarkModeSwitch from "../Navigation/ThemeSwitch";
 import LanguageSwitch from "../Navigation/LanguageSwitch";
 import navItems from "./navItems";
+import { Link } from "react-router-dom";
 
 function Navigation() {
 	const [anchorEl, setAnchorEl] = React.useState(null);
@@ -45,10 +46,12 @@ function Navigation() {
 	return (
 		<div className="flex flex-row justify-between px-5 py-3 items-center select-none">
 			<div className="flex flex-row items-baseline">
-				<h1 class="text-5xl font-extrabold uppercase">
-					<span class="text-blue-400">K</span>
-					<span class="text-4xl">c</span>
-				</h1>
+				<Link to="/">
+					<h1 class="text-5xl font-extrabold uppercase">
+						<span class="text-blue-400">K</span>
+						<span class="text-4xl">c</span>
+					</h1>
+				</Link>
 			</div>
 			<div className="flex flex-row items-center sm:hidden">
 				<IconButton onClick={toggleDrawer(true)}>
