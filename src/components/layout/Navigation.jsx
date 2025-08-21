@@ -1,32 +1,10 @@
 import { Settings } from "@mui/icons-material";
 import MenuIcon from "@mui/icons-material/Menu";
-import {
-	Drawer,
-	FormControlLabel,
-	IconButton,
-	Popover,
-} from "@mui/material";
+import { Drawer, FormControlLabel, IconButton, Popover } from "@mui/material";
 import React from "react";
 import DarkModeSwitch from "../Navigation/ThemeSwitch";
 import LanguageSwitch from "../Navigation/LanguageSwitch";
-
-const navItems = [
-	{
-		path: "/",
-		title: "Főoldal",
-		hidden: false,
-	},
-	{
-		path: "/referencies",
-		title: "Referenciák",
-		hidden: false,
-	},
-	{
-		path: "/contact",
-		title: "Kapcsolat",
-		hidden: false,
-	},
-];
+import navItems from "./navItems";
 
 function Navigation() {
 	const [anchorEl, setAnchorEl] = React.useState(null);
@@ -49,9 +27,10 @@ function Navigation() {
 				<a
 					key={item.path}
 					href={item.path}
-					className={isMobile
-						? "p-2 hover:bg-blue-400 hover:text-black transition-colors duration-300"
-						: "p-5 hover:bg-blue-400 hover:text-black transition-colors duration-300"
+					className={
+						isMobile
+							? "p-2 hover:bg-blue-400 hover:text-black transition-colors duration-300"
+							: "p-5 hover:bg-blue-400 hover:text-black transition-colors duration-300"
 					}
 				>
 					{item.title}
@@ -66,8 +45,10 @@ function Navigation() {
 	return (
 		<div className="flex flex-row justify-between px-5 py-3 items-center select-none">
 			<div className="flex flex-row items-baseline">
-				<h1 className="text-5xl font-extrabold uppercase text-blue-400">K</h1>
-				<h1 className="text-4xl font-extrabold uppercase">C</h1>
+				<h1 class="text-5xl font-extrabold uppercase">
+					<span class="text-blue-400">K</span>
+					<span class="text-4xl">c</span>
+				</h1>
 			</div>
 			<div className="flex flex-row items-center sm:hidden">
 				<IconButton onClick={toggleDrawer(true)}>
