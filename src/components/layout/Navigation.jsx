@@ -25,9 +25,9 @@ function Navigation() {
 		return navItems
 			.filter((item) => !item.hidden)
 			.map((item) => (
-				<a
+				<Link
 					key={item.path}
-					href={item.path}
+					to={item.path}
 					className={
 						isMobile
 							? "p-2 hover:bg-blue-400 hover:text-black transition-colors duration-300"
@@ -35,7 +35,7 @@ function Navigation() {
 					}
 				>
 					{item.title}
-				</a>
+				</Link>
 			));
 	};
 

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import navItems from "./navItems";
 
 function Footer() {
@@ -8,17 +9,19 @@ function Footer() {
 					.filter((item) => item.footer === true)
 					.map((item) => (
 						<li key={item.path}>
-							<a
-								href={item.path}
+							<Link
+								to={item.path}
 								className="text-gray-400 hover:text-white transition-[color] duration-300"
 							>
 								{item.title}
-							</a>
+							</Link>
 						</li>
 					))}
 			</ul>
-            
-			<p className="text-center text-gray-400">Kód és design: Kevin Chen 💙 · © 2025</p>
+
+			<p className="text-center text-gray-400">
+				Kód és design: Kevin Chen 💙 · © 2025
+			</p>
 		</div>
 	);
 }
