@@ -1,11 +1,11 @@
-import Hero from "../components/Hero";
-import Highlights from "../components/Highlights";
+import HomeHero from "../components/HomeHero";
+import HomeHighlights from "../components/HomeHighlights";
 
 function Home() {
 	return (
 		<>
-			<Hero />
-			<Highlights />
+			<HomeHero />
+			<HomeHighlights />
 		</>
 	);
 }
