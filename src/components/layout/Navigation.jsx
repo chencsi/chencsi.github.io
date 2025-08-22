@@ -66,34 +66,35 @@ function Navigation() {
 
 	return (
 		<div
-			className={
-				isScrolled
-					? "bg-zinc-900/60 backdrop-blur-xl fixed w-full flex flex-row justify-between px-5 py-3 items-center select-none transition duration-300"
-					: "fixed w-full flex flex-row justify-between px-5 py-3 items-center select-none transition duration-300"
-			}
 			id="navigation"
+			className={`
+				fixed w-full flex flex-row justify-between px-5 py-3 items-center select-none transition duration-300
+				${isScrolled ? "backdrop-blur-sm bg-zinc-100/10" : ""}
+				${theme === "dark" ? "text-white" : "text-black"}
+				${theme === "dark" && isScrolled ? "bg-gray-900/80" : ""}
+				`.trim()}
 		>
 			<div className="flex flex-row items-baseline">
 				<Link to="/">
 					<h1 className="text-5xl font-extrabold uppercase">
 						<span className="text-blue-400">K</span>
-						<span className="text-4xl">c</span>
+						<span className="text-zinc-200 text-4xl">c</span>
 					</h1>
 				</Link>
 			</div>
 			<div className="flex flex-row items-center sm:hidden">
 				<IconButton onClick={toggleDrawer(true)}>
-					<MenuIcon sx={{ color: "white", fontSize: "24pt" }} />
+					<MenuIcon sx={{ fontSize: "24pt" }} />
 				</IconButton>
 				<Drawer
 					open={drawerOpen}
 					onClose={toggleDrawer(false)}
 					anchor="right"
 					sx={{
-						backdropFilter: "blur(5px)"
+						backdropFilter: "blur(5px)",
 					}}
 				>
-					<div className="h-full w-full flex flex-col bg-zinc-800 text-white">
+					<div className={`h-full w-full flex flex-col ${theme === "dark" ? "bg-zinc-800 text-zinc-200" : "bg-zinc-200 text-zinc-800"}`}>
 						{NavItems(true)}
 					</div>
 				</Drawer>
@@ -102,16 +103,15 @@ function Navigation() {
 				{NavItems(false)}
 				<IconButton
 					sx={{
-						color: isPopoverOpen
-							? "rgb(66, 165, 245)"
-							: "rgba(255, 255, 255, 0.87)",
 						transform: isPopoverOpen ? "rotate(90deg)" : "none",
 						transition: "transform 300ms, color 300ms",
 						"&:hover": {
 							transform: "rotate(90deg)",
 						},
+						color: theme === "dark" ? "white" : "black",
 					}}
 					onClick={handlePopoverClick}
+					disableRipple
 				>
 					<Settings />
 				</IconButton>
