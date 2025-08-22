@@ -1,19 +1,27 @@
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import useUI from "../hooks/useUI";
 
 function Hero() {
+	const { theme } = useUI();
 	const navigate = useNavigate();
 
 	return (
-		<section className="bg-zinc-900 rounded-xl shadow-lg flex sm:flex-row items-center flex-col-reverse justify-between gap-5 sm:gap-15 py-10 px-5 sm:py-15 sm:px-10 md:px-20 max-w-[600px] md:max-w-[800px] mx-auto">
+		<section
+			className={`${theme === "dark" ? "bg-zinc-900 text-zinc-100" : "bg-zinc-100 text-zinc-700"} rounded-xl shadow-lg flex sm:flex-row items-center flex-col-reverse justify-between gap-5 sm:gap-15 py-10 px-5 sm:py-15 sm:px-10 md:px-20 max-w-[600px] md:max-w-[800px] mx-auto transition duration-300`}
+		>
 			<div className="flex flex-col self-center text-center sm:text-left sm:gap-1">
 				<h1 className="sm:text-left text-4xl sm:text-4xl md:text-5xl font-bold">
 					Kevin Chen
 				</h1>
-				<h2 className="text-xl text-md text-gray-300">
+				<h2
+					className={`${theme === "dark" ? "text-zinc-300" : "text-zinc-700"} text-xl text-md`}
+				>
 					Frontend fejlesztő hallgató
 				</h2>
-				<p className="text-sm text-gray-400 leading-relaxed">
+				<p
+					className={`${theme === "dark" ? "text-zinc-300" : "text-zinc-600"} text-sm leading-relaxed`}
+				>
 					Letisztult és felhasználóbarát weboldalakat építek.
 				</p>
 				<Button
@@ -22,6 +30,8 @@ function Hero() {
 						mr: { xs: "auto", sm: "auto" },
 						mt: 2,
 						px: 2,
+						color: theme === "dark" ? "grey.900" : "grey.100",
+						transition: "color, 300ms"
 					}}
 					variant="contained"
 					onClick={() => navigate("/contact")}

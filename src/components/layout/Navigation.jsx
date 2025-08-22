@@ -70,8 +70,8 @@ function Navigation() {
 			className={`
 				fixed w-full flex flex-row justify-between px-5 py-3 items-center select-none transition duration-300
 				${isScrolled ? "backdrop-blur-sm" : ""}
-				${isScrolled && theme === "dark" ? "bg-zinc-800/10" : ""}
-				${isScrolled && theme === "light" ? "bg-zinc-200/10" : ""}
+				${isScrolled && theme === "dark" ? "bg-zinc-800/50" : ""}
+				${isScrolled && theme === "light" ? "bg-zinc-100/50" : ""}
 				${theme === "dark" ? "text-zinc-100" : "text-zinc-900"}
 				`}
 		>
@@ -79,7 +79,7 @@ function Navigation() {
 				<Link to="/">
 					<h1 className="text-5xl font-extrabold uppercase">
 						<span className="text-blue-400">K</span>
-						<span className="text-zinc-200 text-4xl">c</span>
+						<span className={`${theme === "dark" ? "text-zinc-100" : "text-zinc-700"} text-blue-100 text-4xl`}>c</span>
 					</h1>
 				</Link>
 			</div>
