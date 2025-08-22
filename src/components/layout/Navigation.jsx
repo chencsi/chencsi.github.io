@@ -51,8 +51,8 @@ function Navigation() {
 					to={item.path}
 					className={
 						isMobile
-							? "p-2 hover:bg-blue-400 hover:text-black transition-colors duration-300"
-							: "p-4 hover:bg-blue-400 hover:text-black transition-colors duration-300"
+							? "p-2 hover:bg-blue-400 hover:text-black"
+							: "p-4 hover:bg-blue-400 hover:text-black"
 					}
 				>
 					{item.title}
@@ -69,7 +69,10 @@ function Navigation() {
 			id="navigation"
 			className={`
 				fixed w-full flex flex-row justify-between px-5 py-3 items-center select-none transition duration-300
-				${isScrolled ? "backdrop-blur-sm bg-zinc-800/10" : ""}
+				${isScrolled ? "backdrop-blur-sm" : ""}
+				${isScrolled && theme === "dark" ? "bg-zinc-800/10" : ""}
+				${isScrolled && theme === "light" ? "bg-zinc-200/10" : ""}
+				${theme === "dark" ? "text-zinc-100" : "text-zinc-900"}
 				`}
 		>
 			<div className="flex flex-row items-baseline">
