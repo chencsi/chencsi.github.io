@@ -49,11 +49,7 @@ function Navigation() {
 				<Link
 					key={item.path}
 					to={item.path}
-					className={
-						isMobile
-							? "p-2 hover:bg-blue-400 hover:text-black"
-							: "p-4 hover:bg-blue-400 hover:text-black"
-					}
+					className={`${isMobile ? "p-2" : "p-4"} hover:bg-blue-400 ${theme === "dark" ? "hover:text-zinc-900" : "hover:text-zinc-100"} transition-[background-color] duration-300`}
 				>
 					{item.title}
 				</Link>
@@ -79,7 +75,11 @@ function Navigation() {
 				<Link to="/">
 					<h1 className="text-5xl font-extrabold uppercase">
 						<span className="text-blue-400">K</span>
-						<span className={`${theme === "dark" ? "text-zinc-100" : "text-zinc-700"} text-blue-100 text-4xl`}>c</span>
+						<span
+							className={`${theme === "dark" ? "text-zinc-100" : "text-zinc-700"} text-4xl`}
+						>
+							c
+						</span>
 					</h1>
 				</Link>
 			</div>
