@@ -12,7 +12,7 @@ const LanguageSwitch = styled(Switch)(({ theme }) => ({
 			color: "#fff",
 			transform: "translateX(22px)",
 			"& .MuiSwitch-thumb:before": {
-				backgroundImage: `url('../../public/hungarian-flag.png')`,
+				backgroundImage: `url('/hungarian-flag.png')`,
 				backgroundSize: "cover",
 			},
 			"& + .MuiSwitch-track": {
@@ -37,7 +37,7 @@ const LanguageSwitch = styled(Switch)(({ theme }) => ({
 			top: 0,
 			backgroundRepeat: "no-repeat",
 			backgroundPosition: "center",
-			backgroundImage: `url('../../public/united-kingdom-flag.png')`,
+			backgroundImage: `url('/united-kingdom-flag.png')`,
 			backgroundSize: "cover",
 		},
 		...theme.applyStyles("dark", {

@@ -1,7 +1,7 @@
 import { RouterProvider } from "react-router-dom";
 import { routers } from "./routes";
 import { ThemeProvider } from "@mui/material";
-import UIContext from "./themes/UIContext";
+import UIContext from "./contexts/UIContext";
 import muiTheme from "./themes/muiTheme";
 import { useState } from "react";
 

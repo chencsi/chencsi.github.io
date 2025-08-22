@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import UIContext from "../themes/UIContext"
+import UIContext from "../contexts/UIContext"
 
 const UseUI = () => {
     const context = useContext(UIContext);
