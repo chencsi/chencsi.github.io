@@ -17,7 +17,7 @@ function Navigation() {
 	let scrollTicking = false;
 
 	function checkScroll(scrollPos) {
-		setIsScrolled(scrollPos > 50)
+		setIsScrolled(scrollPos > 50);
 	}
 
 	document.addEventListener("scroll", () => {
@@ -26,11 +26,11 @@ function Navigation() {
 		if (!scrollTicking) {
 			scrollTicking = true;
 			window.requestAnimationFrame(() => {
-				checkScroll(lastKnownPosition)
+				checkScroll(lastKnownPosition);
 				scrollTicking = false;
-			})
+			});
 		}
-	})
+	});
 
 	const handlePopoverClick = (event) => {
 		setAnchorEl(event.currentTarget);
@@ -63,10 +63,14 @@ function Navigation() {
 	};
 
 	return (
-		<div className={isScrolled 
-			? "bg-zinc-900/60 backdrop-blur-xl fixed w-full flex flex-row justify-between px-5 py-3 items-center select-none"
-			: "fixed w-full flex flex-row justify-between px-5 py-3 items-center select-none transition-[]"
-		}>
+		<div
+			className={
+				isScrolled
+					? "bg-zinc-900/60 backdrop-blur-xl fixed w-full flex flex-row justify-between px-5 py-3 items-center select-none"
+					: "fixed w-full flex flex-row justify-between px-5 py-3 items-center select-none transition-[]"
+			}
+			id="navigation"
+		>
 			<div className="flex flex-row items-baseline">
 				<Link to="/">
 					<h1 className="text-5xl font-extrabold uppercase">
@@ -83,7 +87,9 @@ function Navigation() {
 					open={drawerOpen}
 					onClose={toggleDrawer(false)}
 					anchor="right"
-					sx={{ backdropFilter: "blur(10px)" }}
+					sx={{
+						backdropFilter: "blur(5px)"
+					}}
 				>
 					<div className="h-full w-full flex flex-col bg-zinc-800 text-white">
 						{NavItems(true)}
