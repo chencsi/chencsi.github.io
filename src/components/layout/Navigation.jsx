@@ -1,11 +1,12 @@
 import { Settings } from "@mui/icons-material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Drawer, FormControlLabel, IconButton, Popover } from "@mui/material";
-import React, { useEffect } from "react";
+import React from "react";
 import DarkModeSwitch from "../Navigation/ThemeSwitch";
 import LanguageSwitch from "../Navigation/LanguageSwitch";
 import navItems from "./navItems";
 import { Link } from "react-router-dom";
+import UseUI from "../../hooks/useUI";
 
 function Navigation() {
 	const [anchorEl, setAnchorEl] = React.useState(null);
@@ -13,6 +14,7 @@ function Navigation() {
 	const popoverId = open ? "navigation-settings-popover" : undefined;
 	const [drawerOpen, setDrawerOpen] = React.useState(false);
 	const [isScrolled, setIsScrolled] = React.useState(false);
+	const { theme, lang } = UseUI();
 	let lastKnownPosition = 0;
 	let scrollTicking = false;
 
@@ -66,8 +68,8 @@ function Navigation() {
 		<div
 			className={
 				isScrolled
-					? "bg-zinc-900/60 backdrop-blur-xl fixed w-full flex flex-row justify-between px-5 py-3 items-center select-none"
-					: "fixed w-full flex flex-row justify-between px-5 py-3 items-center select-none transition-[]"
+					? "bg-zinc-900/60 backdrop-blur-xl fixed w-full flex flex-row justify-between px-5 py-3 items-center select-none transition duration-300"
+					: "fixed w-full flex flex-row justify-between px-5 py-3 items-center select-none transition duration-300"
 			}
 			id="navigation"
 		>
