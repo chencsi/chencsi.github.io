@@ -107,7 +107,6 @@ function Navigation() {
 						transition: "transform 300ms, color 300ms",
 						"&:hover": {
 							transform: "rotate(90deg)",
-							color: "rgb(66, 165, 245)",
 						},
 					}}
 					onClick={handlePopoverClick}
