@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import UIContext from "../contexts/UIContext"
 
-const UseUI = () => {
+const useUI = () => {
     const context = useContext(UIContext);
 
     if (!context) {
@@ -11,4 +11,4 @@ const UseUI = () => {
     return context;
 }
 
-export default UseUI;
+export default useUI;

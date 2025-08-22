@@ -6,7 +6,7 @@ import DarkModeSwitch from "../Navigation/ThemeSwitch";
 import LanguageSwitch from "../Navigation/LanguageSwitch";
 import navItems from "./navItems";
 import { Link } from "react-router-dom";
-import UseUI from "../../hooks/useUI";
+import useUI from "../../hooks/useUI";
 
 function Navigation() {
 	const [anchorEl, setAnchorEl] = React.useState(null);
@@ -14,7 +14,7 @@ function Navigation() {
 	const popoverId = open ? "navigation-settings-popover" : undefined;
 	const [drawerOpen, setDrawerOpen] = React.useState(false);
 	const [isScrolled, setIsScrolled] = React.useState(false);
-	const { theme, lang } = UseUI();
+	const { theme, toggleTheme, lang } = useUI();
 	let lastKnownPosition = 0;
 	let scrollTicking = false;
 
@@ -69,10 +69,8 @@ function Navigation() {
 			id="navigation"
 			className={`
 				fixed w-full flex flex-row justify-between px-5 py-3 items-center select-none transition duration-300
-				${isScrolled ? "backdrop-blur-sm bg-zinc-100/10" : ""}
-				${theme === "dark" ? "text-white" : "text-black"}
-				${theme === "dark" && isScrolled ? "bg-gray-900/80" : ""}
-				`.trim()}
+				${isScrolled ? "backdrop-blur-sm bg-zinc-800/10" : ""}
+				`}
 		>
 			<div className="flex flex-row items-baseline">
 				<Link to="/">
@@ -94,7 +92,9 @@ function Navigation() {
 						backdropFilter: "blur(5px)",
 					}}
 				>
-					<div className={`h-full w-full flex flex-col ${theme === "dark" ? "bg-zinc-800 text-zinc-200" : "bg-zinc-200 text-zinc-800"}`}>
+					<div
+						className={`h-full w-full flex flex-col ${theme === "dark" ? "bg-zinc-800 text-zinc-200" : "bg-zinc-200 text-zinc-800"}`}
+					>
 						{NavItems(true)}
 					</div>
 				</Drawer>
@@ -126,21 +126,20 @@ function Navigation() {
 					horizontal: "left",
 				}}
 			>
-				<div className="bg-white p-1 select-none scale-[90%]">
-					<div className="flex flex-row items-center justify-between">
-						<FormControlLabel
-							control={<DarkModeSwitch sx={{ m: 1 }} defaultChecked />}
-							label="Téma"
-							labelPlacement="start"
-						/>
-					</div>
-					<div className="flex flex-row items-center justify-between">
-						<FormControlLabel
-							control={<LanguageSwitch sx={{ m: 1 }} defaultChecked />}
-							label="Nyelv"
-							labelPlacement="start"
-						/>
-					</div>
+				<div className="bg-zinc-100 py-3 pl-3 pr-5 select-none flex flex-col gap-3">
+					<FormControlLabel
+						control={<DarkModeSwitch checked={theme === "dark"} />}
+						label="Sötét mód"
+						labelPlacement="start"
+						sx={{ ml: "auto" }}
+						onClick={toggleTheme}
+					/>
+					<FormControlLabel
+						control={<LanguageSwitch defaultChecked />}
+						label="Nyelv"
+						labelPlacement="start"
+						sx={{ ml: "auto" }}
+					/>
 				</div>
 			</Popover>
 		</div>
