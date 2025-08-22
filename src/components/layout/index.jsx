@@ -5,7 +5,7 @@ import Footer from "./Footer";
 const Layout = () => {
 	return (
 		<>
-			<nav className="w-full h-full overflow-hidden">
+			<nav className="w-full overflow-hidden h-25">
 				<Navigation />
 			</nav>
 			<main className="pt-5 px-3 flex flex-col gap-20 min-h-screen">

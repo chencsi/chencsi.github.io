@@ -1,7 +1,7 @@
 import { Settings } from "@mui/icons-material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Drawer, FormControlLabel, IconButton, Popover } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import DarkModeSwitch from "../Navigation/ThemeSwitch";
 import LanguageSwitch from "../Navigation/LanguageSwitch";
 import navItems from "./navItems";
@@ -12,6 +12,25 @@ function Navigation() {
 	const isPopoverOpen = Boolean(anchorEl);
 	const popoverId = open ? "navigation-settings-popover" : undefined;
 	const [drawerOpen, setDrawerOpen] = React.useState(false);
+	const [isScrolled, setIsScrolled] = React.useState(false);
+	let lastKnownPosition = 0;
+	let scrollTicking = false;
+
+	function checkScroll(scrollPos) {
+		setIsScrolled(scrollPos > 50)
+	}
+
+	document.addEventListener("scroll", () => {
+		lastKnownPosition = window.scrollY;
+
+		if (!scrollTicking) {
+			scrollTicking = true;
+			window.requestAnimationFrame(() => {
+				checkScroll(lastKnownPosition)
+				scrollTicking = false;
+			})
+		}
+	})
 
 	const handlePopoverClick = (event) => {
 		setAnchorEl(event.currentTarget);
@@ -31,7 +50,7 @@ function Navigation() {
 					className={
 						isMobile
 							? "p-2 hover:bg-blue-400 hover:text-black transition-colors duration-300"
-							: "p-5 hover:bg-blue-400 hover:text-black transition-colors duration-300"
+							: "p-4 hover:bg-blue-400 hover:text-black transition-colors duration-300"
 					}
 				>
 					{item.title}
@@ -44,12 +63,15 @@ function Navigation() {
 	};
 
 	return (
-		<div className="flex flex-row justify-between px-5 py-3 items-center select-none">
+		<div className={isScrolled 
+			? "bg-zinc-900/60 backdrop-blur-xl fixed w-full flex flex-row justify-between px-5 py-3 items-center select-none"
+			: "fixed w-full flex flex-row justify-between px-5 py-3 items-center select-none transition-[]"
+		}>
 			<div className="flex flex-row items-baseline">
 				<Link to="/">
-					<h1 class="text-5xl font-extrabold uppercase">
-						<span class="text-blue-400">K</span>
-						<span class="text-4xl">c</span>
+					<h1 className="text-5xl font-extrabold uppercase">
+						<span className="text-blue-400">K</span>
+						<span className="text-4xl">c</span>
 					</h1>
 				</Link>
 			</div>
