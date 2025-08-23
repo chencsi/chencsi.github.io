@@ -8,7 +8,7 @@ function Hero() {
 
 	return (
 		<section
-			className={`${theme === "dark" ? "bg-zinc-900 text-zinc-100" : "bg-zinc-100 text-zinc-700"} rounded-xl shadow-lg flex sm:flex-row items-center flex-col-reverse justify-between gap-5 sm:gap-15 py-10 px-5 sm:py-15 sm:px-10 md:px-20 max-w-[600px] md:max-w-[800px] mx-auto transition duration-300`}
+			className={`${theme === "dark" ? "bg-zinc-900 text-zinc-100" : "bg-zinc-100 text-zinc-700"} rounded-xl shadow-lg flex sm:flex-row items-center flex-col-reverse justify-between gap-5 sm:gap-15 py-10 px-5 sm:py-15 sm:px-10 md:px-20 max-w-[600px] md:max-w-[800px] mx-auto`}
 		>
 			<div className="flex flex-col self-center text-center sm:text-left sm:gap-1">
 				<h1 className="sm:text-left text-4xl sm:text-4xl md:text-5xl font-bold">
@@ -31,7 +31,6 @@ function Hero() {
 						mt: 2,
 						px: 2,
 						color: theme === "dark" ? "grey.900" : "grey.100",
-						transition: "color, 300ms"
 					}}
 					variant="contained"
 					onClick={() => navigate("/contact")}

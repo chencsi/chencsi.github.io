@@ -7,7 +7,7 @@ const Layout = () => {
 	const { theme } = useUI();
 
 	return (
-		<div className={`${theme === "dark" ? "bg-zinc-800" : "bg-zinc-300"} transition duration-300`}>
+		<div className={`${theme === "dark" ? "bg-zinc-800" : "bg-zinc-300"}`}>
 			<nav className="w-full overflow-hidden h-25">
 				<Navigation />
 			</nav>

@@ -14,3 +14,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+body {
+  @apply bg-zinc-300;
+}
+
+body.dark {
+  @apply bg-zinc-800;
+}
