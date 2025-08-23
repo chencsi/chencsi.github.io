@@ -49,7 +49,7 @@ function Navigation() {
 				<Link
 					key={item.path}
 					to={item.path}
-					className={`${isMobile ? "p-2" : "p-4"} hover:bg-blue-400 ${theme === "dark" ? "hover:text-zinc-900" : "hover:text-zinc-100"} transition-[background-color] duration-300`}
+					className={`${isMobile ? "p-2" : "p-4"} hover:bg-blue-400 hover:text-zinc-900 transition-[background-color] duration-300`}
 				>
 					{item.title}
 				</Link>
@@ -107,7 +107,7 @@ function Navigation() {
 				<IconButton
 					sx={{
 						transform: isPopoverOpen ? "rotate(90deg)" : "none",
-						transition: "transform 300ms, color 300ms",
+						transition: "transform 300ms",
 						"&:hover": {
 							transform: "rotate(90deg)",
 						},
