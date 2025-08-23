@@ -64,7 +64,7 @@ function Navigation() {
 		<div
 			id="navigation"
 			className={`
-				fixed w-full flex flex-row justify-between px-5 py-3 items-center select-none transition duration-300
+				fixed w-full flex flex-row justify-between px-5 py-3 items-center select-none
 				${isScrolled ? "backdrop-blur-sm" : ""}
 				${isScrolled && theme === "dark" ? "bg-zinc-800/50" : ""}
 				${isScrolled && theme === "light" ? "bg-zinc-100/50" : ""}
@@ -85,7 +85,7 @@ function Navigation() {
 			</div>
 			<div className="flex flex-row items-center sm:hidden">
 				<IconButton onClick={toggleDrawer(true)}>
-					<MenuIcon sx={{ fontSize: "24pt" }} />
+					<MenuIcon sx={{color: theme === "dark" ? "grey.100" : "grey.800", fontSize: "24pt" }} />
 				</IconButton>
 				<Drawer
 					open={drawerOpen}
