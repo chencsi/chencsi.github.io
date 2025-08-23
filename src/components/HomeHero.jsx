@@ -30,7 +30,6 @@ function Hero() {
 						mr: { xs: "auto", sm: "auto" },
 						mt: 2,
 						px: 2,
-						color: theme === "dark" ? "grey.900" : "grey.100",
 					}}
 					variant="contained"
 					onClick={() => navigate("/contact")}
