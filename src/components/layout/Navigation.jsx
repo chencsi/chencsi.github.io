@@ -7,6 +7,8 @@ import LanguageSwitch from "../Navigation/LanguageSwitch";
 import navItems from "./navItems";
 import { Link } from "react-router-dom";
 import useUI from "../../hooks/useUI";
+import { useEffect } from "react";
+import { useState } from "react";
 
 function Navigation() {
 	const [anchorEl, setAnchorEl] = React.useState(null);
@@ -15,6 +17,7 @@ function Navigation() {
 	const [drawerOpen, setDrawerOpen] = React.useState(false);
 	const [isScrolled, setIsScrolled] = React.useState(false);
 	const { theme, toggleTheme, lang } = useUI();
+	const [isLoaded, setIsLoaded] = useState(false);
 	let lastKnownPosition = 0;
 	let scrollTicking = false;
 
@@ -60,6 +63,10 @@ function Navigation() {
 		setDrawerOpen(newOpen);
 	};
 
+	useEffect(() => {
+		const timer = setTimeout(() => setIsLoaded(true), 100)
+	}, []);
+
 	return (
 		<div
 			id="navigation"
@@ -69,6 +76,7 @@ function Navigation() {
 				${isScrolled && theme === "dark" ? "bg-zinc-800/50" : ""}
 				${isScrolled && theme === "light" ? "bg-zinc-100/50" : ""}
 				${theme === "dark" ? "text-zinc-100" : "text-zinc-900"}
+				${isLoaded ? "transition-[background-color] duration-300" : ""}
 				`}
 		>
 			<div className="flex flex-row items-baseline">
