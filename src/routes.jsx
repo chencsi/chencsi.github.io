@@ -12,10 +12,10 @@ export const routers = createBrowserRouter([
 				index: true,
 				element: <Home />,
 			},
+			{
+				path: "*",
+				element: <NotFound />,
+			},
 		],
-	},
-	{
-		path: "*",
-		element: <NotFound />,
 	},
 ]);
