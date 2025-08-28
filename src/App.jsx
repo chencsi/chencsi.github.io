@@ -11,8 +11,8 @@ function App() {
 	useEffect(() => {
 		AOS.init({
 			duration: 800,
-			easing: "ease-in",
-			once: true,
+			easing: "ease-in-out",
+			once: false,
 			mirror: true,
 			offset: 100,
 			delay: 0,

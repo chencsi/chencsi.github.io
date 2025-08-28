@@ -7,7 +7,7 @@ function Highlights() {
 	return (
 		<section
 		data-aos="fade-up"
-		data-aos-delay="300"
+		data-aos-duration="500"
 		className="flex flex-row flex-wrap justify-center sm:flex-row mx-auto gap-10 sm:gap-5 md:gap-10">
 			<div className="flex flex-col items-center gap-3 flex-1 min-w-[150px]">
 				<div className="bg-blue-500/30 rounded-xl shadow-lg p-2">
