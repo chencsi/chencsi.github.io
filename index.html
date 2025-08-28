@@ -4,22 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
-    <script>
-      (function() {
-        const stored = localStorage.getItem("ui-theme");
-        let theme;
-
-        if (stored) {
-          theme = stored;
-        } else {
-          theme = window.matchMedia("(prefers-color-scheme: dark)").matches
-            ? "dark"
-            : "light";
-        }
-
-        document.querySelector("body").style.backgroundColor = "oklch(21% 0.006 285.885)"
-      })();
-    </script>
   </head>
   <body>
     <div id="root"></div>
