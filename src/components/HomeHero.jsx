@@ -5,7 +5,6 @@ import translations from "../utils/translations";
 
 function Hero() {
 	const { theme, lang } = useUI();
-	const navigate = useNavigate();
 	const content = translations[lang]?.pages?.home?.hero;
 
 	return (
