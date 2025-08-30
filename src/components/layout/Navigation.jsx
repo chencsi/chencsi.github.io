@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import useUI from "../../hooks/useUI";
 import { useEffect } from "react";
 import { useState } from "react";
+import translations from "../../utils/translations";
 
 function Navigation() {
 	const [anchorEl, setAnchorEl] = React.useState(null);
@@ -18,6 +19,7 @@ function Navigation() {
 	const [isScrolled, setIsScrolled] = React.useState(false);
 	const { theme, toggleTheme, lang } = useUI();
 	const [isLoaded, setIsLoaded] = useState(false);
+	const content = translations[lang]?.layout?.nav;
 	let lastKnownPosition = 0;
 	let scrollTicking = false;
 
@@ -54,7 +56,7 @@ function Navigation() {
 					to={item.path}
 					className={`${isMobile ? "p-2" : "p-4"} hover:bg-blue-400 hover:text-zinc-900 transition-[background-color] duration-300`}
 				>
-					{item.title}
+					{content?.links?.[item.name] ?? item.name}
 				</Link>
 			));
 	};
@@ -64,7 +66,7 @@ function Navigation() {
 	};
 
 	useEffect(() => {
-		const timer = setTimeout(() => setIsLoaded(true), 100)
+		const timer = setTimeout(() => setIsLoaded(true), 100);
 	}, []);
 
 	return (
@@ -93,7 +95,12 @@ function Navigation() {
 			</div>
 			<div className="flex flex-row items-center sm:hidden">
 				<IconButton onClick={toggleDrawer(true)}>
-					<MenuIcon sx={{color: theme === "dark" ? "grey.100" : "grey.800", fontSize: "24pt" }} />
+					<MenuIcon
+						sx={{
+							color: theme === "dark" ? "grey.100" : "grey.800",
+							fontSize: "24pt",
+						}}
+					/>
 				</IconButton>
 				<Drawer
 					open={drawerOpen}
@@ -140,14 +147,14 @@ function Navigation() {
 				<div className="bg-zinc-100 py-3 pl-3 pr-5 select-none flex flex-col gap-3">
 					<FormControlLabel
 						control={<DarkModeSwitch checked={theme === "dark"} />}
-						label="Sötét mód"
+						label={content?.settings.darkmode}
 						labelPlacement="start"
 						sx={{ ml: "auto" }}
 						onClick={toggleTheme}
 					/>
 					<FormControlLabel
 						control={<LanguageSwitch defaultChecked />}
-						label="Nyelv"
+						label={content?.settings.language}
 						labelPlacement="start"
 						sx={{ ml: "auto" }}
 					/>
