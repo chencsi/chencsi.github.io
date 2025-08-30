@@ -1,4 +1,5 @@
 import HomeAbout from "../components/HomeAbout";
+import HomeEducation from "../components/HomeEducation";
 import HomeHero from "../components/HomeHero";
 import HomeHighlights from "../components/HomeHighlights";
 
@@ -8,6 +9,7 @@ function Home() {
 			<HomeHero />
 			<HomeHighlights />
 			<HomeAbout />
+			<HomeEducation />
 		</div>
 	);
 }
