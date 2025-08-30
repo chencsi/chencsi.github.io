@@ -11,7 +11,7 @@ const Layout = () => {
 			<nav className="w-full overflow-hidden h-25">
 				<Navigation />
 			</nav>
-			<main className="pb-25 px-10 flex flex-col gap-20 min-h-screen">
+			<main className="pb-50 px-10 flex flex-col gap-20 min-h-screen">
 				<Outlet />
 			</main>
 			<footer>

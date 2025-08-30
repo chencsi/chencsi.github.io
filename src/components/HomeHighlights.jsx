@@ -14,11 +14,11 @@ function Highlights() {
 					<TabletSmartphone size={40}/>
 				</div>
 				<div className="text-center">
-					<p
+					<h3
 						className={`text-lg font-semibold ${theme === "dark" ? "text-zinc-300" : "text-zinc-800"}`}
 					>
 						Reszponzív weboldalak
-					</p>
+					</h3>
 					<p
 						className={`text-gray-400 ${theme === "dark" ? "text-zinc-400" : "text-zinc-600"}`}
 					>
@@ -31,11 +31,11 @@ function Highlights() {
 					<Code size={40}/>
 				</div>
 				<div className="text-center">
-					<p
+					<h3
 						className={`text-lg font-semibold ${theme === "dark" ? "text-zinc-300" : "text-zinc-800"}`}
 					>
 						Modern technológiák
-					</p>
+					</h3>
 					<p
 						className={`text-gray-400 ${theme === "dark" ? "text-zinc-400" : "text-zinc-600"}`}
 					>
@@ -48,11 +48,11 @@ function Highlights() {
 					<LayoutDashboard size={40}/>
 				</div>
 				<div className="text-center">
-					<p
+					<h3
 						className={`text-lg font-semibold ${theme === "dark" ? "text-zinc-300" : "text-zinc-800"}`}
 					>
 						UI/UX fókusz
-					</p>
+					</h3>
 					<p
 						className={`text-gray-400 ${theme === "dark" ? "text-zinc-400" : "text-zinc-600"}`}
 					>
