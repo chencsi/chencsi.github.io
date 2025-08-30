@@ -1,40 +1,41 @@
-const data = [
-	{
-		name: "BMSZC Neumann János Informatikai Technikum",
-        time: "2020-2025",
-		description:
-			"Itt betekintést nyerhettem a Full-Stack fejlesztésbe, adatbázis kezelést és konténerizációt tanultunk.",
-	},
-	{
-		name: "Gábor Dénes Egyetem",
-        time: "2025-",
-		description:
-			"Jelenleg az első félévemet töltöm itt, mérnökinformatikus szakon és izgatottan várom, milyen további skilleket sajátíthatok még itt el.",
-	},
-];
+import useUI from "../hooks/useUI";
+import translations from "../utils/translations";
 
 function HomeEducation() {
+	const { theme, lang } = useUI();
+	const content = translations[lang]?.pages?.home?.education;
+
 	return (
 		<div
 			data-aos="fade-up"
 			data-aos-duration="500"
 			className="flex flex-col gap-2 max-w-[1000px] mx-auto"
 		>
-			<h2 className="text-zinc-300 font-extrabold text-5xl uppercase text-shadow mb-5 text-center">
-				Tanulmányok
-			</h2>
+			<h3
+				className={`${theme === "dark" ? "text-zinc-300" : "text-zinc-700"} font-extrabold text-5xl uppercase text-shadow mb-5 text-center`}
+			>
+				{content?.h3}
+			</h3>
 			<div className="flex flex-row flex-wrap gap-5">
-				{data.map((item) => (
+				{content?.schools?.map((item) => (
 					<div
-						key={item.name}
-						class="block max-w-sm min-h-50 p-6 bg-white border border-zinc-200 rounded-lg shadow-sm bg-zinc-700 border-zinc-800"
+						key={item.h5}
+						class={`${theme === "dark" ? "bg-zinc-700 border-zinc-800" : "bg-zinc-100 border-zinc-50"} block max-w-[500px] md:max-w-xs lg:max-w-sm min-h-50 p-6 border rounded-lg shadow-md mx-auto`}
 					>
-						<h5 class="mb-2 text-2xl font-bold tracking-tight text-white">
-							{item.name}
+						<h5
+							class={`${theme === "dark" ? "text-zinc-50" : "text-zinc-700"} mb-2 text-2xl font-bold tracking-tight`}
+						>
+							{item.h5}
 						</h5>
-                        <p className="text-zinc-300 mb-1 text-lg">{item.time}</p>
-						<p class="font-normal text-zinc-400">
-							{item.description}
+						<p
+							className={`${theme === "dark" ? "text-zinc-300" : "text-zinc-700"} mb-1 text-lg`}
+						>
+							{item.p1}
+						</p>
+						<p
+							className={`${theme === "dark" ? "text-zinc-300" : "text-zinc-600"}`}
+						>
+							{item.p2}
 						</p>
 					</div>
 				))}
