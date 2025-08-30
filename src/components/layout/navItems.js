@@ -1,19 +1,19 @@
 const navItems = [
     {
         path: "/",
-        title: "Főoldal",
+        name: "home",
         footer: true,
         hidden: false,
     },
     {
         path: "/referencies",
-        title: "Referenciák",
+        name: "referencies",
         footer: true,
         hidden: false,
     },
     {
         path: "/contact",
-        title: "Kapcsolat",
+        name: "contact",
         footer: true,
         hidden: false,
     },
