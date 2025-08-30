@@ -1,10 +1,12 @@
 import { Button } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useUI from "../hooks/useUI";
+import translations from "../utils/translations";
 
 function Hero() {
-	const { theme } = useUI();
+	const { theme, lang } = useUI();
 	const navigate = useNavigate();
+	const content = translations[lang]?.pages?.home?.hero;
 
 	return (
 		<section
@@ -12,35 +14,36 @@ function Hero() {
 		>
 			<div className="flex flex-col self-center text-center sm:text-left sm:gap-1">
 				<h1 className="sm:text-left text-4xl sm:text-4xl md:text-5xl font-bold">
-					Kevin Chen
+					{content?.h1}
 				</h1>
 				<h2
 					className={`${theme === "dark" ? "text-zinc-300" : "text-zinc-700"} text-xl text-md`}
 				>
-					Frontend fejlesztő hallgató
+					{content?.h2}
 				</h2>
 				<p
 					className={`${theme === "dark" ? "text-zinc-300" : "text-zinc-600"} text-sm leading-relaxed`}
 				>
-					Letisztult és felhasználóbarát weboldalakat építek.
+					{content?.p}
 				</p>
-				<Button
-					sx={{
-						mx: { xs: "auto", sm: 0 },
-						mr: { xs: "auto", sm: "auto" },
-						mt: 2,
-						px: 2,
-					}}
-					variant="contained"
-					onClick={() => navigate("/contact")}
-				>
-					Kapcsolat
-				</Button>
+				<Link to={"/contact"}>
+					<Button
+						sx={{
+							mx: { xs: "auto", sm: 0 },
+							mr: { xs: "auto", sm: "auto" },
+							mt: 2,
+							px: 2,
+						}}
+						variant="contained"
+					>
+						{content?.button}
+					</Button>
+				</Link>
 			</div>
 			<div className="block max-w-50 max-h-50 md:max-w-60 md:max-h-60 overflow-hidden rounded-full bg-blue-400 select-none pointer-events-none shadow-xl">
 				<img
 					src="/portrait.png"
-					alt="'Portrait photo'"
+					alt={content?.imgAlt}
 					className="w-full h-full object-cover object-[50%_10%] shadow-lg"
 				/>
 			</div>
