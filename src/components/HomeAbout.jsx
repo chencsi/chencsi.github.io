@@ -14,10 +14,10 @@ function HomeAbout() {
 			<h3 className={`${theme === "dark" ? "text-zinc-300" : "text-zinc-700"} font-extrabold text-5xl uppercase text-shadow mb-5`}>
 				{content?.h3}
 			</h3>
-			<p>
+			<p className={`${theme === "dark" ? "text-zinc-300" : "text-zinc-900"}`}>
 				{content?.p1}
 			</p>
-			<p>
+			<p className={`${theme === "dark" ? "text-zinc-300" : "text-zinc-900"}`}>
 				{content?.p2}
 			</p>
 		</div>
