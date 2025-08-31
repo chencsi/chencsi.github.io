@@ -6,7 +6,7 @@ function HomeEducation() {
 	const content = translations[lang]?.pages?.home?.education;
 
 	return (
-		<div
+		<section
 			data-aos="fade-up"
 			data-aos-duration="500"
 			className="flex flex-col gap-2 max-w-[1000px] mx-auto"
@@ -40,7 +40,7 @@ function HomeEducation() {
 					</div>
 				))}
 			</div>
-		</div>
+		</section>
 	);
 }
 

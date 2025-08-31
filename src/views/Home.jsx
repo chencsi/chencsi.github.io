@@ -6,8 +6,12 @@ import HomeHighlights from "../components/HomeHighlights";
 function Home() {
 	return (
 		<div className="h-full flex flex-col gap-y-34">
-			<HomeHero />
-			<HomeHighlights />
+			<div className="px-10">
+				<HomeHero />
+			</div>
+			<div className="px-10">
+				<HomeHighlights />
+			</div>
 			<HomeAbout />
 			<HomeEducation />
 		</div>
