@@ -1,27 +1,17 @@
 import { Link } from "react-router-dom";
 import navItems from "./navItems";
+import translations from "../../utils/translations";
+import useUI from "../../hooks/useUI";
 
 function Footer() {
-	return (
-		<div className=" bg-black/30 py-5 flex flex-col gap-5">
-			<ul className="flex flex-row gap-5 justify-center">
-				{navItems
-					.filter((item) => item.footer === true)
-					.map((item) => (
-						<li key={item.path}>
-							<Link
-								to={item.path}
-								className="text-gray-400 hover:text-white transition-[color] duration-300"
-							>
-								{item.title}
-							</Link>
-						</li>
-					))}
-			</ul>
+	const { theme, lang } = useUI();
+	const content = translations[lang]?.layout?.footer;
 
-			<p className="text-center text-gray-400">
-				Kód és design: Kevin Chen 💙 · © 2025
-			</p>
+	return (
+		<div
+			className={`${theme === "dark" ? "bg-zinc-950" : "bg-zinc-50"} py-5 flex flex-col gap-5`}
+		>
+			<p className="text-center text-zinc-500">{content?.p}</p>
 		</div>
 	);
 }
