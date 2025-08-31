@@ -10,6 +10,7 @@ import useUI from "../../hooks/useUI";
 import { useEffect } from "react";
 import { useState } from "react";
 import translations from "../../utils/translations";
+import useLanguageSwitch from "../../hooks/useLanguageSwitch";
 
 function Navigation() {
 	const [anchorEl, setAnchorEl] = React.useState(null);
@@ -19,6 +20,7 @@ function Navigation() {
 	const [isScrolled, setIsScrolled] = React.useState(false);
 	const { theme, toggleTheme, lang } = useUI();
 	const [isLoaded, setIsLoaded] = useState(false);
+	const [checked, handleLangSwitch] = useLanguageSwitch();
 	const content = translations[lang]?.layout?.nav;
 	let lastKnownPosition = 0;
 	let scrollTicking = false;
@@ -141,10 +143,15 @@ function Navigation() {
 				onClose={handlePopoverClose}
 				anchorOrigin={{
 					vertical: "bottom",
-					horizontal: "left",
+					horizontal: "right",
+				}}
+				PaperProps={{
+					sx: {
+						mt: 1.5,
+					},
 				}}
 			>
-				<div className="bg-zinc-100 py-3 pl-3 pr-5 select-none flex flex-col gap-3">
+				<div className="bg-zinc-100 py-3 pl-3 pr-5 select-none flex flex-col gap-3 min-w-[170px]">
 					<FormControlLabel
 						control={<DarkModeSwitch checked={theme === "dark"} />}
 						label={content?.settings.darkmode}
@@ -153,7 +160,9 @@ function Navigation() {
 						onClick={toggleTheme}
 					/>
 					<FormControlLabel
-						control={<LanguageSwitch defaultChecked />}
+						control={
+							<LanguageSwitch checked={checked} onChange={handleLangSwitch} />
+						}
 						label={content?.settings.language}
 						labelPlacement="start"
 						sx={{ ml: "auto" }}
