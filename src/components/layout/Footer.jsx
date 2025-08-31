@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import navItems from "./navItems";
 import translations from "../../utils/translations";
 import useUI from "../../hooks/useUI";
 

@@ -68,7 +68,7 @@ function Navigation() {
 	};
 
 	useEffect(() => {
-		const timer = setTimeout(() => setIsLoaded(true), 100);
+		setTimeout(() => setIsLoaded(true), 100);
 	}, []);
 
 	return (
