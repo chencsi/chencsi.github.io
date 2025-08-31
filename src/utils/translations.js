@@ -106,7 +106,7 @@ const translations = {
 				},
 				about: {
 					h3: "About me",
-					p1: `My name is Kevin and I started programming ${sinceYear} years ago, but my interest in programming goes back to elementary school. Since then, I have been absolutely dedicated to it. During this time, I completed a software developer and tester technician course, and now I am starting my university years as an engineering IT student. So far, I have participated in several school and personal projects, which I detail more precisely in the <a href="/references" className="text-blue-400 hover:underline">references</a> section.`,
+					p1: `My name is Kevin and I started programming ${sinceYear} years ago, but my interest in programming goes back to elementary school. Since then, I have been absolutely dedicated to it. During this time, I completed a software developer and tester technician course, and now I am starting my university years as an engineering IT student. So far, I have participated in several school and personal projects, which I detail more precisely in the <a href="/references" class="text-blue-400 hover:underline">references</a> section.`,
 					p2: "My goal is to build user-friendly websites and web applications that solve real problems. I constantly keep my knowledge up to date to use the latest technologies.",
 				},
 				education: {
