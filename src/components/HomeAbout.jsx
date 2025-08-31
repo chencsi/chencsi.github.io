@@ -17,11 +17,11 @@ function HomeAbout() {
 				>
 					{content?.h3}
 				</h3>
-				<p
+				<div
 					className={`${theme === "dark" ? "text-zinc-300" : "text-zinc-900"}`}
-				>
-					{content?.p1}
-				</p>
+					// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
+					dangerouslySetInnerHTML={{ __html: content?.p1 }}
+				/>
 				<p
 					className={`${theme === "dark" ? "text-zinc-300" : "text-zinc-900"}`}
 				>
