@@ -14,6 +14,9 @@ const translations = {
 					language: "Nyelv",
 				},
 			},
+            footer: {
+                p: "Kód és design: Kevin Chen 💙 · © 2025"
+            }
 		},
 		pages: {
 			home: {
@@ -74,6 +77,9 @@ const translations = {
 					language: "Language",
 				},
 			},
+            footer: {
+                p: "Code & design: Kevin Chen 💙 · © 2025"
+            }
 		},
 		pages: {
 			home: {
