@@ -75,7 +75,7 @@ function Navigation() {
 		<div
 			id="navigation"
 			className={`
-				fixed z-50 w-full flex flex-row justify-between px-5 py-3 items-center select-none
+				fixed z-30 w-full flex flex-row justify-between px-5 py-3 items-center select-none
 				${isScrolled ? "backdrop-blur-sm" : ""}
 				${isScrolled && theme === "dark" ? "bg-zinc-800/50" : ""}
 				${isScrolled && theme === "light" ? "bg-zinc-100/50" : ""}
