@@ -1,22 +1,27 @@
 import translations from "../utils/translations";
 import useUI from "../hooks/useUI";
+import { User } from "lucide-react";
 
 function HomeAbout() {
 	const { theme, lang } = useUI();
 	const content = translations[lang]?.pages?.home?.about;
 
 	return (
-		<section className={`${theme === "dark" ? "bg-zinc-900" : "bg-zinc-100"}`}>
+		<section
+		className="flex flex-col items-center"
+		>
 			<div
-				data-aos="fade-right"
-				data-aos-duration="500"
-				className="p-10 flex flex-col gap-2 max-w-[1000px] mx-auto"
+				data-aos="fade-up"
+				className={`${theme === "dark" ? "bg-gradient-to-br from-zinc-800 to-zinc-900 border border-zinc-800" : "bg-zinc-100"} px-10 py-5 flex flex-col gap-5 max-w-[1000px] mx-10 rounded-2xl shadow-xl`}
 			>
-				<h3
-					className={`${theme === "dark" ? "text-zinc-300" : "text-zinc-700"} font-extrabold text-5xl uppercase text-shadow mb-5`}
-				>
-					{content?.h3}
-				</h3>
+				<div className="flex flex-row gap-2 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full py-3 px-8 w-fit mx-auto shadow-lg">
+					<User size="25" className="self-center" />
+					<h3
+						className={`${theme === "dark" ? "text-zinc-100" : "text-zinc-700"} font-extrabold text-2xl uppercase`}
+					>
+						{content?.h3}
+					</h3>
+				</div>
 				<div
 					className={`${theme === "dark" ? "text-zinc-300" : "text-zinc-900"}`}
 					// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>

@@ -8,7 +8,6 @@ function HomeEducation() {
 	return (
 		<section
 			data-aos="fade-up"
-			data-aos-duration="500"
 			className="flex flex-col gap-2 max-w-[1000px] mx-auto px-5 sm:px-0"
 		>
 			<h3

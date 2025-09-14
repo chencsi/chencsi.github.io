@@ -77,8 +77,8 @@ function Navigation() {
 			className={`
 				fixed z-50 w-full flex flex-row justify-between px-5 py-3 items-center select-none
 				${isScrolled ? "backdrop-blur-sm" : ""}
-				${isScrolled && theme === "dark" ? "bg-zinc-800/50" : ""}
-				${isScrolled && theme === "light" ? "bg-zinc-100/50" : ""}
+				${isScrolled && theme === "dark" ? "bg-zinc-800/40" : ""}
+				${isScrolled && theme === "light" ? "bg-zinc-100/40" : ""}
 				${theme === "dark" ? "text-zinc-100" : "text-zinc-900"}
 				${isLoaded ? "transition-[background-color] duration-300" : ""}
 				`}
@@ -86,7 +86,9 @@ function Navigation() {
 			<div className="flex flex-row items-baseline">
 				<Link to="/">
 					<h1 className="text-5xl font-extrabold uppercase">
-						<span className="text-blue-400">K</span>
+						<span className="bg-clip-text text-transparent bg-gradient-to-br from-blue-500 to-indigo-500">
+							K
+						</span>
 						<span
 							className={`${theme === "dark" ? "text-zinc-100" : "text-zinc-700"} text-4xl`}
 						>

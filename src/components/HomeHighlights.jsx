@@ -9,12 +9,12 @@ function Highlights() {
 	return (
 		<section
 			data-aos="fade-up"
-			data-aos-duration="500"
 			className="flex flex-row flex-wrap justify-center sm:flex-row mx-auto gap-10 sm:gap-5 md:gap-10 max-w-[1000px] min-h-[200px]"
 		>
 			<div className="flex flex-col items-center gap-3 flex-1 min-w-[150px]">
-				<div className="bg-blue-500/30 rounded-xl shadow-lg p-2">
-					<TabletSmartphone size={40} />
+				{/* <div className="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl shadow-lg p-2"> */}
+				<div className="bg-gradient-to-br from-blue-500 to-indigo-500 rounded-xl shadow-lg p-2">
+					<TabletSmartphone size={40} className="stroke-zinc-50" />
 				</div>
 				<div className="text-center">
 					<h3
@@ -30,8 +30,8 @@ function Highlights() {
 				</div>
 			</div>
 			<div className="flex flex-col items-center gap-3 flex-1 min-w-[150px]">
-				<div className="bg-amber-500/30 rounded-xl shadow-lg p-2">
-					<Code size={40} />
+				<div className="bg-gradient-to-br from-blue-500 to-indigo-500 rounded-xl shadow-lg p-2">
+					<Code size={40} className="stroke-zinc-50" />
 				</div>
 				<div className="text-center">
 					<h3
@@ -47,8 +47,9 @@ function Highlights() {
 				</div>
 			</div>
 			<div className="flex flex-col items-center gap-3 flex-1 min-w-[150px]">
-				<div className="bg-green-500/30 rounded-xl shadow-lg p-2">
-					<LayoutDashboard size={40} />
+				<div className="bg-gradient-to-br from-blue-500 to-indigo-500 rounded-xl shadow-lg p-2">
+				{/* <div className="bg-gradient-to-br from-violet-500 to-purple-600  rounded-xl shadow-lg p-2"> */}
+					<LayoutDashboard size={40} className="stroke-zinc-50" />
 				</div>
 				<div className="text-center">
 					<h3
