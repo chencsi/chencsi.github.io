@@ -5,7 +5,7 @@ import HomeHighlights from "../components/HomeHighlights";
 
 function Home() {
 	return (
-		<div className="h-full flex flex-col gap-y-34">
+		<div className="h-full flex flex-col gap-y-20 sm:gap-y-34">
 			<div className="px-10">
 				<HomeHero />
 			</div>
