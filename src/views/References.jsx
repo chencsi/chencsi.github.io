@@ -16,11 +16,12 @@ function References() {
           icon={<FolderKanban />}
           theme={theme}
         />
+        <p className="md:mx-20 text-center">{content?.p}</p>
         <div className="flex flex-col gap-y-10 sm:gap-y-20 min-h-screen">
           {content?.references.map((reference, index) => {
             return (
               <div key={reference.img} className={`flex flex-col-reverse ${index % 2 == 0 ? 'sm:flex-row' : "sm:flex-row-reverse"} gap-10`}>
-                <img src={reference.img} alt={reference.h4} className="border border-zinc-700 rounded-4xl w-full" />
+                <img src={reference.img} alt={reference.h4} className="border border-zinc-700/30 rounded-4xl w-full" />
                 <div className="w-full py-5">
                   <h4 className="text-center text-3xl font-bold">{reference.h4}</h4>
                   <div className="flex flex-wrap py-3 justify-center gap-2">

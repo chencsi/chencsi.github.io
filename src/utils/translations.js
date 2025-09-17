@@ -64,6 +64,7 @@ const translations = {
       },
       references: {
         h3: "Referenciák",
+        p: "Az alább látható projektjeim szeretném kiemelni, javarészt csapatban készítettük őket, ezeket és a részleteket a GitHub repositorykon keresztül lehet látni.",
         references: [
           {
             h4: "Uranus",
@@ -179,6 +180,7 @@ const translations = {
       },
       references: {
         h3: "References",
+        p: "I would like to highlight my projects below, most of which were created in a team. You can see these and the details through the GitHub repositories.",
         references: [
           {
             h4: "Uranus",
