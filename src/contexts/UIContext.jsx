@@ -11,7 +11,6 @@ const UIContext = createContext({
 
 const getSystemTheme = () => {
 	if (
-		// biome-ignore lint/complexity/useOptionalChain: <explanation>
 		window.matchMedia &&
 		window.matchMedia("(prefers-color-scheme: dark)").matches
 	) {
