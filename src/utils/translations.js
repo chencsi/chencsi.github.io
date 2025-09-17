@@ -143,20 +143,20 @@ const translations = {
           button: "Contact",
           imgAlt: "Portrait photo",
         },
-        highlights: {
-          blue: {
+        highlights: [
+          {
             h3: "Responsive websites",
             p: "Optimized appearance for all devices.",
           },
-          yellow: {
+          {
             h3: "Modern technologies",
             p: "React, Angular, Laravel and TailwindCSS",
           },
-          green: {
+          {
             h3: "UI/UX focus",
             p: "Clean and user-friendly user experience.",
           },
-        },
+        ],
         about: {
           h3: "About me",
           p1: `My name is Kevin and I started programming ${sinceYear} years ago, but my interest in programming goes back to elementary school. Since then, I have been absolutely dedicated to it. During this time, I completed a software developer and tester technician course, and now I am starting my university years as an engineering IT student. So far, I have participated in several school and personal projects, which I detail more precisely in the <a href="/references" class="text-blue-400 hover:underline">references</a> section.`,
