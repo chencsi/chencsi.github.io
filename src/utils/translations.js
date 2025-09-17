@@ -6,7 +6,7 @@ const translations = {
 			nav: {
 				links: {
 					home: "Főoldal",
-					referencies: "Referenciák",
+					references: "Referenciák",
 					contact: "Kapcsolat",
 				},
 				settings: {
@@ -69,7 +69,7 @@ const translations = {
 			nav: {
 				links: {
 					home: "Home",
-					referencies: "References",
+					references: "References",
 					contact: "Contact",
 				},
 				settings: {

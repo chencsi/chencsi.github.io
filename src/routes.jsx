@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Home from "./views/Home";
 import Layout from "./components/Layout";
 import NotFound from "./views/NotFound";
+import References from "./views/References";
 
 export const routers = createBrowserRouter([
 	{
@@ -12,6 +13,10 @@ export const routers = createBrowserRouter([
 				index: true,
 				element: <Home />,
 			},
+      {
+        path: "/references",
+        element: <References />
+      },
 			{
 				path: "*",
 				element: <NotFound />,

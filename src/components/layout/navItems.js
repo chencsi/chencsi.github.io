@@ -6,8 +6,8 @@ const navItems = [
         hidden: false,
     },
     {
-        path: "/referencies",
-        name: "referencies",
+        path: "/references",
+        name: "references",
         footer: true,
         hidden: false,
     },
