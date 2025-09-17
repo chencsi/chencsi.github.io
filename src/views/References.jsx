@@ -1,4 +1,4 @@
-import { Briefcase, BriefcaseBusiness, Folder, FolderKanban, Star, User } from "lucide-react";
+import { FolderKanban, Link } from "lucide-react";
 import useUI from "../hooks/useUI";
 import PrimaryContainer from "../components/PrimaryContainer";
 import PrimaryBadgeTitle from "../components/PrimaryBadgeTitle";
@@ -34,6 +34,13 @@ function References() {
                     })}
                   </div>
                   <p className="text-justify">{reference.description}</p>
+                  <div className="flex flex-row justify-between mt-2">
+                    <p className="text-zinc-500">- 2025</p>
+                    <div className="flex gap-2 text-blue-400 hover:text-blue-500">
+                      <a href={reference.link} className="text-sm font-semibold">Repository</a>
+                      <Link size={20} />
+                    </div>
+                  </div>
                 </div>
               </div>
             );
