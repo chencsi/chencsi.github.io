@@ -78,7 +78,7 @@ function Navigation() {
 				fixed z-50 w-full flex flex-row justify-between px-5 py-3 items-center select-none
 				${isScrolled ? "backdrop-blur-sm" : ""}
 				${isScrolled && theme === "dark" ? "bg-zinc-800/40" : ""}
-				${isScrolled && theme === "light" ? "bg-zinc-100/40" : ""}
+				${isScrolled && theme === "light" ? "bg-white/40" : ""}
 				${theme === "dark" ? "text-zinc-100" : "text-zinc-900"}
 				${isLoaded ? "transition-[background-color] duration-300" : ""}
 				`}
@@ -153,7 +153,7 @@ function Navigation() {
 					},
 				}}
 			>
-				<div className="bg-zinc-100 py-3 pl-3 pr-5 select-none flex flex-col gap-3 min-w-[170px]">
+				<div className="bg-white py-3 pl-3 pr-5 select-none flex flex-col gap-3 min-w-[170px]">
 					<FormControlLabel
 						control={<DarkModeSwitch checked={theme === "dark"} />}
 						label={content?.settings.darkmode}

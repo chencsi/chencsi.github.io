@@ -19,7 +19,7 @@ function HomeEducation() {
 				{content?.schools?.map((item) => (
 					<div
 						key={item.h5}
-						class={`${theme === "dark" ? "bg-zinc-700 border-zinc-800" : "bg-zinc-100 border-zinc-50"} block max-w-[500px] md:max-w-xs lg:max-w-sm min-h-50 p-6 border rounded-lg shadow-md mx-auto`}
+						class={`${theme === "dark" ? "bg-zinc-700 border-zinc-800" : "bg-white border-zinc-50"} block max-w-[500px] md:max-w-xs lg:max-w-sm min-h-50 p-6 border rounded-lg shadow-md mx-auto`}
 					>
 						<h5
 							class={`${theme === "dark" ? "text-zinc-50" : "text-zinc-700"} mb-2 text-2xl font-bold tracking-tight`}
