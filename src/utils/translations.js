@@ -73,7 +73,7 @@ const translations = {
               "Expo",
               "Nativewind"
             ],
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum minima excepturi, velit odit dolorum sed expedita ducimus commodi reprehenderit, iure consectetur, voluptatem ex consequatur quia dolorem asperiores perspiciatis temporibus voluptas?"
+            description: "Ez egy mobilalkalmazás ami lehetővé teszi, hogy alkalmazás formájában lehessen használni a Neptunt egyszeri bejelentkezés mellett."
           },
           {
             h4: "Vagy idén vagy soha",
@@ -84,7 +84,7 @@ const translations = {
               "MaterialUI",
               "TailwindCSS"
             ],
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum minima excepturi, velit odit dolorum sed expedita ducimus commodi reprehenderit, iure consectetur, voluptatem ex consequatur quia dolorem asperiores perspiciatis temporibus voluptas?"
+            description: "Egy landing page, amit felkérésre készítek egy magán oktatással foglalkozó vállalkozónak. A megjelenés modern és letisztult single page, ami teljesen statikus."
           },
           {
             h4: "Web Task Evaulator (WTE)",
@@ -96,19 +96,18 @@ const translations = {
               "Laravel",
               "TailwindCSS"
             ],
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum minima excepturi, velit odit dolorum sed expedita ducimus commodi reprehenderit, iure consectetur, voluptatem ex consequatur quia dolorem asperiores perspiciatis temporibus voluptas?"
+            description: "Ezzel a webalkalmazással a volt iskolámban tanító web tanáraink napi feladatait szerettük volna megkönnyíteni azáltal, hogy automatizáltuk számukra a HTML és CSS feladatsorok ellenőrzését és kijavítását. A mögöttes logikáért nem én feleltem, én a megjelenésben, pár API végpontban és az automatizált tesztelésben vettem részt."
           },
           {
             h4: "WTE - Chrome Extension",
             img: "/assets/extension.jpg",
             badges: [
-              "Vue",
-              "Pinia",
-              "FormKit",
-              "Laravel",
+              "Angular",
+              "RxJS",
+              "Lucide",
               "TailwindCSS"
             ],
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum minima excepturi, velit odit dolorum sed expedita ducimus commodi reprehenderit, iure consectetur, voluptatem ex consequatur quia dolorem asperiores perspiciatis temporibus voluptas?"
+            description: "Ez a projekt a diák oldali része a WTE webalkalmazásnak, ami egy böngészőben lévő pop-up, hogy a diákok folyamatosan tudják követni, hogy hol tartanak a feladat megoldásában. Ebben a projektben leginkább a nagy testvér projekt logikája van szintén implementálva ellenőrzéshez, azonban én itt a felhasználói felület megjelenítéséért feleltem."
           },
         ],
       },
@@ -189,7 +188,7 @@ const translations = {
               "Expo",
               "Nativewind"
             ],
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum minima excepturi, velit odit dolorum sed expedita ducimus commodi reprehenderit, iure consectetur, voluptatem ex consequatur quia dolorem asperiores perspiciatis temporibus voluptas?"
+            description: "This is a mobile application that allows you to use Neptun in app form with a single login."
           },
           {
             h4: "Vagy idén vagy soha",
@@ -200,7 +199,7 @@ const translations = {
               "MaterialUI",
               "TailwindCSS"
             ],
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum minima excepturi, velit odit dolorum sed expedita ducimus commodi reprehenderit, iure consectetur, voluptatem ex consequatur quia dolorem asperiores perspiciatis temporibus voluptas?"
+            description: "A landing page I am creating on commission for a private education entrepreneur. The appearance is a modern and clean single page, which is completely static."
           },
           {
             h4: "Web Task Evaulator (WTE)",
@@ -212,20 +211,19 @@ const translations = {
               "Laravel",
               "TailwindCSS"
             ],
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum minima excepturi, velit odit dolorum sed expedita ducimus commodi reprehenderit, iure consectetur, voluptatem ex consequatur quia dolorem asperiores perspiciatis temporibus voluptas?"
+            description: "With this web application, we wanted to make the daily tasks of our web teachers at my former school easier by automating the checking and correction of HTML and CSS assignments. I was not responsible for the underlying logic, I participated in the UI, some API endpoints, and automated testing."
           },
           {
             h4: "WTE - Chrome Extension",
             img: "/assets/extension.jpg",
             badges: [
-              "Vue",
-              "Pinia",
-              "FormKit",
-              "Laravel",
+              "Angular",
+              "RxJS",
+              "Lucide",
               "TailwindCSS"
             ],
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum minima excepturi, velit odit dolorum sed expedita ducimus commodi reprehenderit, iure consectetur, voluptatem ex consequatur quia dolorem asperiores perspiciatis temporibus voluptas?"
-          },
+            description: "This project is the student-side part of the WTE web application, which is a browser pop-up so that students can continuously track their progress in solving the task. In this project, the logic of the main project is also implemented for checking, but I was responsible for the user interface."
+          }
         ],
       },
     },
