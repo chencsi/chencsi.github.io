@@ -12,7 +12,7 @@ function HomeAbout() {
 		>
 			<div
 				data-aos="fade-up"
-				className={`${theme === "dark" ? "bg-gradient-to-br from-zinc-800 to-zinc-900 border border-zinc-800" : "bg-zinc-100"} px-10 py-5 flex flex-col gap-5 max-w-[1000px] mx-10 rounded-2xl shadow-xl`}
+				className={`${theme === "dark" ? "bg-gradient-to-br from-zinc-800 to-zinc-900 border border-zinc-800" : "bg-zinc-100"} p-10 flex flex-col gap-5 max-w-[1000px] mx-10 rounded-4xl shadow-xl`}
 			>
 				<div className="flex flex-row gap-2 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full py-3 px-8 w-fit mx-auto shadow-lg">
 					<User size="25" className="self-center" />
