@@ -32,7 +32,7 @@ function Hero() {
 			</div>
 			<div className="block max-w-50 max-h-50 md:max-w-60 md:max-h-60 overflow-hidden rounded-full bg-gradient-to-br from-blue-500 to-indigo-500 select-none pointer-events-none shadow-xl">
 				<img
-					src="/portrait.png"
+					src="/portfolio/portrait.png"
 					alt={content?.imgAlt}
 					className="w-full h-full object-cover object-[50%_10%] shadow-lg"
 				/>
