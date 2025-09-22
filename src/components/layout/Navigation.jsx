@@ -11,6 +11,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import translations from "../../utils/translations";
 import useLanguageSwitch from "../../hooks/useLanguageSwitch";
+import { useLocation } from "react-router-dom";
 
 function Navigation() {
 	const [anchorEl, setAnchorEl] = React.useState(null);
@@ -22,6 +23,8 @@ function Navigation() {
 	const [isLoaded, setIsLoaded] = useState(false);
 	const [checked, handleLangSwitch] = useLanguageSwitch();
 	const content = translations[lang]?.layout?.nav;
+  const location = useLocation();
+  const currentRoute = location.pathname;
 	let lastKnownPosition = 0;
 	let scrollTicking = false;
 
@@ -56,7 +59,7 @@ function Navigation() {
 				<Link
 					key={item.path}
 					to={item.path}
-					className={`${isMobile ? "p-2" : "p-4"} hover:bg-blue-400 hover:text-zinc-900 transition-[background-color] duration-300`}
+					className={`${isMobile ? "p-2" : "p-4"} ${item.path === currentRoute && ""} hover:bg-blue-400 hover:text-zinc-900 transition-[background-color] duration-300`}
 				>
 					{content?.links?.[item.name] ?? item.name}
 				</Link>
