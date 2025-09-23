@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://chencsi.github.io/portfolio/",
+  "homepage": "https://kevinchen.hu",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
