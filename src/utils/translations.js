@@ -4,11 +4,11 @@ const translations = {
   hu: {
     layout: {
       nav: {
-        links: {
-          home: "Főoldal",
-          references: "Referenciák",
-          contact: "Kapcsolat",
-        },
+        links: [
+          { name: "Kezdőlap", path: "/" },
+          { name: "Referenciák", path: "/references" },
+          { name: "Kapcsolat", path: "/contact" }
+        ],
         settings: {
           darkmode: "Sötét mód",
           language: "Nyelv",
@@ -120,11 +120,11 @@ const translations = {
   en: {
     layout: {
       nav: {
-        links: {
-          home: "Home",
-          references: "References",
-          contact: "Contact",
-        },
+        links: [
+          { name: "Home", path: "/" },
+          { name: "References", path: "/references" },
+          { name: "Contact", path: "/contact" }
+        ],
         settings: {
           darkmode: "Dark mode",
           language: "Language",

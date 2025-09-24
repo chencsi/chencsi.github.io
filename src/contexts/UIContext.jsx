@@ -7,7 +7,7 @@ const UIContext = createContext({
   theme: null,
   lang: null,
   toggleTheme: () => { },
-  setLang: () => { },
+  toggleLang: () => { },
 });
 
 const getSystemTheme = () => {
@@ -75,14 +75,15 @@ export const UIProvider = ({ children }) => {
   }, [lang]);
 
   const toggleTheme = () =>
-    setTheme((prev) => (prev === "light" ? "dark" : "light"));
-  const setLanguage = (newLang) => setLang(newLang);
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));  
+  const toggleLang = () => 
+    setLang((prev) => (prev === "en" ? "hu" : "en"));
 
   const value = {
     theme,
     lang,
     toggleTheme,
-    setLanguage,
+    toggleLang,
   };
 
   return (<UIContext.Provider value={value}>{children}</UIContext.Provider>);
