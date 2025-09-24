@@ -11,5 +11,10 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  base: "/"
+  base: "/",
+  resolve: {
+    alias: {
+      "react-device-frameset": "react-device-frameset/dist/index.js",
+    },
+  }
 })
