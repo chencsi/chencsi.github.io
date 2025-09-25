@@ -2,24 +2,26 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import useUI from "../../hooks/useUI";
 import { useEffect, useState } from "react";
 import translations from "../../utils/translations";
-import { motion } from "framer-motion"
-import { Moon, Sun } from "lucide-react";
+import { motion, useCycle } from "framer-motion"
+import { Menu, Moon, Sun, X } from "lucide-react";
 
-function Navigation({ onRouteChange }) {
+function Navigation({ onRouteChange, closeMenu }) {
   const { theme, toggleTheme, lang, toggleLang } = useUI();
   const content = translations[lang]?.layout?.nav;
   const [selectedTab, setSelectedTab] = useState();
   const [pendingPath, setPendingPath] = useState(null);
+  const [isOpen, toggleOpen] = useCycle(false, true);
   const location = useLocation();
-
-  console.log('lang:', lang);
-  console.log('translations:', translations);
-  console.log('content:', content);
-  console.log('links:', content?.links);
 
   useEffect(() => {
     setSelectedTab(location.pathname);
   }, [location]);
+
+  useEffect(() => {
+    if (closeMenu.menuOpen === false && isOpen === true) {
+      toggleOpen();
+    }
+  }, [closeMenu.menuOpen, isOpen, toggleOpen])
 
   const handleClick = (path) => {
     setSelectedTab(path);
@@ -30,7 +32,7 @@ function Navigation({ onRouteChange }) {
   const Logo = () => {
     return (
       <Link to="/">
-        <h1 className="uppercase flex items-baseline font-black w-12 h-12 justify-center pt-[0.1rem]">
+        <h1 className="uppercase flex items-baseline font-black w-12 h-12 justify-center pt-[0.25rem] sm:pt-[0.1rem]">
           <span className="bg-clip-text text-transparent bg-gradient-to-br from-blue-500 to-indigo-500 text-4xl">
             K
           </span>
@@ -63,7 +65,7 @@ function Navigation({ onRouteChange }) {
   };
 
   const Bubble = ({ children }) => {
-    return <div className={`${theme === "dark" ? "bg-gradient-to-br from-zinc-800/80 to-zinc-900/80" : "bg-white/50"} h-16 backdrop-blur-xl py-2 px-2 rounded-full flex flex-row items-center gap-1 shadow-xl ${theme === "dark" && "shadow-zinc-950/30"}`}>{children}</div>
+    return <div className={`${theme === "dark" ? "bg-gradient-to-br from-zinc-800/80 to-zinc-900/80" : "bg-white/50"} h-16 w-fit backdrop-blur-xl py-2 px-2 rounded-full flex flex-row items-center gap-1 shadow-xl ${theme === "dark" && "shadow-zinc-950/30"}`}>{children}</div>
   }
 
   if (!lang || !Array.isArray(content?.links)) {
@@ -72,47 +74,104 @@ function Navigation({ onRouteChange }) {
   return (
     <div
       id="navigation"
-      className="fixed z-50 w-full flex flex-row justify-between px-5 py-5 items-center select-none"
+      className="fixed z-50 w-full flex flex-row gap-2 justify-between px-5 py-5 items-center select-none"
     >
-      <div className="flex gap-2">
+      <Bubble>
+        <Logo />
+      </Bubble>
 
+      <Bubble>
+        <motion.button
+          className={`${theme === "dark" ? "hover:bg-white/10" : "hover:bg-zinc-400/20"} w-10 h-10 p-2 cursor-pointer transition-colors duration-300 rounded-full`}
+          type="button"
+          onClick={() => {
+            toggleLang()
+          }}
+        >
+          {lang === "hu" ? <p>HU</p> : <p>EN</p>}
+        </motion.button>
+        <div className="h-full w-[1px] bg-zinc-500/40 rounded-full mx-1" />
+        <motion.button
+          className={`${theme === "dark" ? "hover:bg-white/10" : "hover:bg-zinc-400/20"} w-10 h-10 p-2 cursor-pointer transition-colors duration-300 rounded-full`}
+          type="button"
+          onClick={() => {
+            toggleTheme()
+          }}
+        >
+          {theme === "dark" ?
+            <Moon strokeWidth={1.5} /> :
+            <Sun strokeWidth={1.5} />
+          }
+        </motion.button>
+      </Bubble>
+
+      <div className="hidden sm:flex flex-1 justify-end">
         <Bubble>
-          {Logo()}
-        </Bubble>
-        <Bubble>
-          <motion.button
-            className={`${theme === "dark" ? "hover:bg-white/10" : "hover:bg-zinc-400/20"} w-10 h-10 p-2 cursor-pointer hover:bg-white/10 transition-colors duration-300 rounded-full`}
-            type="button"
-            onClick={() => {
-              toggleLang()
-            }}
-          >
-            {lang === "hu" ? <p>HU</p> : <p>EN</p>}
-          </motion.button>
-          <div className="h-full w-[1px] bg-zinc-500/40 rounded-full mx-1" />
-          <motion.button
-            className={`${theme === "dark" ? "hover:bg-white/10" : "hover:bg-zinc-400/20"} w-10 h-10  p-2 cursor-pointer transition-colors duration-300 rounded-full`}
-            type="button"
-            onClick={() => {
-              toggleTheme()
-            }}
-          >
-            {theme === "dark" ?
-              <motion.div initial={{ opacity: 1 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 400 }}>
-                <Moon strokeWidth={1.5} />
-              </motion.div> :
-              <motion.div initial={{ opacity: 1 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 400 }}>
-                <Sun strokeWidth={1.5} />
-              </motion.div>
-            }
-          </motion.button>
+          <NavItems />
         </Bubble>
       </div>
 
+      <motion.div className="flex sm:hidden justify-end">
+        <Bubble>
+          <motion.button
+            className="p-3 cursor-pointer"
+            onClick={() => {
+              toggleOpen();
+              closeMenu.setMenuOpen(true);
+            }}
+          >
+            <Menu />
+          </motion.button>
+        </Bubble>
 
-      <Bubble>
-        {NavItems()}
-      </Bubble>
+        <motion.div
+          className={`fixed top-0 right-0 bottom-0 ${theme === "dark" ? "bg-zinc-900/95" : "bg-white/95"} backdrop-blur-md shadow-xl w-full z-50`}
+          initial={{ x: "100%" }}
+          animate={{ x: isOpen ? 0 : "100%" }}
+          transition={{ type: "spring", stiffness: 400, damping: 50 }}
+          style={{ zIndex: 999 }}
+        >
+          <div className="flex flex-col gap-4">
+            <div className="flex justify-end items-center mb-8">
+              <motion.button
+                className={`${theme === "dark" ? "hover:bg-white/10" : "hover:bg-zinc-400/20"} p-10 rounded-full`}
+                onClick={() => toggleOpen()}
+              >
+                <X />
+              </motion.button>
+            </div>
+            <div className="flex flex-col gap-5 mx-10 items-end">
+              <div className="h-[1px] bg-white/10 w-full" />
+              {Array.isArray(content?.links) && content?.links.map((tab) => (
+                <motion.div
+                  key={tab.path}
+                  className={`p-3 cursor-pointer rounded-lg w-full relative ${selectedTab === tab.path ? (theme === "dark" ? "bg-white/10" : "bg-zinc-400/20") : ""}`}
+                  onClick={() => {
+                    handleClick(tab.path);
+                  }}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <p className="text-end">
+                    {tab.name}
+                  </p>
+                </motion.div>
+              ))}
+              <div className="h-[1px] bg-white/10 w-full" />
+            </div>
+          </div>
+        </motion.div>
+
+        {isOpen && (
+          <motion.div
+            className="fixed inset-0 bg-black/40 z-40"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => toggleOpen()}
+          />
+        )}
+      </motion.div>
     </div>
   );
 }

@@ -8,6 +8,7 @@ import { AnimatePresence, motion } from "framer-motion";
 const Layout = () => {
   const { theme } = useUI();
   const [routeChange, setRouteChange] = useState(null);
+  const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -22,6 +23,7 @@ const Layout = () => {
       const timeout = setTimeout(() => {
         navigate(routeChange);
         setRouteChange(null);
+        setMenuOpen(false);
       }, 400);
 
       return () => clearTimeout(timeout);
@@ -31,7 +33,7 @@ const Layout = () => {
   return (
     <>
       <nav className="w-full overflow-hidden h-25">
-        <Navigation onRouteChange={setRouteChange} />
+        <Navigation onRouteChange={setRouteChange} closeMenu={{setMenuOpen, menuOpen}}  />
       </nav>
       <AnimatePresence mode="wait">
         <motion.main
