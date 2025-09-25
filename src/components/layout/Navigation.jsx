@@ -30,11 +30,11 @@ function Navigation({ onRouteChange }) {
   const Logo = () => {
     return (
       <Link to="/">
-        <h1 className="uppercase flex items-baseline font-black px-2">
+        <h1 className="uppercase flex items-baseline font-black w-12 h-12 justify-center pt-[0.1rem]">
           <span className="bg-clip-text text-transparent bg-gradient-to-br from-blue-500 to-indigo-500 text-4xl">
             K
           </span>
-          <span className={`${theme === "dark" ? "text-zinc-100" : "text-zinc-700"} text-3xl`}>
+          <span className={`${theme === "dark" ? "text-zinc-100" : "text-zinc-700"} text-2xl`}>
             c
           </span>
         </h1>
