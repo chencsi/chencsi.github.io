@@ -26,6 +26,10 @@ function Navigation({ onRouteChange, closeMenu }) {
   const handleClick = (path) => {
     setSelectedTab(path);
     setPendingPath(path);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
     if (onRouteChange) onRouteChange(path);
   };
 
