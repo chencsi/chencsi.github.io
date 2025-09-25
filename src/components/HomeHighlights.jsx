@@ -15,7 +15,7 @@ function Highlights() {
   return (
     <section
       data-aos="fade-up"
-      className="flex flex-row flex-wrap justify-center sm:flex-row mx-auto gap-10 sm:gap-5 md:gap-10 max-w-[1000px] min-h-[200px]"
+      className="flex flex-row flex-wrap justify-center sm:flex-row mx-auto gap-y-10 gap-x-5 sm:gap-5 md:gap-10 max-w-[1000px] min-h-[200px]"
     >
       {content?.map((item, index) => {
         return (
