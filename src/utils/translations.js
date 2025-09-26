@@ -34,7 +34,7 @@ const translations = {
           },
           {
             h3: "Modern technológiák",
-            p: "React, Angular, Laravel és TailwindCSS",
+            p: "React, Angular, Framer Motion és TailwindCSS",
           },
           {
             h3: "UI/UX fókusz",
@@ -150,7 +150,7 @@ const translations = {
           },
           {
             h3: "Modern technologies",
-            p: "React, Angular, Laravel and TailwindCSS",
+            p: "React, Angular, Framer Motion and TailwindCSS",
           },
           {
             h3: "UI/UX focus",
