@@ -9,7 +9,7 @@ function Home() {
 			<div className="px-10">
 				<HomeHero />
 			</div>
-			<div className="px-10">
+			<div className="px-5">
 				<HomeHighlights />
 			</div>
 			<HomeAbout />

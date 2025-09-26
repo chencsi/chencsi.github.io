@@ -1,13 +1,13 @@
 import useUI from "../hooks/useUI";
 import translations from "../utils/translations";
+import {motion} from "framer-motion";
 
 function HomeEducation() {
 	const { theme, lang } = useUI();
 	const content = translations[lang]?.pages?.home?.education;
 
 	return (
-		<section
-			data-aos="fade-up"
+		<motion.section
 			className="flex flex-col gap-2 max-w-[1000px] mx-auto px-5 sm:px-0"
 		>
 			<h3
@@ -39,7 +39,7 @@ function HomeEducation() {
 					</div>
 				))}
 			</div>
-		</section>
+		</motion.section>
 	);
 }
 

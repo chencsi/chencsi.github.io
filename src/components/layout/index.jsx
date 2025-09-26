@@ -33,7 +33,7 @@ const Layout = () => {
   return (
     <>
       <nav className="w-full overflow-hidden h-25">
-        <Navigation onRouteChange={setRouteChange} closeMenu={{setMenuOpen, menuOpen}}  />
+        <Navigation onRouteChange={setRouteChange} closeMenu={{ setMenuOpen, menuOpen }} />
       </nav>
       <AnimatePresence mode="wait">
         <motion.main
