@@ -8,7 +8,7 @@ function Footer() {
 
 	return (
 		<div
-			className={`${theme === "dark" ? "bg-zinc-950" : "bg-zinc-50"} py-5 flex flex-col gap-5`}
+			className={`${theme === "dark" ? "bg-zinc-950" : "bg-zinc-50"} py-5 flex flex-col gap-5 border-t border-zinc-900`}
 		>
 			<p className="text-center text-zinc-500">{content?.p}</p>
 		</div>
