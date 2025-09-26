@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import translations from "../../utils/translations";
 import { motion, useCycle } from "framer-motion"
 import { Menu, Moon, Sun, X } from "lucide-react";
+import Bubble from "../PrimaryBubble";
 
 function Navigation({ onRouteChange, closeMenu }) {
   const { theme, toggleTheme, lang, toggleLang } = useUI();
@@ -67,10 +68,6 @@ function Navigation({ onRouteChange, closeMenu }) {
       </p>
     ));
   };
-
-  const Bubble = ({ children }) => {
-    return <div className={`${theme === "dark" ? "bg-gradient-to-br from-zinc-800/80 to-zinc-900/80" : "bg-white/50"} h-16 w-fit backdrop-blur-xl py-2 px-2 rounded-full flex flex-row items-center gap-1 shadow-xl ${theme === "dark" && "shadow-zinc-950/30"}`}>{children}</div>
-  }
 
   if (!lang || !Array.isArray(content?.links)) {
     return <p className="text-center mt-5">{content?.links.map(item => <p>{item}</p>)}</p>;
