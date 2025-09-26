@@ -11,7 +11,7 @@ const PrimaryButtonBase = ({ children, theme }) => {
   );
 };
 
-const PrimaryButton = ({ children, link, theme }) => {
+const PrimaryButton = ({ children, link }) => {
   if (link !== undefined) {
     return (
       <div>
