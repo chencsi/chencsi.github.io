@@ -13,7 +13,7 @@ function References() {
       <PrimaryContainer theme={theme}>
         <PrimaryBadgeTitle
           title={content?.h3}
-          icon={<FolderKanban />}
+          icon={FolderKanban}
           theme={theme}
         />
         <p className="md:mx-20 text-center">{content?.p}</p>

@@ -13,7 +13,7 @@ const Contact = () => {
       <PrimaryContainer theme={theme}>
         <PrimaryBadgeTitle
           title={content?.h3}
-          icon={<Send />}
+          icon={Send}
         />
       </PrimaryContainer>
     </section>

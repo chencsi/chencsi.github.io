@@ -15,7 +15,7 @@ function Highlights() {
 
   return (
     <section
-      className="flex flex-row flex-wrap justify-center sm:flex-row gap-y-10 gap-x-3 sm:gap-5 md:gap-15 max-w-[1200px] min-h-[200px] mx-auto"
+      className="flex flex-row flex-wrap justify-center sm:flex-row gap-y-10 gap-x-3 sm:gap-5 md:gap-15 max-w-[1200px] mx-auto"
     >
       {content?.map((item, index) => {
         return (
