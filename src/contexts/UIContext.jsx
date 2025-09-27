@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { createContext } from "react";
-import AOS from 'aos';
 
 const UIContext = createContext({
   theme: null,
@@ -54,11 +53,6 @@ export const UIProvider = ({ children }) => {
     if (theme) {
       localStorage.setItem("ui-theme", theme);
       document.documentElement.style.colorScheme = theme;
-      if (typeof AOS !== 'undefined' && AOS.refresh) {
-        setTimeout(() => {
-          AOS.refresh();
-        }, 50);
-      }
     }
   }, [theme]);
 
@@ -66,11 +60,6 @@ export const UIProvider = ({ children }) => {
     if (lang) {
       localStorage.setItem("ui-lang", lang);
       document.documentElement.lang = lang;
-      if (typeof AOS !== 'undefined' && AOS.refresh) {
-        setTimeout(() => {
-          AOS.refresh();
-        }, 50);
-      }
     }
   }, [lang]);
 
