@@ -41,7 +41,7 @@ const Layout = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.4 }}
+          transition={{ duration: 0.7 }}
           className="pb-50 mt-2 flex flex-col gap-20 min-h-screen"
         >
           <Outlet />
