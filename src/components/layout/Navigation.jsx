@@ -1,4 +1,4 @@
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import useUI from "../../hooks/useUI";
 import { useEffect, useState } from "react";
 import translations from "../../utils/translations";
@@ -25,27 +25,36 @@ function Navigation({ onRouteChange, closeMenu }) {
   }, [closeMenu.menuOpen, isOpen, toggleOpen])
 
   const handleClick = (path) => {
-    setSelectedTab(path);
-    setPendingPath(path);
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-    if (onRouteChange) onRouteChange(path);
+    if (!pendingPath) {
+      setSelectedTab(path);
+      setPendingPath(path);
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+      if (onRouteChange) onRouteChange(path);
+    }
   };
 
   const Logo = () => {
     return (
-      <Link to="/">
-        <h1 className="uppercase flex items-baseline font-black w-12 h-12 justify-center pt-[0.25rem] sm:pt-[0.1rem]">
+      <Bubble>
+        <motion.button
+          className="uppercase flex items-baseline font-black w-12 h-12 justify-center pt-[0.25rem] sm:pt-[0.1rem] cursor-pointer"
+          onClick={() => {
+            if (location.pathname !== "/") {
+              handleClick("/");
+            }
+          }}
+          >
           <span className="bg-clip-text text-transparent bg-gradient-to-br from-blue-500 to-indigo-500 text-4xl">
             K
           </span>
           <span className={`${theme === "dark" ? "text-zinc-100" : "text-zinc-700"} text-2xl`}>
             c
           </span>
-        </h1>
-      </Link>
+        </motion.button>
+      </Bubble>
     )
   }
 
@@ -69,21 +78,11 @@ function Navigation({ onRouteChange, closeMenu }) {
     ));
   };
 
-  if (!lang || !Array.isArray(content?.links)) {
-    return <p className="text-center mt-5">{content?.links.map(item => <p>{item}</p>)}</p>;
-  }
-  return (
-    <div
-      id="navigation"
-      className="fixed z-50 w-full flex flex-row gap-2 justify-between px-5 py-5 items-center select-none"
-    >
-      <Bubble>
-        <Logo />
-      </Bubble>
-
+  const Settings = () => {
+    return (
       <Bubble>
         <motion.button
-          className={`${theme === "dark" ? "hover:bg-white/10" : "hover:bg-zinc-400/20"} w-10 h-10 p-2 cursor-pointer transition-colors duration-300 rounded-full`}
+          className={`${theme === "dark" ? "hover:bg-white/10" : "hover:bg-zinc-400/20"} w-10 h-10 p-2 cursor-pointer rounded-full`}
           type="button"
           onClick={() => {
             toggleLang()
@@ -93,7 +92,7 @@ function Navigation({ onRouteChange, closeMenu }) {
         </motion.button>
         <div className="h-full w-[1px] bg-zinc-500/40 rounded-full mx-1" />
         <motion.button
-          className={`${theme === "dark" ? "hover:bg-white/10" : "hover:bg-zinc-400/20"} w-10 h-10 p-2 cursor-pointer transition-colors duration-300 rounded-full`}
+          className={`${theme === "dark" ? "hover:bg-white/10" : "hover:bg-zinc-400/20"} w-10 h-10 p-2 cursor-pointer rounded-full`}
           type="button"
           onClick={() => {
             toggleTheme()
@@ -105,6 +104,20 @@ function Navigation({ onRouteChange, closeMenu }) {
           }
         </motion.button>
       </Bubble>
+    )
+  }
+
+  if (!lang || !Array.isArray(content?.links)) {
+    return <p className="text-center mt-5">{content?.links.map(item => <p>{item}</p>)}</p>;
+  }
+  return (
+    <div
+      id="navigation"
+      className="fixed z-50 w-full flex flex-row gap-2 justify-between px-5 py-5 items-center select-none"
+    >
+      <Logo />
+
+      <Settings />
 
       <div className="hidden sm:flex flex-1 justify-end">
         <Bubble>
