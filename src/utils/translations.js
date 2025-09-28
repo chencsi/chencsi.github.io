@@ -42,7 +42,7 @@ const translations = {
           },
         ],
         about: {
-          h3: "Rólam",
+          h3: "Bemutatkozás",
           p1: `A nevem Kevin és ${sinceYear} éve kezdtem el foglalkozni programozással, azonban a programozás iránti érdeklődésem egészen általános iskolás koromra nyúlik vissza. Azóta abszolút elszánt vagyok iránta. Ez idő alatt egy szoftverfejlesztő és -tesztelő technikusi képzést végeztem el, most pedig az egyetemi éveim kezdem meg mérnökinformatikus szakon. Eddig számos iskolai és saját projektben vettem részt, ezekre pontosabban a <a href="/references" class="text-blue-400 hover:underline">referenciáknál</a> térek ki.`,
           p2: "Célom, hogy felhasználóbarát weboldalakat és webalkalmazásokat építsek, amik valós problémákra találnak megoldást. Folyamatosan naprakészen tartom a tudástáram, hogy a legújabb technológiákat használjam.",
         },
@@ -68,7 +68,8 @@ const translations = {
         references: [
           {
             h4: "Uranus",
-            img: "/assets/uranus.jpg",
+            img: "/uranus-splash.png",
+            size: "sm",
             badges: [
               "React Native",
               "Expo",
@@ -78,7 +79,8 @@ const translations = {
           },
           {
             h4: "Vagy idén vagy soha",
-            img: "/assets/vagyidenvagysoha.jpg",
+            img: "/vagyidenvagysoha.png",
+            size: "md",
             badges: [
               "React",
               "Vite",
@@ -89,7 +91,8 @@ const translations = {
           },
           {
             h4: "Web Task Evaulator (WTE)",
-            img: "/assets/wte.jpg",
+            img: "/wte-desktop.png",
+            size: "md",
             badges: [
               "Vue",
               "Pinia",
@@ -101,7 +104,8 @@ const translations = {
           },
           {
             h4: "WTE - Chrome Extension",
-            img: "/assets/extension.jpg",
+            img: "/extension.jpeg",
+            size: "[50px]",
             badges: [
               "Angular",
               "RxJS",
