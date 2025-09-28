@@ -17,13 +17,10 @@ function HomeAbout() {
         title={content?.h3}
         theme={theme}
       />
-      <div className={`${theme === "dark" ? "text-zinc-300" : "text-zinc-800"} flex flex-col gap-5 lg:text-lg font-[500] text-justify px-5 font-stretch-110%`}>
+      <div className={`${theme === "dark" ? "text-zinc-300" : "text-zinc-800"} flex flex-col gap-5 md:text-lg font-[500] text-justify`}>
         <p
           dangerouslySetInnerHTML={{ __html: content?.p1 }}
         />
-        <p>
-          {content?.p2}
-        </p>
       </div>
     </PrimaryContainer>
   );
