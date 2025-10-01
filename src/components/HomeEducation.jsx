@@ -47,25 +47,29 @@ function HomeEducation() {
     offset: ["start start", "end end"],
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-50%"]);
+  const firstBox = useTransform(scrollYProgress, [0, 1], ["0%", "-300%"]);
+  const secondBox = useTransform(scrollYProgress, [0, 1], ["0%", "-100%"]);
 
 
   return (
-    <section ref={ref} className="relative h-[300vh] p-5 md:p-10 rounded-4xl">
+    <section ref={ref} className="relative h-[500vh] md:h-[300vw] p-5 md:p-10 rounded-4xl">
       <motion.div
-        className="sticky top-26 sm:top-30 h-[75vh] sm:h-[45rem] max-w-[1400px] mx-auto py-10 rounded-3xl shadow-xl overflow-hidden bg-gradient-to-br from-blue-500 to-indigo-500 flex flex-col gap-5"
+        className="sticky top-26 sm:top-30 h-[75vh] sm:h-[40rem] max-w-[1400px] rounded-3xl shadow-xl mx-auto overflow-hidden bg-gradient-to-br from-blue-500 to-indigo-500 flex flex-row gap-5"
         transition={{ duration: 1, delay: 1, type: "spring" }}
       >
-        <motion.div style={{ x }} className="w-[760%] md:w-[500%] lg:w-[4200px] h-full flex gap-20 lg:gap-35">
-          <div className="self-center w-[13%] md:w-[20%] lg:w-[30%] xl:w-[30%] flex flex-col items-center gap-5">
-            <div className="bg-white/20 rounded-full mx-auto px-8 py-3 text-zinc-100 font-extrabold text-4xl sm:text-4xl uppercase text-shadow text-center flex flex-row gap-2 items-center">
+        <motion.div style={{ x: firstBox }} className="w-full h-full flex flex-row">
+          <div className="w-[90vw] self-center flex flex-col items-center gap-5">
+            <div className="bg-white/20 rounded-full mx-auto px-8 py-3 text-zinc-100 font-extrabold uppercase text-shadow text-center flex flex-row gap-2 items-center">
               <Book />
-              <h3>{content?.h3}</h3>
+              <h3 className="text-2xl sm:text-4xl">{content?.h3}</h3>
             </div>
-            <p className="text-zinc-100 text-center max-w-md md:max-w-2xl lg:max-w-4xl px-5 mx-auto text-xl font-semibold">
+            <p className="text-zinc-100 text-center max-w-md md:max-w-2xl lg:max-w-4xl px-5 mx-auto sm:text-xl font-semibold">
               {content?.p}
             </p>
           </div>
+        </motion.div>
+        <motion.div style={{ x: secondBox }} className="w-[4400px] h-full flex py-10 pr-20 gap-20 lg:gap-35">
+
           <div className="flex flex-row gap-40 px-5 h-full relative">
             {content?.educations?.slice().reverse().map((education, index) => {
               const even = index % 2 == 0;
