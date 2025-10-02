@@ -31,11 +31,17 @@ function References() {
         <div className="flex flex-col gap-y-10 sm:gap-y-20 min-h-screen">
           {content?.references.map((reference, index) => {
             return (
-              <div key={reference.img} className={`flex flex-col-reverse items-center ${index % 2 == 0 ? 'sm:flex-row' : "sm:flex-row-reverse"} gap-10`}>
-                <img 
-                  src={reference.img} 
-                  alt={reference.h4} 
-                  className={`border border-zinc-700/30 rounded-4xl w-full object-center max-w-${reference.size} max-h-[700px] cursor-pointer`}
+              <motion.div
+                key={reference.img}
+                className={`flex flex-col items-center ${index % 2 == 0 ? 'md:flex-row' : "md:flex-row-reverse"} gap-10`}
+                initial={{opacity: 0, y: 10}}
+                whileInView={{opacity:1, y: 0}}
+                transition={{delay: 0.2, type: "spring", }}
+                >
+                <img
+                  src={reference.img}
+                  alt={reference.h4}
+                  className={`select-none border border-zinc-700/30 rounded-4xl w-full object-cover max-w-[300px] max-h-[250px] cursor-pointer`}
                   onClick={() => setSelectedImage(reference.img)}
                 />
                 <div className="w-full py-5">
@@ -52,22 +58,22 @@ function References() {
                   <p className="text-justify">{reference.description}</p>
                   <div className="flex flex-row justify-between mt-2">
                     <p className="text-zinc-500">- 2025</p>
-                    <div className="flex gap-2 text-blue-400 hover:text-blue-500">
+                    <div className={`flex gap-2 ${reference.link !== undefined ? "text-blue-400 hover:text-blue-500  cursor-pointer" : "text-gray-500 cursor-not-allowed"} select-none`}>
                       <a href={reference.link} className="text-sm font-semibold">Repository</a>
                       <Link size={20} />
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>
       </PrimaryContainer>
-      
+
       <AnimatePresence>
         {selectedImage && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center">
-            <motion.div 
+          <div className="fixed inset-0 z-50 flex items-center justify-center select-none">
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.6 }}
               exit={{ opacity: 0 }}
@@ -81,9 +87,9 @@ function References() {
               transition={transition}
               className="relative z-10 w-[80vw] max-w-4xl max-h-[80vh] flex items-center justify-center"
             >
-              <motion.img 
-                src={selectedImage} 
-                alt="Zoomed preview" 
+              <motion.img
+                src={selectedImage}
+                alt="Zoomed preview"
                 className="max-w-full max-h-[80vh] object-contain rounded-lg"
                 layoutId={`image-${selectedImage}`}
               />
