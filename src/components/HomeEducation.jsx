@@ -68,7 +68,7 @@ function HomeEducation() {
             </p>
           </div>
         </motion.div>
-        <motion.div style={{ x: secondBox }} className="min-w-[1700px] sm:max-w-[4600px] h-full flex py-10 pr-20 gap-20 lg:gap-35">
+        <motion.div style={{ x: secondBox }} className="min-w-[1700px] sm:min-w-[1900px] sm:max-w-[4600px] h-full flex py-10 pr-20 gap-20 lg:gap-35">
 
           <div className="flex flex-row gap-20 px-5 h-full relative">
             {content?.educations?.slice().reverse().map((education, index) => {
