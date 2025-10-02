@@ -8,20 +8,20 @@ const EducationBox = ({ education, theme }) => {
   return (
     <div
       key={education.h5}
-      className={`flex flex-row w-md sm:w-lg items-center`}
+      className={`flex flex-row min-h-[200px] sm:min-h-[250px] w-sm sm:min-w-lg items-center`}
     >
-      <div className={`${theme === "dark" ? "bg-gradient-to-br from-zinc-800/80 to-zinc-900/80" : "bg-white/90"} rounded-l-2xl z-10 left-2 h-3/4 flex flex-col justify-center shadow-xl`}>
-        <p className={`${theme === "dark" ? "text-zinc-300" : "text-zinc-700"} text-xl [writing-mode:vertical-lr] rotate-180 font-thin p-1`}>
+      <div className={`${theme === "dark" ? "bg-gradient-to-br from-zinc-800/80 to-zinc-900/80" : "bg-white/90"} rounded-l-2xl z-10 left-2 h-2/3 flex flex-col justify-center shadow-xl`}>
+        <p className={`${theme === "dark" ? "text-zinc-300" : "text-zinc-700"} sm:text-xl [writing-mode:vertical-lr] rotate-180 font-thin p-1`}>
           {education.p1}
         </p>
       </div>
       <div
-        className={`${theme === "dark" ? "bg-gradient-to-br from-zinc-800/80 to-zinc-900/80" : "bg-white/90"} py-5 px-5 rounded-2xl backdrop-blur-xl w-full shadow-xl z-10 min-h-[250px] min-w-[300px]`}
+        className={`${theme === "dark" ? "bg-gradient-to-br from-zinc-800/80 to-zinc-900/80" : "bg-white/90"} py-5 px-5 rounded-2xl backdrop-blur-xl w-full shadow-xl z-10 min-h-[200px]`}
       >
-        <h5 className={`${theme === "dark" ? "text-zinc-50" : "text-zinc-700"} mb-2 text-2xl font-bold min-h-15`}>
+        <h5 className={`${theme === "dark" ? "text-zinc-50" : "text-zinc-700"} mb-2 text-lg sm:text-2xl font-bold min-h-15`}>
           {education.h5}
         </h5>
-        <p className={`${theme === "dark" ? "text-zinc-300" : "text-zinc-600"}`}>
+        <p className={`${theme === "dark" ? "text-zinc-300" : "text-zinc-600"} text-sm`}>
           {education.p2}
         </p>
         <div className="flex flex-row gap-1 my-1">
@@ -52,13 +52,13 @@ function HomeEducation() {
 
 
   return (
-    <section ref={ref} className="relative h-[500vh] md:h-[300vw] p-5 md:p-10 rounded-4xl">
+    <section ref={ref} className="relative h-[500vh] md:h-[300vw] px-2 sm:p-5 md:p-10 rounded-4xl">
       <motion.div
-        className="sticky top-26 sm:top-30 h-[75vh] sm:h-[40rem] max-w-[1400px] rounded-3xl shadow-xl mx-auto overflow-hidden bg-gradient-to-br from-blue-500 to-indigo-500 flex flex-row gap-5"
+        className="sticky top-26 sm:top-30 h-[36rem] sm:h-[40rem] max-w-[1400px] rounded-3xl shadow-xl mx-auto overflow-hidden bg-gradient-to-br from-blue-500 to-indigo-500 flex flex-row gap-65 sm:gap-5"
         transition={{ duration: 1, delay: 1, type: "spring" }}
       >
         <motion.div style={{ x: firstBox }} className="w-full h-full flex flex-row">
-          <div className="w-[90vw] self-center flex flex-col items-center gap-5">
+          <div className="w-[94vw] sm:w-[90vw] self-center flex flex-col items-center gap-5">
             <div className="bg-white/20 rounded-full mx-auto px-8 py-3 text-zinc-100 font-extrabold uppercase text-shadow text-center flex flex-row gap-2 items-center">
               <Book />
               <h3 className="text-2xl sm:text-4xl">{content?.h3}</h3>
@@ -68,18 +68,18 @@ function HomeEducation() {
             </p>
           </div>
         </motion.div>
-        <motion.div style={{ x: secondBox }} className="w-[4400px] h-full flex py-10 pr-20 gap-20 lg:gap-35">
+        <motion.div style={{ x: secondBox }} className="min-w-[1700px] sm:max-w-[4600px] h-full flex py-10 pr-20 gap-20 lg:gap-35">
 
-          <div className="flex flex-row gap-40 px-5 h-full relative">
+          <div className="flex flex-row gap-20 px-5 h-full relative">
             {content?.educations?.slice().reverse().map((education, index) => {
               const even = index % 2 == 0;
 
               return (
                 <div key={index} className={`${index === 0 && "ml-10"} flex ${even ? "flex-col-reverse" : "flex-col"} ${even && "justify-start"}`}>
                   <EducationBox education={education} theme={theme} />
-                  <div className={`${even ? "-top-20 flex-col" : "-bottom-20 flex-col-reverse"} relative left-1/2 flex`}>
-                    <div className={`${theme === "dark" ? "bg-gradient-to-br from-zinc-800/80 to-zinc-900" : "bg-white/90"} w-2 h-20 left-0 absolute self-center`} />
-                    <div className={`${theme === "dark" ? "bg-gradient-to-br from-zinc-800 to-zinc-900" : "bg-white/90"} w-6 h-6 absolute left-0 -translate-x-1/3 rounded-full z-10`}></div>
+                  <div className={`${even ? "-top-14 sm:-top-10 flex-col" : "-bottom-14 sm:-bottom-11 flex-col-reverse"} relative left-1/2 flex flex-col items-center`}>
+                    <div className={`${theme === "dark" ? "bg-gradient-to-br from-zinc-800/80 to-zinc-900" : "bg-white/90"} w-1 h-14 sm:w-2 sm:h-20 left-0 absolute self-center`} />
+                    <div className={`${theme === "dark" ? "bg-gradient-to-br from-zinc-800 to-zinc-900" : "bg-white/90"} w-4 h-4 sm:w-6 sm:h-6 absolute left-0 -translate-x-1/3 rounded-full z-10`}></div>
                     <p className={`text-2xl font-extrabold -left-5 absolute ${even ? "-top-10" : "-bottom-10"}`}>{education.p1.split("-")[0]}</p>
                   </div>
                 </div>
@@ -89,7 +89,7 @@ function HomeEducation() {
               initial={{ width: 0 }}
               className="absolute top-1/2 -translate-y-10 h-20 w-full flex flex-col justify-center"
             >
-              <div className={`${theme === "dark" ? "bg-gradient-to-r from-zinc-800/90 to-zinc-900/90" : "bg-white/90"} h-2 w-full rounded-full`} />
+              <div className={`${theme === "dark" ? "bg-gradient-to-r from-zinc-800/90 to-zinc-900/90" : "bg-white/90"} h-1 sm:h-2 w-full rounded-full`} />
             </div>
           </div>
         </motion.div>
