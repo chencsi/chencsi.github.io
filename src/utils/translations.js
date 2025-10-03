@@ -1,3 +1,7 @@
+import { educations } from "./educations";
+import { references } from "./references";
+import { navigationPaths } from "./navigationPaths";
+
 const sinceYear = new Date().getFullYear() - 2019;
 
 const translations = {
@@ -5,18 +9,12 @@ const translations = {
     layout: {
       nav: {
         links: [
-          { name: "Kezdőlap", path: "/" },
-          { name: "Referenciák", path: "/references" },
-          { name: "Kapcsolat", path: "/contact" }
-        ],
-        settings: {
-          darkmode: "Sötét mód",
-          language: "Nyelv",
-        },
+          { name: "Kezdőlap", path: navigationPaths.home },
+          { name: "Referenciák", path: navigationPaths.references },
+          { name: "Kapcsolat", path: navigationPaths.contact }
+        ]
       },
-      footer: {
-        p: "Kód és design: Kevin Chen 💙 · © 2025"
-      }
+      footer: "Kód és design: Kevin Chen 💙 · © 2025"
     },
     pages: {
       home: {
@@ -51,34 +49,22 @@ const translations = {
           p: "A eddigi tudásom megszerzésében nagy szerepet játszott az oktatás amit kaptam az iskolában, azonban sok időt fordítottam mellette az önfejlesztésre, hogy megismerjem a modern és korszerű megoldásokat.",
           educations: [
             {
+              ...educations.gde,
               h5: "Gábor Dénes Egyetem",
               p1: "2025-",
               p2: "Jelenleg az első félévemet töltöm itt, mérnökinformatikus szakon és izgatottan várom, milyen további skilleket sajátíthatok még itt el.",
-              badges: [
-                
-              ]
             },
             {
+              ...educations.neu,
               h5: "BMSZC Neumann János Informatikai Technikum",
               p1: "2020-2025",
               p2: "Itt betekintést nyerhettem a Full-Stack fejlesztésbe az alapoktól fogva a keretrendszerekig, majd adatbázis kezelést és konténerizációt is tanultunk.",
-              badges: [
-                "Web",
-                "C#",
-                "MYSQL",
-                "Docker",
-                "Linux"
-              ]
             },
             {
+              ...educations.plugin,
               h5: "Első weboldalam és játékszerver pluginom",
               p1: "2019",
               p2: "Ekkor még általános iskolába jártam, azonban már aktívan elkezdtem nyári szünetben foglalkozni a programozással.",
-              badges: [
-                "HTML",
-                "CSS",
-                "JAVA"
-              ]
             },
           ],
         },
@@ -88,57 +74,30 @@ const translations = {
         p: "Az alább látható projektjeim szeretném kiemelni, javarészt csapatban készítettük őket, ezeket és a részleteket a GitHub repositorykon keresztül lehet látni.",
         references: [
           {
-            h4: "Uranus",
-            img: "/uranus-splash.png",
-            size: "sm",
-            badges: [
-              "React Native",
-              "Expo",
-              "Nativewind"
-            ],
+            ...references.uranus,
             description: "Ez egy mobilalkalmazás ami lehetővé teszi, hogy alkalmazás formájában lehessen használni a Neptunt egyszeri bejelentkezés mellett."
           },
           {
-            h4: "Vagy idén vagy soha",
-            img: "/vagyidenvagysoha.png",
-            size: "md",
-            badges: [
-              "React",
-              "Vite",
-              "MaterialUI",
-              "TailwindCSS"
-            ],
+            ...references.vagyidenvagysoha,
             description: "Egy landing page, amit felkérésre készítek egy magán oktatással foglalkozó vállalkozónak. A megjelenés modern és letisztult single page, ami teljesen statikus."
           },
           {
-            h4: "Web Task Evaulator (WTE)",
-            img: "/wte-desktop.png",
-            size: "md",
-            badges: [
-              "Vue",
-              "Pinia",
-              "FormKit",
-              "Laravel",
-              "TailwindCSS"
-            ],
+            ...references.wteDesktop,
             description: "Ezzel a webalkalmazással a volt iskolámban tanító web tanáraink napi feladatait szerettük volna megkönnyíteni azáltal, hogy automatizáltuk számukra a HTML és CSS feladatsorok ellenőrzését és kijavítását. A mögöttes logikáért nem én feleltem, én a megjelenésben, pár API végpontban és az automatizált tesztelésben vettem részt."
           },
           {
-            h4: "WTE - Chrome Extension",
-            img: "/extension.jpeg",
-            size: "[50px]",
-            badges: [
-              "Angular",
-              "RxJS",
-              "Lucide",
-              "TailwindCSS"
-            ],
+            ...references.extension,
             description: "Ez a projekt a diák oldali része a WTE webalkalmazásnak, ami egy böngészőben lévő pop-up, hogy a diákok folyamatosan tudják követni, hogy hol tartanak a feladat megoldásában. Ebben a projektben leginkább a nagy testvér projekt logikája van szintén implementálva ellenőrzéshez, azonban én itt a felhasználói felület megjelenítéséért feleltem."
           },
         ],
       },
       contact: {
         h3: "Kapcsolat",
+      },
+      notfound: {
+        h1: "Hoppá!",
+        p: "Sajnos az általad keresett oldal nem létezik. :(",
+        button: "Vissza a főoldalra"
       }
     },
   },
@@ -146,134 +105,95 @@ const translations = {
     layout: {
       nav: {
         links: [
-          { name: "Home", path: "/" },
-          { name: "References", path: "/references" },
-          { name: "Contact", path: "/contact" }
-        ],
-        settings: {
-          darkmode: "Dark Mode",
-          language: "Language",
-        },
+          { name: "Home", path: navigationPaths.home },
+          { name: "References", path: navigationPaths.references },
+          { name: "Contact", path: navigationPaths.contact }
+        ]
       },
-      footer: {
-        p: "Code and design: Kevin Chen 💙 · © 2025"
-      }
+      footer: "Code and design: Kevin Chen 💙 · © 2025"
     },
     pages: {
       home: {
         hero: {
           h1: "Kevin Chen",
           h2: "Frontend Developer Student",
-          p: "I build clean and user-friendly websites",
+          p: "I build simple and user-friendly websites",
           button: "Contact",
           imgAlt: "Portrait photo",
         },
         highlights: [
           {
-            h3: "Responsive Websites",
-            p: "Optimized appearance for all devices.",
+            h3: "Responsive websites",
+            p: "Optimized view for all devices.",
           },
           {
-            h3: "Modern Technologies",
+            h3: "Modern technologies",
             p: "React, Angular, Framer Motion and TailwindCSS",
           },
           {
-            h3: "UI/UX Focus",
+            h3: "UI/UX focus",
             p: "Clean and user-friendly experience.",
           },
         ],
         about: {
-          h3: "About Me",
-          p1: `My name is Kevin and I've been programming for ${sinceYear} years, although my interest in programming dates back to elementary school. I've been absolutely dedicated to it ever since. During this time, I completed a software developer and tester technical training, and now I'm starting my university years in computer engineering. So far, I've participated in numerous school and personal projects, which I detail more specifically in the <a href="/references" class="text-blue-400 hover:underline">references</a> section.`,
-          p2: "My goal is to build user-friendly websites and web applications that solve real problems. I constantly keep my knowledge up-to-date to use the latest technologies.",
+          h3: "About me",
+          p1: `I started programming ${sinceYear} years ago, but my interest in programming goes back to my elementary school years. Since then, I have learned many programming languages, but I fell in love with web development. I finished a software developer and tester course, and now I'm in my first year at university studying computer engineering. I have worked on many school and personal projects, which you can see in the <a href="/references" class="text-blue-400 hover:underline font-semibold">references</a> section.`,
+          p2: "My goal is to build user-friendly websites and web applications that solve real problems. I keep my knowledge up-to-date to use the newest technologies.",
         },
         education: {
           h3: "My Education",
+          p: "School education played a big role in getting my knowledge, but I also spent a lot of time learning by myself to know modern solutions.",
           educations: [
             {
-              h5: "Dennis Gabor College",
+              ...educations.gde,
+              h5: "Dennis Gabor University",
               p1: "2025-",
-              p2: "I'm currently spending my first semester here in computer engineering and I'm excited to see what additional skills I can acquire here.",
-              badges: [
-                
-              ]
+              p2: "I'm currently in my first semester here studying computer engineering and I'm excited to learn what new skills I can get here.",
             },
             {
-              h5: "BMSZC Neumann Technical School of Informatics",
+              ...educations.neu,
+              h5: "BMSZC Janos Neumann IT School",
               p1: "2020-2025",
-              p2: "Here I gained insight into Full-Stack development from the basics to frameworks, then we also learned database management and containerization.",
-              badges: [
-                "Web",
-                "C#",
-                "MYSQL",
-                "Docker",
-                "Linux"
-              ]
+              p2: "Here I learned about Full-Stack development from basics to frameworks, then database management and containerization.",
             },
             {
+              ...educations.plugin,
               h5: "My first website and game server plugin",
               p1: "2019",
-              p2: "I was still in elementary school at this time, but I had already actively started to focus on programming during summer break.",
+              p2: "I was still in elementary school, but I started to learn programming actively during summer break.",
             },
           ],
         },
       },
       references: {
         h3: "References",
-        p: "I would like to highlight my projects below, mostly made in teams. These and the details can be seen through the GitHub repositories.",
+        p: "I want to show these projects below, most were made in teams, and you can see details through GitHub repositories.",
         references: [
           {
-            h4: "Uranus",
-            img: "/uranus-splash.png",
-            size: "sm",
-            badges: [
-              "React Native",
-              "Expo",
-              "Nativewind"
-            ],
-            description: "This is a mobile application that allows you to use Neptun in application form with a single sign-on."
+            ...references.uranus,
+            description: "This is a mobile app that lets you use Neptune (university system) in app form with one-time login."
           },
           {
-            h4: "Vagy idén vagy soha",
-            img: "/vagyidenvagysoha.png",
-            size: "md",
-            badges: [
-              "React",
-              "Vite",
-              "MaterialUI",
-              "TailwindCSS"
-            ],
-            description: "A landing page that I'm creating by request for a private education entrepreneur. The appearance is a modern and clean single page that is completely static."
+            ...references.vagyidenvagysoha,
+            description: "A landing page that I'm making for a private education business owner. It has a modern and clean single page design that is completely static."
           },
           {
-            h4: "Web Task Evaluator (WTE)",
-            img: "/wte-desktop.png",
-            size: "md",
-            badges: [
-              "Vue",
-              "Pinia",
-              "FormKit",
-              "Laravel",
-              "TailwindCSS"
-            ],
-            description: "With this web application, we wanted to make the daily tasks of our web teachers in our former school easier by automating the checking and correction of HTML and CSS task sets. I wasn't responsible for the underlying logic; I participated in the appearance, some API endpoints, and automated testing."
+            ...references.wteDesktop,
+            description: "With this web application, we wanted to make daily tasks easier for web teachers in my old school by checking and correcting HTML and CSS assignments automatically. I didn't work on the main logic, but I helped with the design, some API endpoints, and automated testing."
           },
           {
-            h4: "WTE - Chrome Extension",
-            img: "/extension.jpeg",
-            size: "[50px]",
-            badges: [
-              "Angular",
-              "RxJS",
-              "Lucide",
-              "TailwindCSS"
-            ],
-            description: "This project is the student side of the WTE web application, which is a pop-up in the browser so that students can continuously track where they are in solving the task. In this project, the logic of the big brother project is similarly implemented for checking, however, I was responsible for the user interface display here."
+            ...references.extension,
+            description: "This project is the student part of the WTE web application, a browser pop-up that helps students track their progress on assignments. This project uses much of the same logic as the main project for checking, but I was responsible for the user interface."
           },
         ],
       },
       contact: {
         h3: "Contact",
+      },
+      notfound: {
+        h1: "Oops!",
+        p: "Sorry, the page you are looking for does not exist. :(",
+        button: "Back to home page"
       }
     },
   }
