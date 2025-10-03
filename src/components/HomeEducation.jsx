@@ -5,26 +5,28 @@ import { motion, spring, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 const EducationBox = ({ education, theme }) => {
+  const backgroundColor = theme === "dark" ? "bg-gradient-to-br from-zinc-800/80 to-zinc-900/80" : "bg-white/90";
+
   return (
     <div
       key={education.h5}
-      className={`flex flex-row min-h-[200px] sm:min-h-[250px] w-sm sm:min-w-lg items-center`}
+      className={`flex flex-row h-full w-full`}
     >
-      <div className={`${theme === "dark" ? "bg-gradient-to-br from-zinc-800/80 to-zinc-900/80" : "bg-white/90"} rounded-l-2xl z-10 left-2 h-2/3 flex flex-col justify-center shadow-xl`}>
+      <div className={`${backgroundColor} rounded-l-2xl z-10 left-2 h-2/3 flex flex-col justify-center self-center shadow-xl`}>
         <p className={`${theme === "dark" ? "text-zinc-300" : "text-zinc-700"} sm:text-xl [writing-mode:vertical-lr] rotate-180 font-thin p-1`}>
           {education.p1}
         </p>
       </div>
       <div
-        className={`${theme === "dark" ? "bg-gradient-to-br from-zinc-800/80 to-zinc-900/80" : "bg-white/90"} py-5 px-5 rounded-2xl backdrop-blur-xl w-full shadow-xl z-10 min-h-[200px]`}
+        className={`${backgroundColor} flex flex-col gap-2 pt-4 px-4 rounded-2xl backdrop-blur-xl w-full shadow-xl z-10 sm:min-h-[200px]`}
       >
-        <h5 className={`${theme === "dark" ? "text-zinc-50" : "text-zinc-700"} mb-2 text-lg sm:text-2xl font-bold min-h-15`}>
+        <h5 className={`${theme === "dark" ? "text-zinc-50" : "text-zinc-700"} text-lg sm:text-2xl font-bold`}>
           {education.h5}
         </h5>
         <p className={`${theme === "dark" ? "text-zinc-300" : "text-zinc-600"} text-sm`}>
           {education.p2}
         </p>
-        <div className="flex flex-row gap-1 my-1">
+        <div className="flex flex-row gap-1">
           {education?.badges?.map((badge) => {
             return (
               <span key={badge} className="inline-flex items-center rounded-md bg-blue-400/10 px-2 py-1 text-xs font-medium text-blue-400 inset-ring inset-ring-blue-400/30">
@@ -50,11 +52,12 @@ function HomeEducation() {
   const firstBox = useTransform(scrollYProgress, [0, 1], ["0%", "-300%"]);
   const secondBox = useTransform(scrollYProgress, [0, 1], ["0%", "-100%"]);
 
+  const backgroundColor = theme === "dark" ? "bg-gradient-to-br from-zinc-800/80 to-zinc-900/80" : "bg-white/90";
 
   return (
     <section ref={ref} className="relative h-[500vh] md:h-[300vw] px-2 sm:p-5 md:p-10 rounded-4xl">
       <motion.div
-        className="sticky top-26 sm:top-30 h-[36rem] sm:h-[40rem] max-w-[1400px] rounded-3xl shadow-xl mx-auto overflow-hidden bg-gradient-to-br from-blue-500 to-indigo-500 flex flex-row gap-65 sm:gap-5"
+        className="sticky top-26 sm:top-30 h-[36rem] sm:h-[40rem] max-w-[1400px] rounded-3xl shadow-xl mx-auto overflow-hidden bg-gradient-to-br from-blue-500 to-indigo-500 flex flex-row gap-x-65 sm:gap-x-5"
         transition={{ duration: 1, delay: 1, type: "spring" }}
       >
         <motion.div style={{ x: firstBox }} className="w-full h-full flex flex-row">
@@ -68,29 +71,40 @@ function HomeEducation() {
             </p>
           </div>
         </motion.div>
-        <motion.div style={{ x: secondBox }} className="min-w-[1700px] sm:min-w-[1900px] sm:max-w-[4600px] h-full flex py-10 pr-20 gap-20 lg:gap-35">
+        <motion.div style={{ x: secondBox }} className="min-w-[1700px] sm:min-w-[1900px] sm:max-w-[4600px] h-full flexpr-20">
 
-          <div className="flex flex-row gap-20 px-5 h-full relative">
+          <div className="flex flex-row px-20 h-full py-5">
             {content?.educations?.slice().reverse().map((education, index) => {
+
+              const educations = content?.educations;
               const even = index % 2 == 0;
+              const first = index === 0;
+              const last = index === educations?.length - 1;
 
               return (
-                <div key={index} className={`${index === 0 && "ml-10"} flex ${even ? "flex-col-reverse" : "flex-col"} ${even && "justify-start"}`}>
-                  <EducationBox education={education} theme={theme} />
-                  <div className={`${even ? "-top-14 sm:-top-10 flex-col" : "-bottom-14 sm:-bottom-11 flex-col-reverse"} relative left-1/2 flex flex-col items-center`}>
-                    <div className={`${theme === "dark" ? "bg-gradient-to-br from-zinc-800/80 to-zinc-900" : "bg-white/90"} w-1 h-14 sm:w-2 sm:h-20 left-0 absolute self-center`} />
-                    <div className={`${theme === "dark" ? "bg-gradient-to-br from-zinc-800 to-zinc-900" : "bg-white/90"} w-4 h-4 sm:w-6 sm:h-6 absolute left-0 -translate-x-1/3 rounded-full z-10`}></div>
-                    <p className={`text-2xl font-extrabold -left-5 absolute ${even ? "-top-10" : "-bottom-10"}`}>{education.p1.split("-")[0]}</p>
+                <>
+                  <div key={index} className={`flex ${even ? "flex-row" : "flex-row"} ${even && "justify-start"}`}>
+                    <div className={`flex ${!even ? "flex-col-reverse" : "flex-col"}`}>
+                      <div className="h-full" />
+                      <div className="grid grid-cols-3 grid-rows-[1fr_0fr_1fr] h-full items-center text-center">
+                        {
+                          !even &&
+                          <div className={`col-start-2 h-full w-2 mx-auto ${backgroundColor}`}></div>
+                        }
+                        <div className={`row-start-2 col-span-3 w-full h-2 ${backgroundColor} ${first && "rounded-l-full"} ${last && "rounded-r-full"}`}></div>
+                        {
+                          even &&
+                          <div className={`col-start-2 row-start-3 h-full w-2 mx-auto ${backgroundColor}`}></div>
+                        }
+                      </div>
+                      <div className="h-full max-w-sm sm:max-w-lg ">
+                        <EducationBox education={education} theme={theme} />
+                      </div>
+                    </div>
                   </div>
-                </div>
+                </>
               );
             })}
-            <div
-              initial={{ width: 0 }}
-              className="absolute top-1/2 -translate-y-10 h-20 w-full flex flex-col justify-center"
-            >
-              <div className={`${theme === "dark" ? "bg-gradient-to-r from-zinc-800/90 to-zinc-900/90" : "bg-white/90"} h-1 sm:h-2 w-full rounded-full`} />
-            </div>
           </div>
         </motion.div>
       </motion.div>
