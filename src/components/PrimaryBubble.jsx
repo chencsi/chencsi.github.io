@@ -10,7 +10,6 @@ const Bubble = ({ children }) => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      console.log(scrollPosition)
       const isMobileView = window.innerWidth < 768;
       if (scrollPosition > 100 && !isMobileView) {
         setIsScrolled(true);

@@ -148,7 +148,7 @@ function Navigation({ onRouteChange, closeMenu }) {
           <div className="flex flex-col gap-4">
             <div className="flex justify-end items-center mb-8">
               <motion.button
-                className={`${theme === "dark" ? "hover:bg-white/10" : "hover:bg-zinc-400/20"} p-10 rounded-full`}
+                className={`${theme === "dark" ? "hover:bg-white/10" : "hover:bg-zinc-400/20"} m-5 p-5 rounded-full cursor-pointer`}
                 onClick={() => toggleOpen()}
               >
                 <X />
@@ -163,7 +163,7 @@ function Navigation({ onRouteChange, closeMenu }) {
                   onClick={() => {
                     handleClick(tab.path);
                   }}
-                  whileHover={{ scale: 1.1 }}
+                  whileHover={{ scale: 1.01 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   <p className="text-end">
