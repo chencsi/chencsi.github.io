@@ -18,7 +18,7 @@ const EducationBox = ({ education, theme }) => {
         </p>
       </div>
       <div
-        className={`${backgroundColor} flex flex-col gap-2 pt-4 px-4 rounded-2xl backdrop-blur-xl w-full shadow-xl z-10 sm:min-h-[200px]`}
+        className={`${backgroundColor} flex flex-col gap-1 sm:gap-2 pt-3 sm:pt-4 px-4 rounded-2xl backdrop-blur-xl w-full shadow-xl z-10 sm:min-h-[200px]`}
       >
         <h5 className={`${theme === "dark" ? "text-zinc-50" : "text-zinc-700"} text-lg sm:text-2xl font-bold`}>
           {education.h5}
@@ -52,7 +52,7 @@ function HomeEducation() {
   const firstBox = useTransform(scrollYProgress, [0, 1], ["0%", "-300%"]);
   const secondBox = useTransform(scrollYProgress, [0, 1], ["0%", "-100%"]);
 
-  const backgroundColor = theme === "dark" ? "bg-gradient-to-br from-zinc-800/80 to-zinc-900/80" : "bg-white/90";
+  const backgroundColor = theme === "dark" ? "bg-gradient-to-r from-slate-800 via-zinc-800 to-slate-800" : "bg-white/90";
 
   return (
     <section ref={ref} className="relative h-[500vh] md:h-[300vw] px-2 sm:p-5 md:p-10 rounded-4xl">
@@ -82,27 +82,27 @@ function HomeEducation() {
               const last = index === educations?.length - 1;
 
               return (
-                <>
-                  <div key={index} className={`flex ${even ? "flex-row" : "flex-row"} ${even && "justify-start"}`}>
-                    <div className={`flex ${!even ? "flex-col-reverse" : "flex-col"}`}>
-                      <div className="h-full" />
-                      <div className="grid grid-cols-3 grid-rows-[1fr_0fr_1fr] h-full items-center text-center">
-                        {
-                          !even &&
-                          <div className={`col-start-2 h-full w-2 mx-auto ${backgroundColor}`}></div>
-                        }
-                        <div className={`row-start-2 col-span-3 w-full h-2 ${backgroundColor} ${first && "rounded-l-full"} ${last && "rounded-r-full"}`}></div>
-                        {
-                          even &&
-                          <div className={`col-start-2 row-start-3 h-full w-2 mx-auto ${backgroundColor}`}></div>
-                        }
+                <div key={index} className={`flex ${even ? "flex-row" : "flex-row"} ${even && "justify-start"}`}>
+                  <div className={`flex ${!even ? "flex-col-reverse" : "flex-col"}`}>
+                    <div className="h-full" />
+                    <div className="grid grid-cols-3 grid-rows-[1fr_0fr_1fr] h-full items-center text-center">
+                      {
+                        !even &&
+                        <div className={`col-start-2 h-full w-2 mx-auto ${backgroundColor}`}></div>
+                      }
+                      <div className={`row-start-2 col-span-3 w-full h-2 relative ${backgroundColor} ${first && "rounded-l-full"} ${last && "rounded-r-full"}`}>
+                        <div className={`absolute w-6 h-6 rounded-full left-1/2 -translate-x-1/2 -translate-y-1/3 ${backgroundColor}`}></div>
                       </div>
-                      <div className="h-full max-w-sm sm:max-w-lg ">
-                        <EducationBox education={education} theme={theme} />
-                      </div>
+                      {
+                        even &&
+                        <div className={`col-start-2 row-start-3 h-full w-2 mx-auto ${backgroundColor}`}></div>
+                      }
+                    </div>
+                    <div className="h-full max-w-sm sm:max-w-lg ">
+                      <EducationBox education={education} theme={theme} />
                     </div>
                   </div>
-                </>
+                </div>
               );
             })}
           </div>

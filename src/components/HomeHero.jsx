@@ -10,7 +10,7 @@ function Hero() {
 		<section
 			className={`${theme === "dark" ? "bg-gradient-to-br from-zinc-800 to-zinc-900 text-zinc-100" : "bg-white text-zinc-700"} rounded-4xl shadow-xl flex sm:flex-row items-center flex-col-reverse justify-between gap-5 sm:gap-10 lg:gap-15 py-10 px-5 sm:py-15 sm:px-10 md:px-20 max-w-[600px] md:max-w-[800px] mx-auto`}
 		>
-			<div className="flex flex-col self-center text-center sm:text-left sm:gap-2">
+			<div className="flex flex-col self-center text-center sm:text-left gap-1 sm:gap-2">
 				<h1 className="sm:text-left text-4xl sm:text-4xl md:text-5xl font-bold">
 					{content?.h1}
 				</h1>
