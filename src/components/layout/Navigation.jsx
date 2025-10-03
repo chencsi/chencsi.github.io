@@ -10,7 +10,6 @@ function Navigation({ onRouteChange, closeMenu }) {
   const { theme, toggleTheme, lang, toggleLang } = useUI();
   const content = translations[lang]?.layout?.nav;
   const [selectedTab, setSelectedTab] = useState();
-  const [pendingPath, setPendingPath] = useState(null);
   const [isOpen, toggleOpen] = useCycle(false, true);
   const location = useLocation();
 
@@ -25,15 +24,12 @@ function Navigation({ onRouteChange, closeMenu }) {
   }, [closeMenu.menuOpen, isOpen, toggleOpen])
 
   const handleClick = (path) => {
-    if (!pendingPath) {
       setSelectedTab(path);
-      setPendingPath(path);
       window.scrollTo({
         top: 0,
         behavior: "smooth"
       });
       if (onRouteChange) onRouteChange(path);
-    }
   };
 
   const Logo = () => {
@@ -66,11 +62,6 @@ function Navigation({ onRouteChange, closeMenu }) {
           <motion.div
             layoutId="activeTab"
             transition={{ type: "spring", stiffness: 500, damping: 30 }}
-            onLayoutAnimationComplete={() => {
-              if (pendingPath) {
-                setPendingPath(null);
-              }
-            }}
             className={`${theme === "dark" ? "bg-white/10" : "bg-zinc-400/20"} rounded-full h-full w-full absolute top-0 left-0 z-10`}
           />
         )}
