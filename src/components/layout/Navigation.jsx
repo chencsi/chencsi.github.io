@@ -60,7 +60,7 @@ function Navigation({ onRouteChange, closeMenu }) {
 
   const NavItems = () => {
     return Array.isArray(content?.links) && content?.links.map((tab) => (
-      <p key={tab.path} className="py-3 px-3 relative cursor-pointer" onClick={() => handleClick(tab.path)}>
+      <div key={tab.path} className="py-3 px-3 relative cursor-pointer" onClick={() => handleClick(tab.path)}>
         <span className="z-20">{tab.name}</span>
         {selectedTab === tab.path && (
           <motion.div
@@ -74,7 +74,7 @@ function Navigation({ onRouteChange, closeMenu }) {
             className={`${theme === "dark" ? "bg-white/10" : "bg-zinc-400/20"} rounded-full h-full w-full absolute top-0 left-0 z-10`}
           />
         )}
-      </p>
+      </div>
     ));
   };
 

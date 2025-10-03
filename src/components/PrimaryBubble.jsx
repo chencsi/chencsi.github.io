@@ -28,7 +28,7 @@ const Bubble = ({ children }) => {
   }, []);
 
   return (
-    <motion.button
+    <motion.div
       initial={{ opacity: isScrolled ? 0.7 : 1 }}
       animate={{ opacity: isScrolled ? 0.7 : 1 }}
       whileHover={{ opacity: 1 }}
@@ -36,7 +36,7 @@ const Bubble = ({ children }) => {
       transition={{ duration: 0.4, ease: "easeInOut" }}
     >
       <div className={`${theme === "dark" ? "bg-gradient-to-br from-zinc-800/80 to-zinc-900/80 shadow-zinc-950/30" : "bg-white/50"} h-16 w-fit backdrop-blur-xl py-2 px-2 rounded-full flex flex-row items-center gap-1 shadow-xl`}>{children}</div>
-    </motion.button>
+    </motion.div>
   );
 }
 
