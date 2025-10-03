@@ -30,11 +30,9 @@ const PrimaryButtonBase = ({ children, theme }) => {
 const PrimaryButton = ({ children, link }) => {
   if (link !== undefined) {
     return (
-      <div>
-        <Link to={link}>
-          <PrimaryButtonBase>{children}</PrimaryButtonBase>
-        </Link>
-      </div>
+      <Link to={link}>
+        <PrimaryButtonBase>{children}</PrimaryButtonBase>
+      </Link>
     );
   }
   return <PrimaryButtonBase>{children}</PrimaryButtonBase>;
