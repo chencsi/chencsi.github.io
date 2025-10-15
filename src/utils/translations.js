@@ -116,7 +116,7 @@ const translations = {
         },
         form: {
           name: {
-            label: "Név",
+            label: "Név (opcionális)",
             placeholder: "Add meg a neved",
             required: "Név megadása kötelező"
           },
@@ -257,7 +257,7 @@ const translations = {
         },
         form: {
           name: {
-            label: "Name",
+            label: "Name (optional)",
             placeholder: "Enter your name",
             required: "Name is required"
           },

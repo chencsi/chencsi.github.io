@@ -24,7 +24,7 @@ const ContactForm = ({ content, theme }) => {
             id="name"
             className={inputClasses}
             placeholder={content?.name?.placeholder}
-            {...register("name", { required: true })}
+            {...register("name")}
           />
           {errors.name && <span className="text-red-500 text-sm">{content?.name?.required}</span>}
         </div>
