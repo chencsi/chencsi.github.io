@@ -34,10 +34,11 @@ function References() {
               <motion.div
                 key={reference.img}
                 className={`flex flex-col items-center ${index % 2 == 0 ? 'md:flex-row' : "md:flex-row-reverse"} gap-10`}
-                initial={{opacity: 0, y: 10}}
-                whileInView={{opacity:1, y: 0}}
-                transition={{delay: 0.2, type: "spring", }}
-                >
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2, type: "spring", }}
+              >
                 <img
                   src={reference.img}
                   alt={reference.h4}
