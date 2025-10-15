@@ -26,7 +26,7 @@ const ContactForm = ({ content }) => {
             placeholder={content?.name?.placeholder}
             {...register("name", { required: true })}
           />
-          {errors.name && <span className="text-red-500 text-sm">{content?.requiredField}</span>}
+          {errors.name && <span className="text-red-500 text-sm">{content?.name?.required}</span>}
         </div>
 
         <div className="flex flex-col space-y-2">
@@ -43,8 +43,8 @@ const ContactForm = ({ content }) => {
               pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i
             })}
           />
-          {errors.email?.type === "required" && <span className="text-red-500 text-sm">{content?.requiredField}</span>}
-          {errors.email?.type === "pattern" && <span className="text-red-500 text-sm">{content?.invalidEmail}</span>}
+          {errors.email?.type === "required" && <span className="text-red-500 text-sm">{content?.email?.required}</span>}
+          {errors.email?.type === "pattern" && <span className="text-red-500 text-sm">{content?.email?.invalid}</span>}
         </div>
 
         <div className="flex flex-col space-y-2">
@@ -59,7 +59,7 @@ const ContactForm = ({ content }) => {
               pattern: /^\+36[0-9]{8,9}$/
             })}
           />
-          {errors.phone?.type === "pattern" && <span className="text-red-500 text-sm">{content?.invalidPhone}</span>}
+          {errors.phone?.type === "pattern" && <span className="text-red-500 text-sm">{content?.phone?.invalid}</span>}
         </div>
 
         <div className="flex flex-col space-y-2">
@@ -72,7 +72,7 @@ const ContactForm = ({ content }) => {
             placeholder={content?.subject?.placeholder}
             {...register("subject", { required: true })}
           />
-          {errors.subject && <span className="text-red-500 text-sm">{content?.requiredField}</span>}
+          {errors.subject && <span className="text-red-500 text-sm">{content?.subject?.required}</span>}
         </div>
       </div>
 
@@ -87,9 +87,9 @@ const ContactForm = ({ content }) => {
           placeholder={content?.message?.placeholder}
           {...register("message", { required: true, minLength: 50, maxLength: 1000 })}
         ></textarea>
-        {errors.message?.type === "required" && <span className="text-red-500 text-sm">{content?.requiredField}</span>}
-        {errors.message?.type === "minLength" && <span className="text-red-500 text-sm">{content?.messageMinLength}</span>}
-        {errors.message?.type === "maxLength" && <span className="text-red-500 text-sm">{content?.messageMaxLength}</span>}
+        {errors.message?.type === "required" && <span className="text-red-500 text-sm">{content?.message?.required}</span>}
+        {errors.message?.type === "minLength" && <span className="text-red-500 text-sm">{content?.message?.minLength}</span>}
+        {errors.message?.type === "maxLength" && <span className="text-red-500 text-sm">{content?.message?.maxLength}</span>}
       </div>
 
       <button

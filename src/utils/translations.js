@@ -139,7 +139,9 @@ const translations = {
           message: {
             label: "Üzenet",
             placeholder: "Írd ide az üzeneted...",
-            required: "Üzenet megadása kötelező"
+            required: "Üzenet megadása kötelező",
+            minLength: "Az üzenetnek legalább 50 karakter hosszúságúnak kell lennie",
+            maxLength: "Az üzenet maximum 1000 karakter hosszú lehet"
           },
           send: "Küldés",
           success: "Köszönöm az üzenetet! Amint engedi az időm, megnézem és válaszolok rá!",
@@ -278,7 +280,9 @@ const translations = {
           message: {
             label: "Message",
             placeholder: "Write your message here...",
-            required: "Message is required"
+            required: "Message is required",
+            minLength: "Message must be at least 50 characters long",
+            maxLength: "Message cannot be longer than 1000 characters"
           },
           send: "Send",
           success: "Thank you for your message! I will check it and respond as soon as I can!",
