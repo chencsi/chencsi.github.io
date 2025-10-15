@@ -19,11 +19,11 @@ const Contact = () => {
               title={content?.h3}
               icon={Send}
             />
-            <p className="text-center text-zinc-300">Bármilyen kérdésed merülne fel velem kapcsolatban, az alábbi form segítségével, esetleg az alatta található elérhetőségeimen tudsz elérni engem.</p>
-            <ContactForm content={content} />
-            <div className="grid grid-cols-2 gap-5">
+            <p className="text-center text-zinc-300">{content?.p}</p>
+            <ContactForm content={content?.form} />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div className="space-y-5 p-5">
-                <h3 className="font-black text-3xl">Elérhetőségeim:</h3>
+                <h4 className="font-black text-3xl">{content?.section1?.h4}</h4>
                 <div className="flex flex-row gap-3">
                   <Mail />
                   <a href="mailto:chen.kevin05@icloud.com" className="hover:text-blue-500 transition-[color]">chen.kevin05@icloud.com</a>
@@ -38,7 +38,7 @@ const Contact = () => {
                 </div>
               </div>
               <div className="space-y-5 p-5">
-                <h3 className="font-black text-3xl">Önéletrajzom:</h3>
+                <h4 className="font-black text-3xl">{content?.section2?.h4}</h4>
                 <div className="flex flex-row gap-5 select-none">
                   <motion.div
                     whileHover={{
@@ -53,9 +53,9 @@ const Contact = () => {
                       backgroundColor: "#fafafa"
                     }}
                     whileTap={{ scale: 0.995, color: "#27272a", backgroundColor: "#fafafa" }}
-                    className="border-2 w-fit p-2 rounded-2xl cursor-pointer flex flex-col gap-2 items-center">
+                    className="border-2 p-2 rounded-2xl cursor-pointer flex flex-col gap-2 items-center w-[8rem]">
                     <File />
-                    <p>Letöltés</p>
+                    <p>{content?.section2?.item1}</p>
                   </motion.div>
                   <motion.div
                     whileHover={{
@@ -70,9 +70,9 @@ const Contact = () => {
                       backgroundColor: "#fafafa"
                     }}
                     whileTap={{ scale: 0.995, color: "#27272a", backgroundColor: "#fafafa" }}
-                    className="border-2 w-fit p-2 rounded-2xl cursor-pointer flex flex-col gap-2 items-center">
+                    className="border-2 p-2 rounded-2xl cursor-pointer flex flex-col gap-2 items-center w-[8rem]">
                     <View />
-                    <p>Megtekintés</p>
+                    <p>{content?.section2?.item2}</p>
                   </motion.div>
                 </div>
               </div>

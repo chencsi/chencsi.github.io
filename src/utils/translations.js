@@ -4,6 +4,15 @@ import { navigationPaths } from "./navigationPaths";
 
 const sinceYear = new Date().getFullYear() - 2019;
 
+const contactDatas = {
+  email: "chen.kevin05@icloud.com",
+  phone: "+36 70 431 0339",
+  linkedin: {
+    text: "linkedin.com/chencsi",
+    href: "https://www.linkedin.com/in/chencsi/"
+  }
+}
+
 const translations = {
   hu: {
     layout: {
@@ -93,6 +102,49 @@ const translations = {
       },
       contact: {
         h3: "Kapcsolat",
+        p: "Bármilyen kérdésed merülne fel velem kapcsolatban, az alábbi form segítségével, esetleg az alatta található elérhetőségeimen tudsz elérni engem.",
+        section1: {
+          h4: "Elérhetőségeim:",
+          mail: contactDatas.email,
+          phone: contactDatas.phone,
+          linekdin: contactDatas.linkedin,
+        },
+        section2: {
+          h4: "Önéletrajzom:",
+          item1: "Letöltés",
+          item2: "Megtekintés",
+        },
+        form: {
+          name: {
+            label: "Név",
+            placeholder: "Add meg a neved",
+            required: "Név megadása kötelező"
+          },
+          email: {
+            label: "Email",
+            placeholder: "Add meg az email címed",
+            required: "Email cím megadása kötelező",
+            invalid: "Kérlek adj meg egy érvényes email címet"
+          },
+          phone: {
+            label: "Telefon (opcionális)",
+            placeholder: "Add meg a telefonszámod",
+            invalid: "Kérlek adj meg egy érvényes telefonszámot"
+          },
+          subject: {
+            label: "Tárgy",
+            placeholder: "Add meg az üzenet tárgyát",
+            required: "Tárgy megadása kötelező"
+          },
+          message: {
+            label: "Üzenet",
+            placeholder: "Írd ide az üzeneted...",
+            required: "Üzenet megadása kötelező"
+          },
+          send: "Küldés",
+          success: "Köszönöm az üzenetet! Amint engedi az időm, megnézem és válaszolok rá!",
+          error: "Hiba történt az üzenet küldése során. Kérjük, próbáld újra később."
+        }
       },
       notfound: {
         h1: "Hoppá!",
@@ -189,6 +241,49 @@ const translations = {
       },
       contact: {
         h3: "Contact",
+        p: "If you have any questions about me, you can reach me using the form below or through my contact information.",
+        section1: {
+          h4: "My Contact Information:",
+          mail: contactDatas.email,
+          phone: contactDatas.phone,
+          linekdin: contactDatas.linkedin,
+        },
+        section2: {
+          h4: "My Resume:",
+          item1: "Download",
+          item2: "Quick view",
+        },
+        form: {
+          name: {
+            label: "Name",
+            placeholder: "Enter your name",
+            required: "Name is required"
+          },
+          email: {
+            label: "Email",
+            placeholder: "Enter your email address",
+            required: "Email address is required",
+            invalid: "Please enter a valid email address"
+          },
+          phone: {
+            label: "Phone (optional)",
+            placeholder: "Enter your phone number",
+            invalid: "Please enter a valid phone number"
+          },
+          subject: {
+            label: "Subject",
+            placeholder: "Enter the subject of your message",
+            required: "Subject is required"
+          },
+          message: {
+            label: "Message",
+            placeholder: "Write your message here...",
+            required: "Message is required"
+          },
+          send: "Send",
+          success: "Thank you for your message! I will check it and respond as soon as I can!",
+          error: "An error occurred while sending the message. Please try again later."
+        }
       },
       notfound: {
         h1: "Oops!",
