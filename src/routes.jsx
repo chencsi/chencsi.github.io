@@ -19,7 +19,7 @@ export const routers = createHashRouter([
         element: <References />
       },
       {
-        path: "contact",
+        path: "/contact",
         element: <Contact />
       },
 			{
