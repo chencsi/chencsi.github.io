@@ -19,8 +19,8 @@ const Contact = () => {
               title={content?.h3}
               icon={Send}
             />
-            <p className="text-center text-zinc-300">{content?.p}</p>
-            <ContactForm content={content?.form} />
+            <p className={`${theme === "dark" ? "text-zinc-300" : "text-zinc-700"} text-center`}>{content?.p}</p>
+            <ContactForm content={content?.form} theme={theme} />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div className="space-y-5 p-5">
                 <h4 className="font-black text-3xl">{content?.section1?.h4}</h4>
@@ -46,14 +46,10 @@ const Contact = () => {
                       transition: {
                         type: "spring",
                         stiffness: 300,
-                        backgroundColor: true,
-                        color: true
                       },
-                      color: "#27272a",
-                      backgroundColor: "#fafafa"
                     }}
-                    whileTap={{ scale: 0.995, color: "#27272a", backgroundColor: "#fafafa" }}
-                    className="border-2 p-2 rounded-2xl cursor-pointer flex flex-col gap-2 items-center w-[8rem]">
+                    whileTap={{ scale: 0.995 }}
+                    className={`border-2 p-2 rounded-2xl cursor-pointer flex flex-col gap-2 items-center w-[8rem] transition-colors duration-300 ${theme === "dark" ? "hover:text-zinc-800 hover:bg-zinc-50" : "hover:text-zinc-50 hover:bg-zinc-800"}`}>
                     <File />
                     <p>{content?.section2?.item1}</p>
                   </motion.div>
@@ -63,14 +59,10 @@ const Contact = () => {
                       transition: {
                         type: "spring",
                         stiffness: 300,
-                        backgroundColor: true,
-                        color: true
                       },
-                      color: "#27272a",
-                      backgroundColor: "#fafafa"
                     }}
-                    whileTap={{ scale: 0.995, color: "#27272a", backgroundColor: "#fafafa" }}
-                    className="border-2 p-2 rounded-2xl cursor-pointer flex flex-col gap-2 items-center w-[8rem]">
+                    whileTap={{ scale: 0.995 }}
+                    className={`border-2 p-2 rounded-2xl cursor-pointer flex flex-col gap-2 items-center w-[8rem] transition-colors duration-300 ${theme === "dark" ? "hover:text-zinc-800 hover:bg-zinc-50" : "hover:text-zinc-50 hover:bg-zinc-800"}`}>
                     <View />
                     <p>{content?.section2?.item2}</p>
                   </motion.div>

@@ -253,7 +253,7 @@ const translations = {
         section2: {
           h4: "My Resume:",
           item1: "Download",
-          item2: "Quick view",
+          item2: "Quick View",
         },
         form: {
           name: {

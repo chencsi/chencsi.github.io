@@ -1,14 +1,14 @@
 import { Send } from "lucide-react";
 import { useForm } from "react-hook-form"
 
-const ContactForm = ({ content }) => {
+const ContactForm = ({ content, theme }) => {
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm()
-  const inputClasses = "px-4 py-2 bg-zinc-800 border border-zinc-700 shadow-lg rounded-lg focus:outline-none";
+  const inputClasses = `${theme === "dark" ? "bg-zinc-800 border-zinc-700  shadow-lg" : "bg-zinc-100 border-zinc-200 shadow"} px-4 py-2 border rounded-lg focus:outline-none`;
   const labelClasses = "font-semibold text-lg"
 
   const onSubmit = (data) => console.log(data)
