@@ -116,8 +116,8 @@ const translations = {
         },
         form: {
           name: {
-            label: "Név (opcionális)",
-            placeholder: "Add meg a neved",
+            label: "Név",
+            placeholder: "Add meg a neved (opcionális)",
             required: "Név megadása kötelező"
           },
           email: {
@@ -127,9 +127,9 @@ const translations = {
             invalid: "Kérlek adj meg egy érvényes email címet"
           },
           phone: {
-            label: "Telefon (opcionális)",
-            placeholder: "Add meg a telefonszámod",
-            invalid: "Kérlek adj meg egy érvényes telefonszámot"
+            label: "Telefon",
+            placeholder: "Add meg a telefonszámod  (opcionális)",
+            invalid: "A következő formátumban add meg a telefonszámod: +361234567"
           },
           subject: {
             label: "Tárgy",
@@ -144,8 +144,10 @@ const translations = {
             maxLength: "Az üzenet maximum 1000 karakter hosszú lehet"
           },
           send: "Küldés",
-          success: "Köszönöm az üzenetet! Amint engedi az időm, megnézem és válaszolok rá!",
-          error: "Hiba történt az üzenet küldése során. Kérjük, próbáld újra később."
+          sent: "Köszönöm az üzenetet! Amint engedi az időm, megnézem és válaszolok rá!",
+          loading: "Folyamatban",
+          success: "Sikeres",
+          error: "Hiba történt"
         }
       },
       notfound: {
@@ -257,8 +259,8 @@ const translations = {
         },
         form: {
           name: {
-            label: "Name (optional)",
-            placeholder: "Enter your name",
+            label: "Name",
+            placeholder: "Enter your name (optional)",
             required: "Name is required"
           },
           email: {
@@ -268,9 +270,9 @@ const translations = {
             invalid: "Please enter a valid email address"
           },
           phone: {
-            label: "Phone (optional)",
-            placeholder: "Enter your phone number",
-            invalid: "Please enter a valid phone number"
+            label: "Phone",
+            placeholder: "Enter your phone number (optional)",
+            invalid: "Enter your phone number in the following format: +361234567"
           },
           subject: {
             label: "Subject",
@@ -285,8 +287,11 @@ const translations = {
             maxLength: "Message cannot be longer than 1000 characters"
           },
           send: "Send",
-          success: "Thank you for your message! I will check it and respond as soon as I can!",
-          error: "An error occurred while sending the message. Please try again later."
+          sent: "Thank you for your message! I will check it and respond as soon as I can!",
+          loading: "In progress",
+          success: "Success",
+          error: "Something went wrong"
+          
         }
       },
       notfound: {
