@@ -9,8 +9,9 @@ const contactDatas = {
   phone: "+36 70 431 0339",
   linkedin: {
     text: "linkedin.com/chencsi",
-    href: "https://www.linkedin.com/in/chencsi/"
-  }
+    href: "https://www.linkedin.com/in/chencsi/",
+  },
+  github: "https://github.com/chencsi/"
 }
 
 const translations = {
@@ -23,7 +24,15 @@ const translations = {
           { name: "Kapcsolat", path: navigationPaths.contact }
         ]
       },
-      footer: "Kód és design: Kevin Chen 💙 · © 2025"
+      footer: {
+        links: {
+          linkedin: contactDatas.linkedin.href,
+          github: contactDatas.github
+        },
+        pages: "Oldalak",
+        further: "További linkek",
+        p: "Kód és design: Kevin Chen 💙 · © 2025"
+      }
     },
     pages: {
       home: {
@@ -166,7 +175,15 @@ const translations = {
           { name: "Contact", path: navigationPaths.contact }
         ]
       },
-      footer: "Code and design: Kevin Chen 💙 · © 2025"
+      footer: {
+        links: {
+          linkedin: contactDatas.linkedin.href,
+          github: contactDatas.github
+        },
+        pages: "Pages",
+        further: "Further links",
+        p: "Code and design: Kevin Chen 💙 · © 2025"
+      }
     },
     pages: {
       home: {
@@ -291,7 +308,7 @@ const translations = {
           loading: "In progress",
           success: "Success",
           error: "Something went wrong"
-          
+
         }
       },
       notfound: {
