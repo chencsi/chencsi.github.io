@@ -1,6 +1,6 @@
-import useUI from "../hooks/useUI";
-import translations from "../utils/translations";
-import PrimrayButton from "./PrimaryButton";
+import useUI from "../../hooks/useUI";
+import translations from "../../utils/translations";
+import PrimrayButton from "../Elements/PrimaryButton";
 
 function Hero() {
 	const { theme, lang } = useUI();

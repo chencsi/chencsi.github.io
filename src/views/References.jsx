@@ -1,7 +1,7 @@
 import { FolderKanban, Link } from "lucide-react";
 import useUI from "../hooks/useUI";
-import PrimaryContainer from "../components/PrimaryContainer";
-import PrimaryBadgeTitle from "../components/PrimaryBadgeTitle";
+import PrimaryContainer from "../components/Elements/PrimaryContainer";
+import PrimaryBadgeTitle from "../components/Elements/PrimaryBadgeTitle";
 import translations from "../utils/translations";
 import { useState, useRef } from "react";
 import { motion, useDomEvent, AnimatePresence } from "framer-motion";

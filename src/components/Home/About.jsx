@@ -1,8 +1,8 @@
-import translations from "../utils/translations";
-import useUI from "../hooks/useUI";
+import translations from "../../utils/translations";
+import useUI from "../../hooks/useUI";
 import { User } from "lucide-react";
-import PrimaryContainer from "./PrimaryContainer";
-import PrimaryBadgeTitle from "./PrimaryBadgeTitle";
+import PrimaryContainer from "../Elements/PrimaryContainer";
+import PrimaryBadgeTitle from "../Elements/PrimaryBadgeTitle";
 
 function HomeAbout() {
   const { theme, lang } = useUI();

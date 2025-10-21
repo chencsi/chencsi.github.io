@@ -1,4 +1,4 @@
-import PrimaryButton from "../components/PrimaryButton";
+import PrimaryButton from "../components/Elements/PrimaryButton";
 import useUI from "../hooks/useUI";
 import translations from "../utils/translations";
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, scale } from "framer-motion"
-import useUI from "../hooks/useUI";
+import useUI from "../../hooks/useUI";
 
 const Bubble = ({ children }) => {
   const { theme } = useUI();

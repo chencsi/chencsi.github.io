@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import translations from "../../utils/translations";
 import { motion, useCycle } from "framer-motion"
 import { Menu, Moon, Sun, X } from "lucide-react";
-import Bubble from "../PrimaryBubble";
+import Bubble from "../Elements/PrimaryBubble";
 
 function Navigation({ onRouteChange, closeMenu }) {
   const { theme, toggleTheme, lang, toggleLang } = useUI();

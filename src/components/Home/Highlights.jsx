@@ -1,7 +1,7 @@
-import useUI from "../hooks/useUI";
+import useUI from "../../hooks/useUI";
 import { TabletSmartphone, Code, LayoutDashboard } from "lucide-react";
-import translations from "../utils/translations";
-import HighlightTemplate from "./HighlightTemplate";
+import translations from "../../utils/translations";
+import HighlightTemplate from "../HighlightTemplate";
 import {motion} from "framer-motion";
 
 function Highlights() {

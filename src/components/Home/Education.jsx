@@ -1,6 +1,6 @@
 import { Book, Braces } from "lucide-react";
-import useUI from "../hooks/useUI";
-import translations from "../utils/translations";
+import useUI from "../../hooks/useUI";
+import translations from "../../utils/translations";
 import { motion, spring, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 

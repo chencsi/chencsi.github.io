@@ -1,10 +1,10 @@
 import { File, Linkedin, Mail, Phone, Send, View, X } from "lucide-react";
-import PrimaryBadgeTitle from "../components/PrimaryBadgeTitle";
-import PrimaryContainer from "../components/PrimaryContainer";
+import PrimaryBadgeTitle from "../components/Elements/PrimaryBadgeTitle";
+import PrimaryContainer from "../components/Elements/PrimaryContainer";
 import useUI from "../hooks/useUI";
 import translations from "../utils/translations";
 import { motion } from "framer-motion";
-import ContactForm from "../components/ContactForm";
+import ContactForm from "../components/Contact/ContactForm";
 import { useEffect, useState } from "react";
 
 const Contact = () => {
