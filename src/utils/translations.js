@@ -143,7 +143,7 @@ const translations = {
           phone: {
             label: "Telefon",
             placeholder: "Add meg a telefonszámod  (opcionális)",
-            invalid: "A következő formátumban add meg a telefonszámod: +361234567"
+            invalid: "A következő formátumban add meg: +36 30 123 4567"
           },
           subject: {
             label: "Tárgy",
@@ -299,7 +299,7 @@ const translations = {
           phone: {
             label: "Phone",
             placeholder: "Enter your phone number (optional)",
-            invalid: "Enter your phone number in the following format: +361234567"
+            invalid: "Please enter the following format: +36 30 123 4567"
           },
           subject: {
             label: "Subject",
