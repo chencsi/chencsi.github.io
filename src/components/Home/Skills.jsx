@@ -27,13 +27,13 @@ const ProgressBar = ({ skill, index }) => {
   }
 
   return (
-    <div key={skill.id} className="mb-6">
+    <div className="mb-6">
       <p className="font-bold" id={`skill-${skill.id}-label`}>
         {typeof skill.name === 'object' ? skill.name[lang] : skill.name}
       </p>
 
       <div
-        className="relative w-full bg-zinc-300/30 mt-1 rounded-full h-10 overflow-hidden"
+        className="relative w-full bg-zinc-300/30 mt-1 rounded-full h-10 overflow-hidden shadow"
         role="progressbar"
         aria-labelledby={`skill-${skill.id}-label`}
         aria-valuenow={skill.value ?? 0}
@@ -91,10 +91,10 @@ const HomeSkills = () => {
       >
         <div className="space-y-5">
           <h4 className="font-black uppercase text-center text-2xl">{content?.coding}</h4>
-          <div className="rounded-xl border border-zinc-500/30 p-5 max-w-xl mx-auto lg:mx-none">
+          <div className="rounded-xl border border-zinc-400/30 p-5 max-w-xl mx-auto lg:mx-none">
             <div className="space-y-3">
               {skills?.coding.slice().sort((a, b) => b.value - a.value).map((skill, index) => (
-                <ProgressBar index={index} skill={skill} />
+                <ProgressBar key={skill.id} index={index} skill={skill} />
               ))}
             </div>
           </div>
@@ -104,7 +104,7 @@ const HomeSkills = () => {
           <div className="rounded-xl border border-zinc-500/30 p-5 max-w-xl mx-auto lg:mx-none">
             <div className="space-y-3">
               {skills?.professional.slice().sort((a, b) => b.value - a.value).map((skill, index) => (
-                <ProgressBar index={index} skill={skill} />
+                <ProgressBar key={skill.id} index={index} skill={skill} />
               ))}
             </div>
           </div>
