@@ -62,6 +62,11 @@ const translations = {
           p1: `${sinceYear} éve kezdtem el foglalkozni programozással, azonban a programozás iránti érdeklődésem egészen általános iskolás koromra nyúlik vissza. Azóta több programozási nyelvvel és iránnyal találkoztam, de végül a webfejlesztés nőtt a szívemhez. Egy szoftverfejlesztő és -tesztelő technikusi képzést végeztem el, most pedig az első évem töltöm egyetemen mérnökinformatikus képzésen. Eddig számos iskolai és saját projektben vettem részt, ezekre pontosabban a <a href="/references" class="text-blue-400 hover:underline font-semibold">referenciáknál</a> térek ki.`,
           p2: "Célom, hogy felhasználóbarát weboldalakat és webalkalmazásokat építsek, amik valós problémákra találnak megoldást. Folyamatosan naprakészen tartom a tudástáram, hogy a legújabb technológiákat használjam.",
         },
+        skills: {
+          h3: "Kiemelendő készségeim",
+          coding: "Programozási készségek",
+          professional: "Extra készségek"
+        },
         education: {
           h3: "Tanulmányaim",
           p: "A eddigi tudásom megszerzésében nagy szerepet játszott az oktatás amit kaptam az iskolában, azonban sok időt fordítottam mellette az önfejlesztésre, hogy megismerjem a modern és korszerű megoldásokat.",
@@ -212,6 +217,11 @@ const translations = {
           h3: "About me",
           p1: `I started programming ${sinceYear} years ago, but my interest in programming goes back to my elementary school years. Since then, I have learned many programming languages, but I fell in love with web development. I finished a software developer and tester course, and now I'm in my first year at university studying computer engineering. I have worked on many school and personal projects, which you can see in the <a href="/references" class="text-blue-400 hover:underline font-semibold">references</a> section.`,
           p2: "My goal is to build user-friendly websites and web applications that solve real problems. I keep my knowledge up-to-date to use the newest technologies.",
+        },
+        skills: {
+          h3: "My Highlighted Skills",
+          coding: "Coding Skills",
+          professional: "Extra Skills"
         },
         education: {
           h3: "My Education",
