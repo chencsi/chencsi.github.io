@@ -5,6 +5,7 @@ import translations from "../../utils/translations";
 import { motion, useCycle } from "framer-motion"
 import { Menu, Moon, Sun, X } from "lucide-react";
 import Bubble from "../Elements/PrimaryBubble";
+import { smoothScrollToTop } from "../../utils/smoothScrollToTop";
 
 function Navigation({ onRouteChange, closeMenu }) {
   const { theme, toggleTheme, lang, toggleLang } = useUI();
@@ -24,12 +25,10 @@ function Navigation({ onRouteChange, closeMenu }) {
   }, [closeMenu.menuOpen, isOpen, toggleOpen])
 
   const handleClick = (path) => {
-      setSelectedTab(path);
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
+    setSelectedTab(path);
+    smoothScrollToTop().then(() => {
       if (onRouteChange) onRouteChange(path);
+    });
   };
 
   const Logo = () => {
@@ -42,7 +41,7 @@ function Navigation({ onRouteChange, closeMenu }) {
               handleClick("/");
             }
           }}
-          >
+        >
           <span className="bg-clip-text text-transparent bg-gradient-to-br from-blue-500 to-indigo-500 text-4xl">
             K
           </span>
