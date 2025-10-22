@@ -7,7 +7,7 @@ import HomeSkills from "../components/Home/Skills";
 function Home() {
   return (
     <div className="h-full flex flex-col gap-y-24 md:gap-y-34">
-      <div className="px-10">
+      <div className="px-5 sm:px-10">
         <HomeHero />
       </div>
       <div className="px-5">

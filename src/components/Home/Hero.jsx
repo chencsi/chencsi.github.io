@@ -8,19 +8,19 @@ function Hero() {
 
 	return (
 		<section
-			className={`${theme === "dark" ? "bg-gradient-to-br from-zinc-800 to-zinc-900 text-zinc-100" : "bg-white text-zinc-700"} rounded-4xl shadow-xl flex sm:flex-row items-center flex-col-reverse justify-between gap-5 sm:gap-10 lg:gap-15 py-10 px-5 sm:py-15 sm:px-10 md:px-20 max-w-[600px] md:max-w-[800px] mx-auto`}
+			className={`${theme === "dark" ? "bg-gradient-to-br from-zinc-800 to-zinc-900 text-zinc-100" : "bg-white text-zinc-700"} rounded-4xl shadow-xl flex sm:flex-row items-center flex-col-reverse justify-between gap-y-5 sm:gap-10 lg:gap-y-15 py-10 px-3 sm:py-15 sm:px-10 md:px-15 max-w-[600px] md:max-w-[800px] lg:max-w-[900px] mx-auto`}
 		>
 			<div className="flex flex-col self-center text-center sm:text-left gap-1 sm:gap-2">
-				<h1 className="sm:text-left text-4xl sm:text-4xl md:text-5xl font-bold">
-					{content?.h1}
+				<h1 className="sm:text-left text-5xl sm:text-5xl md:text-5xl lg:text-7xl font-black">
+					<span className="text-6xl sm:text-6xl md:text-6xl lg:text-8xl bg-clip-text text-transparent bg-gradient-to-br from-blue-500 to-indigo-500">K</span>evin Chen
 				</h1>
 				<h2
-					className={`${theme === "dark" ? "text-zinc-300" : "text-zinc-700"} text-xl text-md`}
+					className={`${theme === "dark" ? "text-zinc-300" : "text-zinc-700"} text-lg md:text-xl`}
 				>
 					{content?.h2}
 				</h2>
 				<p
-					className={`${theme === "dark" ? "text-zinc-300" : "text-zinc-600"} text-sm leading-relaxed`}
+					className={`${theme === "dark" ? "text-zinc-300" : "text-zinc-600"} md:text-lg leading-relaxed`}
 				>
 					{content?.p}
 				</p>

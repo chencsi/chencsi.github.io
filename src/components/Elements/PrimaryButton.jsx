@@ -5,7 +5,7 @@ const PrimaryButtonBase = ({ children, theme }) => {
   return (
     <motion.button
       type="button"
-      className="mt-2 bg-gradient-to-br from-blue-500 to-indigo-500 px-5 py-1 rounded-lg text-lg text-zinc-50 cursor-pointer"
+      className="mt-2 bg-gradient-to-br from-blue-500 to-indigo-500 px-5 py-1 rounded-lg text-lg text-zinc-50 cursor-pointer font-semibold"
       style={{
         transition: "all 0.2s",
       }}
