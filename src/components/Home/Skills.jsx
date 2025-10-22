@@ -110,7 +110,7 @@ const HomeSkills = () => {
           </div>
         </div>
       </div>
-      <div className="max-w-sm sm:max-w-lg lg:max-w-[1000px] mx-auto flex flex-row justify-end">
+      <div className="max-w-[250px] sm:max-w-lg lg:max-w-[1000px] mx-auto flex flex-row justify-end">
         <Link
           to="/references"
           onClick={scrollToTop}
