@@ -20,6 +20,7 @@ const translations = {
       nav: {
         links: [
           { name: "Kezdőlap", path: navigationPaths.home },
+          { name: "Tanulmányok", path: navigationPaths.education },
           { name: "Referenciák", path: navigationPaths.references },
           { name: "Kapcsolat", path: navigationPaths.contact }
         ]
@@ -65,7 +66,8 @@ const translations = {
         skills: {
           h3: "Kiemelendő készségeim",
           coding: "Programozási készségek",
-          professional: "Extra készségek"
+          professional: "Extra készségek",
+          jumpToReferences: "Tovább a referenciákhoz"
         },
         education: {
           h3: "Tanulmányaim",
@@ -176,6 +178,7 @@ const translations = {
       nav: {
         links: [
           { name: "Home", path: navigationPaths.home },
+          { name: "Education", path: navigationPaths.education },
           { name: "References", path: navigationPaths.references },
           { name: "Contact", path: navigationPaths.contact }
         ]
@@ -221,7 +224,9 @@ const translations = {
         skills: {
           h3: "My Highlighted Skills",
           coding: "Coding Skills",
-          professional: "Extra Skills"
+          professional: "Extra Skills",
+          jumpToReferences: "Jump to references"
+
         },
         education: {
           h3: "My Education",

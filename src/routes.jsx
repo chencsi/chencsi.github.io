@@ -4,6 +4,7 @@ import Layout from "./components/Layout";
 import NotFound from "./views/NotFound";
 import References from "./views/References";
 import Contact from "./views/Contact";
+import HomeEducation from "./components/Home/Education";
 
 export const routers = createHashRouter([
 	{
@@ -21,6 +22,10 @@ export const routers = createHashRouter([
       {
         path: "/contact",
         element: <Contact />
+      },
+      {
+        path: "/education",
+        element: <HomeEducation />
       },
 			{
 				path: "*",

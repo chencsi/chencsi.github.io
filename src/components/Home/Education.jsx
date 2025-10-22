@@ -55,7 +55,7 @@ function HomeEducation() {
   const backgroundColor = theme === "dark" ? "bg-gradient-to-r from-slate-800 via-zinc-800 to-slate-800" : "bg-white/90";
 
   return (
-    <section ref={ref} className="relative h-[500vh] md:h-[300vw] px-2 sm:p-5 md:p-10 rounded-4xl">
+    <section ref={ref} className="relative h-[500vh] md:h-[300vw] px-2 rounded-4xl">
       <motion.div
         className="sticky top-26 sm:top-30 h-[36rem] sm:h-[40rem] max-w-[1400px] rounded-3xl shadow-xl mx-auto overflow-hidden bg-gradient-to-br from-blue-500 to-indigo-500 flex flex-row gap-x-65 sm:gap-x-5"
         transition={{ duration: 1, delay: 1, type: "spring" }}

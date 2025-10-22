@@ -115,7 +115,7 @@ const HomeSkills = () => {
           to="/references"
           onClick={scrollToTop}
           className="text-blue-400 hover:text-blue-500 transition-[color] duration-300 flex">
-          <span>Tovább a referenciákhoz</span>
+          <span>{content?.jumpToReferences}</span>
           <ArrowRight size="26" />
         </Link>
       </div>

@@ -15,7 +15,6 @@ function Home() {
       </div>
       <HomeAbout />
       <HomeSkills />
-      <HomeEducation />
     </div>
   );
 }
