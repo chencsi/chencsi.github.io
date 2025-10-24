@@ -16,6 +16,15 @@ const contactDatas = {
 
 const translations = {
   hu: {
+    time: {
+      year: "év",
+      month: "hónap",
+      week: "hét",
+      day: "nap",
+      hour: "óra",
+      minute: "perc",
+      second: "másodperc"
+    },
     layout: {
       nav: {
         links: [
@@ -174,6 +183,15 @@ const translations = {
     },
   },
   en: {
+    time: {
+      year: "year",
+      month: "month",
+      week: "week",
+      day: "day",
+      hour: "hour",
+      minute: "minute",
+      second: "second"
+    },
     layout: {
       nav: {
         links: [

@@ -7,23 +7,34 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const ProgressBar = ({ skill, index }) => {
-  const { theme, lang } = useUI();
+  const { lang } = useUI();
+  const content = translations[lang];
 
   function formatExperienceYears(years) {
     if (years == null) return '';
+
     const totalMonths = Math.round(years * 12);
-    if (totalMonths <= 0) return 'kezdő';
+    if (totalMonths <= 0) return lang === 'hu' ? 'kezdő' : 'beginner';
+
+    const yearLabel = content?.time?.year;
+    const monthLabel = content?.time?.month;
+
     if (totalMonths < 6) {
-      return `${totalMonths} hónap`;
+      return `${totalMonths} ${monthLabel}${lang === 'en' && totalMonths !== 1 ? 's' : ''}`;
     }
+
     const yearsWhole = Math.floor(totalMonths / 12);
     const months = totalMonths % 12;
+
     if (yearsWhole === 0) {
-      return months === 6 ? '6 hónap' : `${months} hónap`;
+      return `${months} ${monthLabel}${lang === 'en' && months !== 1 ? 's' : ''}`;
     }
-    if (months === 0) return `${yearsWhole} év`;
-    if (months === 6) return `${yearsWhole} év 6 hónap`;
-    return `${yearsWhole} év ${months} hónap`;
+
+    if (months === 0) {
+      return `${yearsWhole} ${yearLabel}${lang === 'en' && yearsWhole !== 1 ? 's' : ''}`;
+    }
+
+    return `${yearsWhole} ${yearLabel}${lang === 'en' && yearsWhole !== 1 ? 's' : ''} ${months} ${monthLabel}${lang === 'en' && months !== 1 ? 's' : ''}`;
   }
 
   return (
