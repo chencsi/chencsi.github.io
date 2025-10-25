@@ -2,7 +2,7 @@ import useUI from "../../hooks/useUI";
 import { TabletSmartphone, Code, LayoutDashboard } from "lucide-react";
 import translations from "../../utils/translations";
 import HighlightTemplate from "../HighlightTemplate";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 
 function Highlights() {
   const { theme, lang } = useUI();
@@ -20,6 +20,7 @@ function Highlights() {
       {content?.map((item, index) => {
         return (
           <motion.div
+            className="max-w-[200px]"
             key={index}
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
