@@ -1,5 +1,4 @@
 import About from "../components/Home/About";
-import Education from "../components/Home/Education";
 import Hero from "../components/Home/Hero";
 import Highlights from "../components/Home/Highlights";
 import Skills from "../components/Home/Skills";
