@@ -90,6 +90,7 @@ const HomeSkills = () => {
       className="space-y-10 py-10"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
       transition={{ delay: 0.3, duration: 0.5, staggerChildren: 0.1 }}
 
     >
