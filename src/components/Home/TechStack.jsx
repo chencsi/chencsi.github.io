@@ -1,71 +1,52 @@
 import { Layers } from "lucide-react";
 import useUI from "../../hooks/useUI";
 import { motion } from "framer-motion";
+import translations from "../../utils/translations";
 import PrimaryBadgeTitle from "../Elements/PrimaryBadgeTitle";
+import { techStackTools } from "../../utils/techStack";
 
 const TechStack = () => {
   const { theme, lang } = useUI();
-
-  const techStackTools = [
-    {
-      id: 1,
-      icon: '💻',
-      name: 'VS Code',
-      description: 'My primary code editor with custom extensions and themes for optimal productivity',
-      tags: ['Editor', 'Daily']
-    },
-    {
-      id: 2,
-      icon: '🎨',
-      name: 'Figma',
-      description: 'Design and prototype user interfaces before diving into code',
-      tags: ['Design', 'UI/UX']
-    },
-    {
-      id: 3,
-      icon: '🔀',
-      name: 'Git & GitHub',
-      description: 'Version control and collaboration platform for all my projects',
-      tags: ['VCS', 'Essential']
-    },
-    {
-      id: 4,
-      icon: '⚡',
-      name: 'Vite',
-      description: 'Lightning-fast build tool for modern web development workflows',
-      tags: ['Build Tool', 'Fast']
-    },
-    {
-      id: 5,
-      icon: '🐳',
-      name: 'Docker',
-      description: 'Containerization for consistent development and deployment environments',
-      tags: ['DevOps', 'Container']
-    },
-    {
-      id: 6,
-      icon: '🖥️',
-      name: 'Linux',
-      description: 'Primary development environment for powerful command-line workflows',
-      tags: ['OS', 'Terminal']
-    }
-  ];
+  const content = translations[lang]?.pages?.home?.techStack;
 
   return (
-    <section className="px-5 space-y-10">
+    <section className="px-5 md:px-10 space-y-10">
       <PrimaryBadgeTitle icon={Layers} title="Tech Stack" />
-      <h4 className="font-black uppercase text-center text-3xl">Tools & Technologies</h4>
-      <div className="grid grid-cols-2 gap-5">
-        {techStackTools.map((item) => (
+      <div className="space-y-2">
+        <h4 className="font-black uppercase text-center text-3xl">{content?.h4}</h4>
+        <p className="text-zinc-300 text-center">{content?.p}</p>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 md:gap-5 w-fit mx-auto">
+        {content?.items.map((item) => (
           <motion.div
-            className="p-4 max-w-md bg-zinc-800 rounded-2xl"
+            className="max-w-md bg-zinc-800/40 border border-zinc-800 rounded-2xl overflow-hidden mx-auto"
+            whileHover="hover"
+            initial={{ y: 0 }}
+            variants={{
+              hover: {
+                y: -8,
+                boxShadow: "0 20px 50px -12px rgba(99, 102, 241, 0.5)",
+                border: "1px solid rgba(99, 102, 241, 0.5)"
+              }
+            }}
+            transition={{ duration: 0.3 }}
           >
-            <h5 className="font-black">{item.name}</h5>
-            <p>{item.description}</p>
-            <div className="flex flex-row gap-x-2 gap-y-3 flex-wrap">
-              {item.tags.map((tag) => (
-                <p>{tag}</p>
-              ))}
+            <motion.div
+              className="block mx-auto h-2 bg-gradient-to-br from-blue-500 to-indigo-500"
+              initial={{ width: 0 }}
+              variants={{
+                hover: { width: "100%" }
+              }}
+            ></motion.div>
+            <div className="p-7 space-y-3">
+              <div className="bg-gradient-to-br from-blue-500 to-indigo-500 w-fit p-3 text-3xl rounded-xl">{item.icon}</div>
+              <h5 className="font-black text-3xl">{item.name}</h5>
+              <p className="text-zinc-300 max-w-sm">{item.description[lang]}</p>
+              <div className="flex flex-row gap-x-2 gap-y-3 flex-wrap">
+                {item.tags.map((tag) => (
+                  <p className="px-3 py-2 rounded-full bg-zinc-800/50 text-zinc-300">{tag}</p>
+                ))}
+              </div>
             </div>
           </motion.div>
         ))}

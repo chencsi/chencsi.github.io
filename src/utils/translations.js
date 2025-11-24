@@ -1,6 +1,7 @@
 import { educations } from "./educations";
 import { references } from "./references";
 import { navigationPaths } from "./navigationPaths";
+import { techStackTools } from "./techStack";
 
 const sinceYear = new Date().getFullYear() - 2019;
 
@@ -15,6 +16,178 @@ const contactDatas = {
 }
 
 const translations = {
+  en: {
+    time: {
+      year: "year",
+      month: "month",
+      week: "week",
+      day: "day",
+      hour: "hour",
+      minute: "minute",
+      second: "second"
+    },
+    layout: {
+      nav: {
+        links: [
+          { name: "Home", path: navigationPaths.home },
+          { name: "Education", path: navigationPaths.education },
+          { name: "References", path: navigationPaths.references },
+          { name: "Contact", path: navigationPaths.contact }
+        ]
+      },
+      footer: {
+        links: {
+          linkedin: contactDatas.linkedin.href,
+          github: contactDatas.github
+        },
+        pages: "Pages",
+        further: "Further links",
+        p: "Code and design: Kevin Chen 💙 · © 2025"
+      }
+    },
+    pages: {
+      home: {
+        hero: {
+          h1: "Kevin Chen",
+          h2: "Frontend Developer Student",
+          p: "I build simple and user-friendly websites",
+          button: "Contact",
+          imgAlt: "Portrait photo",
+        },
+        highlights: [
+          {
+            h3: "Responsive websites",
+            p: "Optimized view for all devices.",
+          },
+          {
+            h3: "Modern technologies",
+            p: "React, Angular, Framer Motion and TailwindCSS",
+          },
+          {
+            h3: "UI/UX focus",
+            p: "Clean and user-friendly experience.",
+          },
+        ],
+        about: {
+          h3: "About me",
+          p1: `I started programming ${sinceYear} years ago, but my interest in programming goes back to my elementary school years. Since then, I have learned many programming languages, but I fell in love with web development. I finished a software developer and tester course, and now I'm in my first year at university studying computer engineering. I have worked on many school and personal projects, which you can see in the <a href="/references" class="text-blue-400 hover:underline font-semibold">references</a> section.`,
+          p2: "My goal is to build user-friendly websites and web applications that solve real problems. I keep my knowledge up-to-date to use the newest technologies.",
+        },
+        skills: {
+          h3: "My Highlighted Skills",
+          coding: "Coding Skills",
+          professional: "Extra Skills",
+          jumpToReferences: "Jump to references"
+        },
+        techStack: {
+          h4: "Tools & Technologies",
+          p: "These are the tools I use every day.",
+          items: techStackTools
+        },
+        education: {
+          h3: "My Education",
+          p: "School education played a big role in getting my knowledge, but I also spent a lot of time learning by myself to know modern solutions.",
+          educations: [
+            {
+              ...educations.gde,
+              h5: "Dennis Gabor University",
+              p1: "2025-",
+              p2: "I'm currently in my first semester here studying computer engineering and I'm excited to learn what new skills I can get here.",
+            },
+            {
+              ...educations.neu,
+              h5: "BMSZC Janos Neumann IT School",
+              p1: "2020-2025",
+              p2: "Here I learned about Full-Stack development from basics to frameworks, then database management and containerization.",
+            },
+            {
+              ...educations.plugin,
+              h5: "My first website and game server plugin",
+              p1: "2019",
+              p2: "I was still in elementary school, but I started to learn programming actively during summer break.",
+            },
+          ],
+        },
+      },
+      references: {
+        h3: "References",
+        p: "I want to show these projects below, most were made in teams, and you can see details through GitHub repositories.",
+        references: [
+          {
+            ...references.uranus,
+            description: "This is a mobile app that lets you use Neptune (university system) in app form with one-time login."
+          },
+          {
+            ...references.vagyidenvagysoha,
+            description: "A landing page that I'm making for a private education business owner. It has a modern and clean single page design that is completely static."
+          },
+          {
+            ...references.wteDesktop,
+            description: "With this web application, we wanted to make daily tasks easier for web teachers in my old school by checking and correcting HTML and CSS assignments automatically. I didn't work on the main logic, but I helped with the design, some API endpoints, and automated testing."
+          },
+          {
+            ...references.extension,
+            description: "This project is the student part of the WTE web application, a browser pop-up that helps students track their progress on assignments. This project uses much of the same logic as the main project for checking, but I was responsible for the user interface."
+          },
+        ],
+      },
+      contact: {
+        h3: "Contact",
+        p: "If you have any questions about me, you can reach me using the form below or through my contact information.",
+        section1: {
+          h4: "My Contact Information:",
+          mail: contactDatas.email,
+          phone: contactDatas.phone,
+          linekdin: contactDatas.linkedin,
+        },
+        section2: {
+          h4: "My Resume:",
+          item1: "Download",
+          item2: "Quick View",
+        },
+        form: {
+          name: {
+            label: "Name",
+            placeholder: "Enter your name (optional)",
+            required: "Name is required"
+          },
+          email: {
+            label: "Email",
+            placeholder: "Enter your email address",
+            required: "Email address is required",
+            invalid: "Please enter a valid email address"
+          },
+          phone: {
+            label: "Phone",
+            placeholder: "Enter your phone number (optional)",
+            invalid: "Please enter the following format: +36 30 123 4567"
+          },
+          subject: {
+            label: "Subject",
+            placeholder: "Enter the subject of your message",
+            required: "Subject is required"
+          },
+          message: {
+            label: "Message",
+            placeholder: "Write your message here...",
+            required: "Message is required",
+            minLength: "Message must be at least 50 characters long",
+            maxLength: "Message cannot be longer than 1000 characters"
+          },
+          send: "Send",
+          sent: "Thank you for your message! I will check it and respond as soon as I can!",
+          loading: "In progress",
+          success: "Success",
+          error: "Something went wrong"
+        }
+      },
+      notfound: {
+        h1: "Oops!",
+        p: "Sorry, the page you are looking for does not exist. :(",
+        button: "Back to home page"
+      }
+    },
+  },
   hu: {
     time: {
       year: "év",
@@ -77,6 +250,11 @@ const translations = {
           coding: "Programozási készségek",
           professional: "Extra készségek",
           jumpToReferences: "Tovább a referenciákhoz"
+        },
+        techStack: {
+          h4: "Eszközök & Technológiák",
+          p: "Ezeket az eszközöket szoktam nap mint nap használni.",
+          items: techStackTools
         },
         education: {
           h3: "Tanulmányaim",
@@ -179,175 +357,6 @@ const translations = {
         h1: "Hoppá!",
         p: "Sajnos az általad keresett oldal nem létezik. :(",
         button: "Vissza a főoldalra"
-      }
-    },
-  },
-  en: {
-    time: {
-      year: "year",
-      month: "month",
-      week: "week",
-      day: "day",
-      hour: "hour",
-      minute: "minute",
-      second: "second"
-    },
-    layout: {
-      nav: {
-        links: [
-          { name: "Home", path: navigationPaths.home },
-          { name: "Education", path: navigationPaths.education },
-          { name: "References", path: navigationPaths.references },
-          { name: "Contact", path: navigationPaths.contact }
-        ]
-      },
-      footer: {
-        links: {
-          linkedin: contactDatas.linkedin.href,
-          github: contactDatas.github
-        },
-        pages: "Pages",
-        further: "Further links",
-        p: "Code and design: Kevin Chen 💙 · © 2025"
-      }
-    },
-    pages: {
-      home: {
-        hero: {
-          h1: "Kevin Chen",
-          h2: "Frontend Developer Student",
-          p: "I build simple and user-friendly websites",
-          button: "Contact",
-          imgAlt: "Portrait photo",
-        },
-        highlights: [
-          {
-            h3: "Responsive websites",
-            p: "Optimized view for all devices.",
-          },
-          {
-            h3: "Modern technologies",
-            p: "React, Angular, Framer Motion and TailwindCSS",
-          },
-          {
-            h3: "UI/UX focus",
-            p: "Clean and user-friendly experience.",
-          },
-        ],
-        about: {
-          h3: "About me",
-          p1: `I started programming ${sinceYear} years ago, but my interest in programming goes back to my elementary school years. Since then, I have learned many programming languages, but I fell in love with web development. I finished a software developer and tester course, and now I'm in my first year at university studying computer engineering. I have worked on many school and personal projects, which you can see in the <a href="/references" class="text-blue-400 hover:underline font-semibold">references</a> section.`,
-          p2: "My goal is to build user-friendly websites and web applications that solve real problems. I keep my knowledge up-to-date to use the newest technologies.",
-        },
-        skills: {
-          h3: "My Highlighted Skills",
-          coding: "Coding Skills",
-          professional: "Extra Skills",
-          jumpToReferences: "Jump to references"
-
-        },
-        education: {
-          h3: "My Education",
-          p: "School education played a big role in getting my knowledge, but I also spent a lot of time learning by myself to know modern solutions.",
-          educations: [
-            {
-              ...educations.gde,
-              h5: "Dennis Gabor University",
-              p1: "2025-",
-              p2: "I'm currently in my first semester here studying computer engineering and I'm excited to learn what new skills I can get here.",
-            },
-            {
-              ...educations.neu,
-              h5: "BMSZC Janos Neumann IT School",
-              p1: "2020-2025",
-              p2: "Here I learned about Full-Stack development from basics to frameworks, then database management and containerization.",
-            },
-            {
-              ...educations.plugin,
-              h5: "My first website and game server plugin",
-              p1: "2019",
-              p2: "I was still in elementary school, but I started to learn programming actively during summer break.",
-            },
-          ],
-        },
-      },
-      references: {
-        h3: "References",
-        p: "I want to show these projects below, most were made in teams, and you can see details through GitHub repositories.",
-        references: [
-          {
-            ...references.uranus,
-            description: "This is a mobile app that lets you use Neptune (university system) in app form with one-time login."
-          },
-          {
-            ...references.vagyidenvagysoha,
-            description: "A landing page that I'm making for a private education business owner. It has a modern and clean single page design that is completely static."
-          },
-          {
-            ...references.wteDesktop,
-            description: "With this web application, we wanted to make daily tasks easier for web teachers in my old school by checking and correcting HTML and CSS assignments automatically. I didn't work on the main logic, but I helped with the design, some API endpoints, and automated testing."
-          },
-          {
-            ...references.extension,
-            description: "This project is the student part of the WTE web application, a browser pop-up that helps students track their progress on assignments. This project uses much of the same logic as the main project for checking, but I was responsible for the user interface."
-          },
-        ],
-      },
-      contact: {
-        h3: "Contact",
-        p: "If you have any questions about me, you can reach me using the form below or through my contact information.",
-        section1: {
-          h4: "My Contact Information:",
-          mail: contactDatas.email,
-          phone: contactDatas.phone,
-          linekdin: contactDatas.linkedin,
-        },
-        section2: {
-          h4: "My Resume:",
-          item1: "Download",
-          item2: "Quick View",
-        },
-        form: {
-          name: {
-            label: "Name",
-            placeholder: "Enter your name (optional)",
-            required: "Name is required"
-          },
-          email: {
-            label: "Email",
-            placeholder: "Enter your email address",
-            required: "Email address is required",
-            invalid: "Please enter a valid email address"
-          },
-          phone: {
-            label: "Phone",
-            placeholder: "Enter your phone number (optional)",
-            invalid: "Please enter the following format: +36 30 123 4567"
-          },
-          subject: {
-            label: "Subject",
-            placeholder: "Enter the subject of your message",
-            required: "Subject is required"
-          },
-          message: {
-            label: "Message",
-            placeholder: "Write your message here...",
-            required: "Message is required",
-            minLength: "Message must be at least 50 characters long",
-            maxLength: "Message cannot be longer than 1000 characters"
-          },
-          send: "Send",
-          sent: "Thank you for your message! I will check it and respond as soon as I can!",
-          loading: "In progress",
-          success: "Success",
-          error: "Something went wrong"
-
-        }
-      },
-      notfound: {
-        h1: "Oops!",
-        p: "Sorry, the page you are looking for does not exist. :(",
-        button: "Back to home page"
       }
     },
   }

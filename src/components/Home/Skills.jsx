@@ -57,6 +57,7 @@ const ProgressBar = ({ skill, index }) => {
           whileInView={{ width: `${skill.value}%` }}
           transition={{ delay: (index + 1) / 10, type: "spring", damping: 15 }}
           style={{ minWidth: "1%" }}
+          viewport={{ once: true }}
           aria-hidden="true"
         />
 
