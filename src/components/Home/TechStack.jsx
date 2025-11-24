@@ -19,8 +19,9 @@ const TechStack = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 md:gap-5 w-fit mx-auto">
         {content?.items.map((item) => (
           <motion.div
-            className="max-w-md bg-zinc-800/40 border border-zinc-800 rounded-2xl overflow-hidden mx-auto"
+            className="max-w-2xs sm:max-w-md bg-zinc-800/40 border border-zinc-800 rounded-2xl overflow-hidden mx-auto select-none"
             whileHover="hover"
+            whileTap="hover"
             initial={{ y: 0 }}
             variants={{
               hover: {
@@ -40,9 +41,9 @@ const TechStack = () => {
             ></motion.div>
             <div className="p-7 space-y-3">
               <div className="bg-gradient-to-br from-blue-500 to-indigo-500 w-fit p-3 text-3xl rounded-xl">{item.icon}</div>
-              <h5 className="font-black text-3xl">{item.name}</h5>
-              <p className="text-zinc-300 max-w-sm">{item.description[lang]}</p>
-              <div className="flex flex-row gap-x-2 gap-y-3 flex-wrap">
+              <h5 className="font-black text-2xl sm:text-3xl">{item.name}</h5>
+              <p className="text-zinc-300 max-w-sm text-sm sm:text-base">{item.description[lang]}</p>
+              <div className="flex flex-row gap-x-2 gap-y-3 flex-wrap text-xs sm:text-sm">
                 {item.tags.map((tag) => (
                   <p className="px-3 py-2 rounded-full bg-zinc-800/50 text-zinc-300">{tag}</p>
                 ))}
