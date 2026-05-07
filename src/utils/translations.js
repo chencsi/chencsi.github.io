@@ -49,7 +49,7 @@ const translations = {
       home: {
         hero: {
           h1: "Kevin Chen",
-          h2: "Frontend Developer Student",
+          h2: "Full Stack Developer Student",
           p: "I build simple and user-friendly websites",
           button: "Contact",
           imgAlt: "Portrait photo",
@@ -221,7 +221,7 @@ const translations = {
       home: {
         hero: {
           h1: "Kevin Chen",
-          h2: "Frontend fejlesztő hallgató",
+          h2: "Full Stack fejlesztő hallgató",
           p: "Letisztult és felhasználóbarát weboldalakat építek",
           button: "Kapcsolat",
           imgAlt: "Portré fotó",
